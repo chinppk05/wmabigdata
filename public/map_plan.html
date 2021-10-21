@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAP</title>
+
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css"
+    />
+    <link rel="stylesheet" href="/css/map.css" />
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline">WMA</span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link align-middle px-0 text-light">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">รายงานเชิงบริหาร</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/maps" class="nav-link align-middle px-0 text-light">
+                              <i class="bi bi-geo-alt"></i><span class="ms-1 d-none d-sm-inline"> แผนที่</span>
+                            </a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle text-light">
+                                <i class="bi bi-search"></i><span class="ms-1 d-none d-sm-inline">ระบบสืบค้นข้อมูลคุณภาพน้ำ</span></a>
+                        </li>
+                        <!---
+                        <li>
+                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                                <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
+                                <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    --->
+                </div>
+            </div>
+            <div class="col py-3">
+                
+                
+                 <!-- Area Chart -->
+                 <div class="col-xl-12 col-lg-12 ">
+                    <div class="card shadow mb-4">
+                        <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-12 ">
+                                <div class="card">
+                                  <div class="card-header">
+                                    <ul
+                                      class="nav nav-tabs card-header-tabs"
+                                      id="bologna-list"
+                                      role="tablist"
+                                    >
+                                      <li class="nav-item">
+                                        <a
+                                          class="nav-link "
+                                          href="/maps"
+                                          role="tab"
+                                          aria-controls="description"
+                                          aria-selected="true"
+                                          >แผนที่ภาพรวม</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          class="nav-link "
+                                          href="/map-do"
+                                          role="tab"
+                                          aria-controls="history"
+                                          aria-selected="false"
+                                          >แผนที่ค่าคุณภาพน้ำ DO</a
+                                        >
+                                      </li>
+                                     
+                                      <li class="nav-item">
+                                        <a
+                                          class="nav-link active"
+                                          href="/map-plan"
+                                          role="tab"
+                                          aria-controls="deals"
+                                          aria-selected="false"
+                                          >แผนที่โครงการก่อสร้าง 5ปี 10ปี 15ปี</a
+                                        >
+                                      </li>
+                                      <li class="nav-item">
+                                        <a
+                                          class="nav-link"
+                                          href="/map-predict"
+                                          role="tab"
+                                          aria-controls="eiei"
+                                          aria-selected="false"
+                                          >แผนที่แสดงพื้นที่ลุ่มแม่น้ำเจ้าพระยา-ท่าจีน </a
+                                        >
+                                      </li>
+                                      
+                                     
+                                    </ul>
+                              
+                      
+                                      
+                                  </div>
+
+                                  
+                                  
+                                  <div class="card-body">
+                                    <h4 class="card-title"></h4>
+                                    <h6 class="card-subtitle mb-2"></h6>
+                      
+                                    <div class="tab-content mt-3">
+                                      <div class="tab-pane " id="description" role="tabpanel">
+                                        <p class="card-text">
+                                           
+                                        </p>
+                                      
+                                      </div>
+                      
+                                      <div
+                                        class="tab-pane active"
+                                        id="history"
+                                        role="tabpanel"
+                                        aria-labelledby="history-tab"
+                                      >
+                                        <p class="card-text">
+                                          <div id="map" class="z-depth-1" style="height: 720px"></div>
+                                        </p>
+                                        
+                                      </div>
+                      
+                                      <div
+                                        class="tab-pane "
+                                        id="deals"
+                                        role="tabpanel"
+                                        aria-labelledby="deals-tab"
+                                      >
+                                        <p class="card-text">
+                                         
+                                        </p>
+                                      
+                                        <hr>
+                                        <div class="d-grid gap-2">
+                                          
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+
+                
+
+      
+          
+
+           <!-- Footer -->
+           <footer class="sticky-footer bg-white">
+               <div class="container my-auto">
+                   <div class="copyright text-center my-auto">
+                       <span>Copyright &copy; Your Website 2021</span>
+                   </div>
+               </div>
+           </footer>
+           <!-- End of Footer -->
+
+
+    
+
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+           <script src="/javascript/map_gcontrol.js"></script>
+           <script src="/javascript/map_mike.js"></script>
+
+
+
+
+           <script>
+            var map = L.map('map', {
+              center: [13.724618, 100.584682],
+              zoom: 10,
+              layers: [ExampleData.Basemaps.Streets, ExampleData.LayerGroups.py5, ExampleData.LayerGroups.py10, ExampleData.LayerGroups.py15, 
+              ExampleData.LayerGroups.tc5,ExampleData.LayerGroups.tc10,ExampleData.LayerGroups.tc15 ]
+            });
+        
+        
+
+        
+            // Overlay layers are grouped
+            var groupedOverlays = {
+              "แผนการก่อสร้าง ลุ่มแม่น้ำเจ้าพระยา": {
+                "แผน 5 ปี": ExampleData.LayerGroups.py5,
+                "แผน 10 ปี": ExampleData.LayerGroups.py10,
+                "แผน 15 ปี": ExampleData.LayerGroups.py15
+              },
+              "แผนการก่อสร้าง ลุ่มแม่น้ำท่าจีน": {
+                "แผน 5 ปี" : ExampleData.LayerGroups.tc5,
+                "แผน 10 ปี" : ExampleData.LayerGroups.tc10,
+                "แผน 15 ปี" : ExampleData.LayerGroups.tc15,
+              }
+            };
+        
+            // Use the custom grouped layer control, not "L.control.layers"
+            L.control.groupedLayers(ExampleData.Basemaps, groupedOverlays).addTo(map);
+        </script>
+
+    
+</body>
+</html>

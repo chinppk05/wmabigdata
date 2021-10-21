@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!---
+    <style>
+        body {
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            border: solid 2px gray;
+        }
+        td, th {
+            padding: 5px;
+        }
+        th {
+            background-color: #cde;
+        }
+    </style>
+    --->
+
+
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+</head>
+<body>
+    <a href="/">หน้าแรก</a><br><br>
+    <h4>รายการข้อมูล</h4>
+    
+    <% if (locals.data) { %>
+
+    <div class="table-responsive-sm ">
+    <table class="table table-sm  table-hover">
+        <thead class="table-primary">
+        <tr>
+            <th scope="col">timestamp</th>
+            <th scope="col">ปริมาณน้ำ</th>
+            <th scope="col">Do</th>
+            <th scope="col">Treated_Do</th>
+            <th scope="col">Temp</th>
+            <th scope="col">Treated_Temp</th>
+            <th scope="col">pH</th>
+            <th scope="col">Treated_pH</th>
+            <th scope="col">BOD</th>
+            <th scope="col">Treated_BOD</th>
+            <th scope="col">วันที่</th>
+            <th scope="col">เดือน</th>
+            <th scope="col">ปี</th>
+        </tr>
+        </thead>
+        <% 
+        for (d of data) { 
+            let dt = new Date(Date.parse(d.date_added))
+            let df = `${dt.getDate()}-${dt.getMonth() + 1}-${dt.getFullYear()}`
+        %>
+        <tbody>
+            <tr>
+                <td><%= d.timestamp %></td>
+                <td><%= d.treated_water %></td>
+                <td><%= d.do %></td>
+                <td><%= d.treated_doo %></td>
+                <td><%= d.temp %></td>
+                <td><%= d.treated_temp %></td>
+                
+                <td><%= d.ph %></td>
+                <td><%= d.treated_ph %></td>
+                <td><%= d.bod %></td>
+                <td><%= d.treated_bod %></td>
+                <td><%= d.day %></td>
+                <td><%= d.month %></td>
+                <td><%= d.year %></td>
+            </tr>
+        </tbody>
+        <% } %>
+    </table>
+    <% } %>
+    </div>
+
+
+  
+   
+    </div>
+    
+     <!-- Earnings (Monthly) Card Example -->
+     <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            ประมาณน้ำประจำวัน</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="test"></span></div>
+                    </div>
+                    <div class="col-auto">
+                        <!--<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<script>
+    const getBtn = document.getElementById("test");
+const getdo00 = document.getElementById("test");
+
+
+const getdata = () => {
+  axios
+    
+    .get("http://localhost:3000/data")
+    .then((response) => {
+      console.log(response.data);
+     // console.log(data);
+      getdo00.innerHTML = response.data.data[0].treated_water;
+   
+      
+    });
+};
+
+/*getBtn.addEventListener("click", getdata);
+*/
+
+getdata()
+</script>
+</body>
+</html>
