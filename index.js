@@ -5,6 +5,8 @@ const ejs = require('ejs')
 const bodyParser = require('body-parser')
 const app = express()
 const path = require('path')
+const PORT = process.env.PORT ||  8080
+
 
 app.use(express.static('public'))
 
@@ -325,5 +327,5 @@ app.get('/show-products-paging-no', (request, response) => {
     })
 })
 
-app.listen(3000, () => console.log('Server started on port: 3000'))
+app.listen(PORT, () => console.log('Server started on port: 3000'))
 
