@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (request, response) => {
     Product
-    .find()
+    .find().sort('level1_approval')
     .where('month').equals(10)
     .where('day').equals(21)
     .exec((err, docs) => {
