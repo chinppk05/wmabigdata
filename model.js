@@ -62,8 +62,42 @@ const mwaSchema = new mongoose.Schema({
     
 })
 
+const ridcpSchema = new mongoose.Schema({
+    "code": String,
+    "name": String,
+    "dateTh": String,
+    "dateTime": String,
+    "ph": Number,
+    "salinity": Number,
+    "tds": Number,
+    "do": Number,
+    "temp": Number,
+    "conductivity": Number,
+    "waterLevel": Number
+    
+})
+
+const ridtcSchema = new mongoose.Schema({
+    "code": String,
+    "name": String,
+    "dateTh": String,
+    "dateTime": String,
+    "ph": Number,
+    "salinity": Number,
+    "tds": Number,
+    "do": Number,
+    "temp": Number,
+    "conductivity": Number,
+    "waterLevel": Number,
+    "velocity": Number,
+    "flowRate": Number
+    
+})
+
 wmaSchema.plugin(paginate)
 
 module.exports.wmadata = mongoose.model('wma99', wmaSchema)
 module.exports.mwadata = mongoose.model('wma87', mwaSchema)
+module.exports.ridcpdata = mongoose.model('wma88', ridcpSchema)
+module.exports.ridtcdata = mongoose.model('wma89', ridtcSchema)
 

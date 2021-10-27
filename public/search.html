@@ -169,7 +169,7 @@ crossorigin="anonymous"
                                                    <p>ศูนย์บริหารจัดการคุณภาพน้ำ</p>
                                                     <select class="form-select" aria-label="Default select example" id="wma">
                                                        
-                                                        <option selected>กรุณาเลือกสถานี</option>
+                                                        <option selected value="#">กรุณาเลือกสถานี</option>
                                             <option value="/wmastation01">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองพะเยา</option>
                                             <option value="/wmastation02">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลนครลำปาง</option>
                                             <option value="/wmastation03">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองมุกดาหาร</option>
@@ -254,7 +254,7 @@ crossorigin="anonymous"
                                                <p>สถานีจุดตรวจวัดคุณภาพน้ำ</p>
                                                 <select class="form-select" aria-label="Default select example" id="mwa">
                                                    
-                                                    <option selected>กรุณาเลือกสถานี</option>
+                                                    <option selected value="#">กรุณาเลือกสถานี</option>
                                         <option value="/mwa01">สถานีวัดบ้านแป้ง</option>
                                         <option value="#"style="color: #FF0000;">สถานีวัดโพธิ์แดงเหนือ *ปิดปรับปรุง* </option>
                                         <option value="/mwa03">สถานีวัดมะขาม</option>
@@ -296,7 +296,7 @@ crossorigin="anonymous"
                                                <p>สถานีจุดตรวจวัดคุณภาพน้ำ</p>
                                                 <select class="form-select" aria-label="Default select example">
                                                    
-                                                    <option selected>กรุณาเลือกสถานี</option>
+                                                    <option selected  value="#">กรุณาเลือกสถานี</option>
                                                     <option value="1">สถานีสมุทรปราการ</option>
                                                     <option value="2">สถานีดาวคะนอง</option>
                                                     <option value="3">สถานีปากเกร็ด</option>
@@ -336,26 +336,26 @@ crossorigin="anonymous"
                                         <div class="row">
                                             <div class="col-xl-4 col-lg-4">
                                                <p>สถานีจุดตรวจวัดคุณภาพน้ำ</p>
-                                                <select class="form-select" aria-label="Default select example">
+                                                <select class="form-select" aria-label="Default select example" id="rid">
                                                    
-                                                    <option selected>กรุณาเลือกสถานี</option>
-                                        <option value="">สถานีกรมชลประทานสามเสน</option>
-                                        <option value="">สถานีวัดเขมาภิรตาราม</option>
-                                        <option value="">สถานีวัดเชิงเลน</option>
-                                        <option value="">สถานีวัดฉาง</option>
-                                        <option value="">สถานีวัดโสภาราม</option>
-                                        <option value="">สถานีวัดกร่าง</option>
+                                                    <option selected value="#">กรุณาเลือกสถานี</option>
+                                        <option value="/rid-cp06">สถานีกรมชลประทานสามเสน</option>
+                                        <option value="/rid-cp05">สถานีวัดเขมาภิรตาราม</option>
+                                        <option value="/rid-cp04">สถานีวัดเชิงเลน</option>
+                                        <option value="/rid-cp03">สถานีวัดฉาง</option>
+                                        <option value="/rid-cp02">สถานีวัดโสภาราม</option>
+                                        <option value="/rid-cp01">สถานีวัดกร่าง</option>
 
 
-                                        <option value="">สถานีวัดพันธุวงษ์</option>
-                                        <option value="">สถานีวัดอ่างทอง</option>
-                                        <option value="">สถานีวัดตอนไก่ดี</option>
-                                        <option value="">สถานีวัดเทียนตัด</option>
-                                        <option value="">สถานีปตร.คลองจินดา</option>
-                                        <option value="">สถานีวัดท่าขาม</option>
-                                        <option value="">สถานีวัดท่าพูด</option>
-                                        <option value="">สถานีวัดทรงคนอง</option>
-                                        <option value="">สถานีวัดสัมปทวน</option>
+                                        <option value="/rid-tc09">สถานีวัดพันธุวงษ์</option>
+                                        <option value="/rid-tc08">สถานีวัดอ่างทอง</option>
+                                        <option value="/rid-tc07">สถานีวัดตอนไก่ดี</option>
+                                        <option value="/rid-tc06">สถานีวัดเทียนตัด</option>
+                                        <option value="/rid-tc05">สถานีปตร.คลองจินดา</option>
+                                        <option value="/rid-tc04">สถานีวัดท่าขาม</option>
+                                        <option value="/rid-tc03">สถานีวัดท่าพูด</option>
+                                        <option value="/rid-tc02">สถานีวัดทรงคนอง</option>
+                                        <option value="/rid-tc01">สถานีวัดสัมปทวน</option>
                                       
                                                   </select>
                                             </div>
@@ -364,7 +364,7 @@ crossorigin="anonymous"
                                             
                                           
                                             <div class="col-xl-4 col-lg-4">
-                                                <button type="button" class="btn btn-outline-primary" style="margin-top: 38px;">สืบค้น</button>
+                                                <button type="button" class="btn btn-outline-primary" style="margin-top: 38px;" id="btn03">สืบค้น</button>
                                             </div>
 
                                           
@@ -463,6 +463,16 @@ crossorigin="anonymous"
       event.preventDefault();
       // show the selected index
       window.location = sb2.value
+  };
+</script>
+
+<script>
+  const btn3 = document.querySelector('#btn03');
+  const sb3 = document.querySelector('#rid')
+  btn3.onclick = (event) => {
+      event.preventDefault();
+      // show the selected index
+      window.location = sb3.value
   };
 </script>
 

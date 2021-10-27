@@ -2,6 +2,8 @@
 const models = require('./model')
 const wmadata = models.wmadata
 const mwadata = models.mwadata
+const ridcpdata = models.ridcpdata
+const ridtcdata = models.ridtcdata
 const express = require('express')
 const ejs = require('ejs')
 const bodyParser = require('body-parser')
@@ -22,6 +24,370 @@ app.get('/', (request, response) => {
     .where('day').equals(27)
     .exec((err, docs) => {
         response.render('index', {
+            data: docs
+        })
+    })
+})
+
+app.get('/rid-tc01', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC01")
+    .where('dateTh').equals("27/10/2564")
+    .exec((err, docs) => {
+        response.render('ridtc01', {
+            data: docs
+        })
+    })
+})
+app.get('/rid-tc02', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC02")
+    .where('dateTh').equals("27/10/2564")
+    .exec((err, docs) => {
+        response.render('ridtc02', {
+            data: docs
+        })
+    })
+})
+app.get('/rid-tc03', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC03")
+    .where('dateTh').equals("27/10/2564")
+    .exec((err, docs) => {
+        response.render('ridtc03', {
+            data: docs
+        })
+    })
+})
+app.get('/rid-tc04', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC04")
+    .where('dateTh').equals("27/10/2564")
+    .exec((err, docs) => {
+        response.render('ridtc04', {
+            data: docs
+        })
+    })
+})
+app.get('/rid-tc05', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC05")
+    .where('dateTh').equals("27/10/2564")
+    .exec((err, docs) => {
+        response.render('ridtc05', {
+            data: docs
+        })
+    })
+})
+app.get('/rid-tc06', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC06")
+    .where('dateTh').equals("27/10/2564")
+    .exec((err, docs) => {
+        response.render('ridtc06', {
+            data: docs
+        })
+    })
+})
+app.get('/rid-tc07', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC07")
+    .where('dateTh').equals("27/10/2564")
+    .exec((err, docs) => {
+        response.render('ridtc07', {
+            data: docs
+        })
+    })
+})
+app.get('/rid-tc08', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC08")
+    .where('dateTh').equals("27/10/2564")
+    .exec((err, docs) => {
+        response.render('ridtc08', {
+            data: docs
+        })
+    })
+})
+app.get('/rid-tc09', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC09")
+    .where('dateTh').equals("27/10/2564")
+    .exec((err, docs) => {
+        response.render('ridtc09', {
+            data: docs
+        })
+    })
+})
+app.get('/riddata-tc01', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC01")
+    .where('dateTh').equals("27/10/2564")
+    
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/riddata-tc02', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC02")
+    .where('dateTh').equals("27/10/2564")
+    
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/riddata-tc02', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC02")
+    .where('dateTh').equals("27/10/2564")
+    
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/riddata-tc03', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC03")
+    .where('dateTh').equals("27/10/2564")
+    
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/riddata-tc04', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC04")
+    .where('dateTh').equals("27/10/2564")
+    
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/riddata-tc05', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC05")
+    .where('dateTh').equals("27/10/2564")
+    
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/riddata-tc06', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC06")
+    .where('dateTh').equals("27/10/2564")
+    
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/riddata-tc07', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC07")
+    .where('dateTh').equals("27/10/2564")
+    
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/riddata-tc08', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC08")
+    .where('dateTh').equals("27/10/2564")
+    
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/riddata-tc09', (request, response) => {
+    ridtcdata
+    .find()
+    .where('code').equals("TC09")
+    .where('dateTh').equals("27/10/2564")
+    
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+
+
+
+
+
+app.get('/rid-cp01', (request, response) => {
+    ridcpdata
+    .find()
+    .where('code').equals("CP01")
+    .where('dateTh').equals("27/10/2564")
+    .exec((err, docs) => {
+        response.render('ridcp01', {
+            data: docs
+        })
+    })
+})
+app.get('/rid-cp02', (request, response) => {
+    ridcpdata
+    .find()
+    .where('code').equals("CP02")
+    .where('dateTh').equals("27/10/2564")
+    .exec((err, docs) => {
+        response.render('ridcp02', {
+            data: docs
+        })
+    })
+})
+app.get('/rid-cp03', (request, response) => {
+    ridcpdata
+    .find()
+    .where('code').equals("CP03")
+    .where('dateTh').equals("27/10/2564")
+    .exec((err, docs) => {
+        response.render('ridcp03', {
+            data: docs
+        })
+    })
+})
+app.get('/rid-cp04', (request, response) => {
+    ridcpdata
+    .find()
+    .where('code').equals("CP04")
+    .where('dateTh').equals("27/10/2564")
+    .exec((err, docs) => {
+        response.render('ridcp04', {
+            data: docs
+        })
+    })
+})
+app.get('/rid-cp05', (request, response) => {
+    ridcpdata
+    .find()
+    .where('code').equals("CP05")
+    .where('dateTh').equals("27/10/2564")
+    .exec((err, docs) => {
+        response.render('ridcp05', {
+            data: docs
+        })
+    })
+})
+app.get('/rid-cp06', (request, response) => {
+    ridcpdata
+    .find()
+    .where('code').equals("CP06")
+    .where('dateTh').equals("27/10/2564")
+    .exec((err, docs) => {
+        response.render('ridcp06', {
+            data: docs
+        })
+    })
+})
+
+app.get('/riddata-cp01', (request, response) => {
+    ridcpdata
+    .find()
+    .where('code').equals("CP01")
+    .where('dateTh').equals("27/10/2564")
+    
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/riddata-cp02', (request, response) => {
+    ridcpdata
+    .find()
+    .where('code').equals("CP02")
+    .where('dateTh').equals("27/10/2564")
+    
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/riddata-cp03', (request, response) => {
+    ridcpdata
+    .find()
+    .where('code').equals("CP03")
+    .where('dateTh').equals("27/10/2564")
+    
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/riddata-cp04', (request, response) => {
+    ridcpdata
+    .find()
+    .where('code').equals("CP04")
+    .where('dateTh').equals("27/10/2564")
+    
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/riddata-cp05', (request, response) => {
+    ridcpdata
+    .find()
+    .where('code').equals("CP05")
+    .where('dateTh').equals("27/10/2564")
+    
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/riddata-cp06', (request, response) => {
+    ridcpdata
+    .find()
+    .where('code').equals("CP06")
+    .where('dateTh').equals("27/10/2564")
+    
+    .exec((err, docs) => {
+        response.json({
             data: docs
         })
     })
