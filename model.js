@@ -44,7 +44,26 @@ const wmaSchema = new mongoose.Schema({
     
 })
 
+const mwaSchema = new mongoose.Schema({
+    "order": Number,
+    "datetime": String,
+    "time": String,
+    "ph": Number,
+    "salt": Number,
+    "turb": Number,
+    "tds": Number,
+    "chlorophyll": Number,
+    "do": Number,
+    "temp": Number,
+    "depth": Number,
+    "conduct": Number,
+    "wlevel": Number,
+    "bga": Number
+    
+})
+
 wmaSchema.plugin(paginate)
 
-module.exports = mongoose.model('wma99', wmaSchema)
+module.exports.wmadata = mongoose.model('wma99', wmaSchema)
+module.exports.mwadata = mongoose.model('wma87', mwaSchema)
 
