@@ -33,7 +33,7 @@ app.get('/rid-tc01', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC01")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('ridtc01', {
             data: docs
@@ -44,7 +44,7 @@ app.get('/rid-tc02', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC02")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('ridtc02', {
             data: docs
@@ -55,7 +55,7 @@ app.get('/rid-tc03', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC03")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('ridtc03', {
             data: docs
@@ -66,7 +66,7 @@ app.get('/rid-tc04', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC04")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('ridtc04', {
             data: docs
@@ -77,7 +77,7 @@ app.get('/rid-tc05', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC05")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('ridtc05', {
             data: docs
@@ -88,7 +88,7 @@ app.get('/rid-tc06', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC06")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('ridtc06', {
             data: docs
@@ -99,7 +99,7 @@ app.get('/rid-tc07', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC07")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('ridtc07', {
             data: docs
@@ -110,7 +110,7 @@ app.get('/rid-tc08', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC08")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('ridtc08', {
             data: docs
@@ -121,7 +121,7 @@ app.get('/rid-tc09', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC09")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('ridtc09', {
             data: docs
@@ -132,7 +132,7 @@ app.get('/riddata-tc01', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC01")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     
     .exec((err, docs) => {
         response.json({
@@ -144,7 +144,7 @@ app.get('/riddata-tc02', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC02")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     
     .exec((err, docs) => {
         response.json({
@@ -156,7 +156,7 @@ app.get('/riddata-tc02', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC02")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     
     .exec((err, docs) => {
         response.json({
@@ -168,7 +168,7 @@ app.get('/riddata-tc03', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC03")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     
     .exec((err, docs) => {
         response.json({
@@ -180,7 +180,7 @@ app.get('/riddata-tc04', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC04")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     
     .exec((err, docs) => {
         response.json({
@@ -192,7 +192,7 @@ app.get('/riddata-tc05', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC05")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     
     .exec((err, docs) => {
         response.json({
@@ -204,7 +204,7 @@ app.get('/riddata-tc06', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC06")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     
     .exec((err, docs) => {
         response.json({
@@ -216,7 +216,7 @@ app.get('/riddata-tc07', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC07")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     
     .exec((err, docs) => {
         response.json({
@@ -228,7 +228,7 @@ app.get('/riddata-tc08', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC08")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     
     .exec((err, docs) => {
         response.json({
@@ -240,7 +240,7 @@ app.get('/riddata-tc09', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals("TC09")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     
     .exec((err, docs) => {
         response.json({
@@ -257,7 +257,7 @@ app.get('/rid-cp01', (request, response) => {
     ridcpdata
     .find()
     .where('code').equals("CP01")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('ridcp01', {
             data: docs
@@ -268,7 +268,7 @@ app.get('/rid-cp02', (request, response) => {
     ridcpdata
     .find()
     .where('code').equals("CP02")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('ridcp02', {
             data: docs
@@ -279,7 +279,7 @@ app.get('/rid-cp03', (request, response) => {
     ridcpdata
     .find()
     .where('code').equals("CP03")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('ridcp03', {
             data: docs
@@ -290,7 +290,7 @@ app.get('/rid-cp04', (request, response) => {
     ridcpdata
     .find()
     .where('code').equals("CP04")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('ridcp04', {
             data: docs
@@ -301,7 +301,7 @@ app.get('/rid-cp05', (request, response) => {
     ridcpdata
     .find()
     .where('code').equals("CP05")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('ridcp05', {
             data: docs
@@ -312,7 +312,7 @@ app.get('/rid-cp06', (request, response) => {
     ridcpdata
     .find()
     .where('code').equals("CP06")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('ridcp06', {
             data: docs
@@ -324,7 +324,7 @@ app.get('/riddata-cp01', (request, response) => {
     ridcpdata
     .find()
     .where('code').equals("CP01")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     
     .exec((err, docs) => {
         response.json({
@@ -336,7 +336,7 @@ app.get('/riddata-cp02', (request, response) => {
     ridcpdata
     .find()
     .where('code').equals("CP02")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     
     .exec((err, docs) => {
         response.json({
@@ -348,7 +348,7 @@ app.get('/riddata-cp03', (request, response) => {
     ridcpdata
     .find()
     .where('code').equals("CP03")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     
     .exec((err, docs) => {
         response.json({
@@ -360,7 +360,7 @@ app.get('/riddata-cp04', (request, response) => {
     ridcpdata
     .find()
     .where('code').equals("CP04")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     
     .exec((err, docs) => {
         response.json({
@@ -372,7 +372,7 @@ app.get('/riddata-cp05', (request, response) => {
     ridcpdata
     .find()
     .where('code').equals("CP05")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     
     .exec((err, docs) => {
         response.json({
@@ -384,7 +384,7 @@ app.get('/riddata-cp06', (request, response) => {
     ridcpdata
     .find()
     .where('code').equals("CP06")
-    .where('dateTh').equals("27/10/2564")
+    .where('dateTh').equals("28/10/2564")
     
     .exec((err, docs) => {
         response.json({
@@ -1590,7 +1590,7 @@ app.get('/wmadata50', (request, response) => {
 app.get('/mwa-data', (request, response) => {
     mwadata
     .find()
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('mwa', {
             data: docs
@@ -1602,7 +1602,7 @@ app.get('/mwa01', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("T3")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('mwa', {
             data: docs
@@ -1614,7 +1614,7 @@ app.get('/mwa02', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('mwa02', {
             data: docs
@@ -1625,7 +1625,7 @@ app.get('/mwa03', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("S4")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('mwa03', {
             data: docs
@@ -1636,7 +1636,7 @@ app.get('/mwa04', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("T4")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('mwa04', {
             data: docs
@@ -1647,7 +1647,7 @@ app.get('/mwa05', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("S7")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('mwa05', {
             data: docs
@@ -1658,7 +1658,7 @@ app.get('/mwa06', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("S6")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('mwa05', {
             data: docs
@@ -1669,7 +1669,7 @@ app.get('/mwa07', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("T2")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('mwa06', {
             data: docs
@@ -1680,7 +1680,7 @@ app.get('/mwa08', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("S2")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('mwa07', {
             data: docs
@@ -1691,7 +1691,7 @@ app.get('/mwa09', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("S17")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('mwa08', {
             data: docs
@@ -1702,7 +1702,7 @@ app.get('/mwa10', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("S18")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('mwa09', {
             data: docs
@@ -1713,7 +1713,7 @@ app.get('/mwa11', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("S20")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.render('mwa10', {
             data: docs
@@ -1727,7 +1727,7 @@ app.get('/mwadata01', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("T3")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.json({
             data: docs
@@ -1739,7 +1739,7 @@ app.get('/mwadata02', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("T3")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.json({
             data: docs
@@ -1751,7 +1751,7 @@ app.get('/mwadata03', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("S4")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.json({
             data: docs
@@ -1763,7 +1763,7 @@ app.get('/mwadata04', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("T4")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.json({
             data: docs
@@ -1775,7 +1775,7 @@ app.get('/mwadata05', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("S7")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.json({
             data: docs
@@ -1787,7 +1787,7 @@ app.get('/mwadata06', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("S6")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.json({
             data: docs
@@ -1799,7 +1799,7 @@ app.get('/mwadata07', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("T2")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.json({
             data: docs
@@ -1811,7 +1811,7 @@ app.get('/mwadata08', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("S2")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.json({
             data: docs
@@ -1823,7 +1823,7 @@ app.get('/mwadata09', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("S17")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.json({
             data: docs
@@ -1835,7 +1835,7 @@ app.get('/mwadata10', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("S18")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.json({
             data: docs
@@ -1847,7 +1847,7 @@ app.get('/mwadata11', (request, response) => {
     mwadata
     .find()
     .where('stationid').equals("S20")
-    .where('datetime').equals("27/10/2564")
+    .where('datetime').equals("28/10/2564")
     .exec((err, docs) => {
         response.json({
             data: docs
