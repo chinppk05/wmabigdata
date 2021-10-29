@@ -94,10 +94,32 @@ const ridtcSchema = new mongoose.Schema({
     
 })
 
+const pcdSchema = new mongoose.Schema({
+    "pH": Number,
+    "DO": Number,
+    "EC": Number,
+    "temp": Number,
+    "Turbid": Number,
+    "Ammonium": Number,
+    "Nitrate": Number,
+    "BOD": Number,
+    "COD": Number,
+    "Ammonia": Number,
+    "time": String,
+    "date": String,
+    "stationid": String,
+    "name": String
+    
+})
+
+
+
 wmaSchema.plugin(paginate)
 
 module.exports.wmadata = mongoose.model('wma99', wmaSchema)
 module.exports.mwadata = mongoose.model('wma87', mwaSchema)
 module.exports.ridcpdata = mongoose.model('wma88', ridcpSchema)
 module.exports.ridtcdata = mongoose.model('wma89', ridtcSchema)
+module.exports.pcddata = mongoose.model('wma85', pcdSchema)
+
 

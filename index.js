@@ -2,8 +2,10 @@
 const models = require('./model')
 const wmadata = models.wmadata
 const mwadata = models.mwadata
+const pcddata = models.pcddata
 const ridcpdata = models.ridcpdata
 const ridtcdata = models.ridtcdata
+
 const express = require('express')
 const ejs = require('ejs')
 const bodyParser = require('body-parser')
@@ -28,6 +30,230 @@ app.get('/', (request, response) => {
         })
     })
 })
+
+app.get('/pcd01', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("240")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.render('pcd01', {
+            data: docs
+        })
+    })
+})
+app.get('/pcd02', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("118")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.render('pcd02', {
+            data: docs
+        })
+    })
+})
+app.get('/pcd03', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("113")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.render('pcd03', {
+            data: docs
+        })
+    })
+})
+app.get('/pcd04', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("128")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.render('pcd04', {
+            data: docs
+        })
+    })
+})
+app.get('/pcd05', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("112")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.render('pcd05', {
+            data: docs
+        })
+    })
+})
+app.get('/pcd06', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("222")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.render('pcd06', {
+            data: docs
+        })
+    })
+})
+app.get('/pcd07', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("111")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.render('pcd07', {
+            data: docs
+        })
+    })
+})
+app.get('/pcd08', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("248")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.render('pcd08', {
+            data: docs
+        })
+    })
+})
+app.get('/pcd09', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("110")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.render('pcd09', {
+            data: docs
+        })
+    })
+})
+app.get('/pcd10', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("109")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.render('pcd10', {
+            data: docs
+        })
+    })
+})
+
+app.get('/pcddata01', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("240")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/pcddata02', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("118")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/pcddata03', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("113")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/pcddata04', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("128")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/pcddata05', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("112")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/pcddata06', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("222")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/pcddata07', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("111")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/pcddata08', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("248")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/pcddata09', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("110")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+app.get('/pcddata10', (request, response) => {
+    pcddata
+    .find()
+    .where("stationid").equals("109")
+    .where("date").equals("29/10/2564")
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+
+
 
 app.get('/rid-tc01', (request, response) => {
     ridtcdata

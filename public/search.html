@@ -294,19 +294,19 @@ crossorigin="anonymous"
                                         <div class="row">
                                             <div class="col-xl-4 col-lg-4">
                                                <p>สถานีจุดตรวจวัดคุณภาพน้ำ</p>
-                                                <select class="form-select" aria-label="Default select example">
+                                                <select class="form-select" aria-label="Default select example" id="pcd">
                                                    
                                                     <option selected  value="#">กรุณาเลือกสถานี</option>
-                                                    <option value="1">สถานีสมุทรปราการ</option>
-                                                    <option value="2">สถานีดาวคะนอง</option>
-                                                    <option value="3">สถานีปากเกร็ด</option>
-                                                    <option value="4">สถานีสำแล</option>
-                                                    <option value="5">สถานีบางไทร</option>
-                                                    <option value="6">สถานึอยุธยา</option>
-                                                    <option value="7">สถานีป่าโมก</option>
-                                                    <option value="8">สถานีอ่างทอง</option>
-                                                    <option value="9">สถานีสิงห์บุรี</option>
-                                                    <option value="10">สถานีชัยนาท</option>
+                                                    <option value="/pcd01">สถานีสมุทรปราการ</option>
+                                                    <option value="/pcd02">สถานีดาวคะนอง</option>
+                                                    <option value="/pcd03">สถานีปากเกร็ด</option>
+                                                    <option value="/pcd04">สถานีสำแล</option>
+                                                    <option value="/pcd05">สถานีบางไทร</option>
+                                                    <option value="/pcd06">สถานึอยุธยา</option>
+                                                    <option value="/pcd07">สถานีป่าโมก</option>
+                                                    <option value="/pcd08">สถานีอ่างทอง</option>
+                                                    <option value="/pcd09">สถานีสิงห์บุรี</option>
+                                                    <option value="/pcd10">สถานีชัยนาท</option>
                                                  
                                                         
                                         
@@ -317,7 +317,7 @@ crossorigin="anonymous"
                                             
                                           
                                             <div class="col-xl-4 col-lg-4">
-                                                <button type="button" class="btn btn-outline-primary" style="margin-top: 38px;">สืบค้น</button>
+                                                <button type="button" class="btn btn-outline-primary" style="margin-top: 38px;" id="btn04">สืบค้น</button>
                                             </div>
 
                                           
@@ -473,6 +473,16 @@ crossorigin="anonymous"
       event.preventDefault();
       // show the selected index
       window.location = sb3.value
+  };
+</script>
+
+<script>
+  const btn4 = document.querySelector('#btn04');
+  const sb4 = document.querySelector('#pcd')
+  btn4.onclick = (event) => {
+      event.preventDefault();
+      // show the selected index
+      window.location = sb4.value
   };
 </script>
 
