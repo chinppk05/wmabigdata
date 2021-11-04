@@ -23,7 +23,7 @@ app.get('/', (request, response) => {
     wmadata
     .find().sort('level1_approval')
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('index', {
             data: docs
@@ -624,7 +624,7 @@ app.get('/wmastation01', (request, response) => {
     .find()
     .where('level1_approval').equals(1)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma-ex', {
             data: docs
@@ -636,7 +636,7 @@ app.get('/wmastation02', (request, response) => {
     .find()
     .where('level1_approval').equals(2)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma02', {
             data: docs
@@ -648,7 +648,7 @@ app.get('/wmastation03', (request, response) => {
     .find()
     .where('level1_approval').equals(3)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma03', {
             data: docs
@@ -660,7 +660,7 @@ app.get('/wmastation04', (request, response) => {
     .find()
     .where('level1_approval').equals(4)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma04', {
             data: docs
@@ -672,7 +672,7 @@ app.get('/wmastation05', (request, response) => {
     .find()
     .where('level1_approval').equals(5)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma05', {
             data: docs
@@ -684,7 +684,7 @@ app.get('/wmastation06', (request, response) => {
     .find()
     .where('level1_approval').equals(6)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma06', {
             data: docs
@@ -696,7 +696,7 @@ app.get('/wmastation07', (request, response) => {
     .find()
     .where('level1_approval').equals(7)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma07', {
             data: docs
@@ -708,7 +708,7 @@ app.get('/wmastation08', (request, response) => {
     .find()
     .where('level1_approval').equals(8)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma08', {
             data: docs
@@ -720,7 +720,7 @@ app.get('/wmastation09', (request, response) => {
     .find()
     .where('level1_approval').equals(9)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma09', {
             data: docs
@@ -732,7 +732,7 @@ app.get('/wmastation10', (request, response) => {
     .find()
     .where('level1_approval').equals(10)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma10', {
             data: docs
@@ -744,7 +744,7 @@ app.get('/wmastation11', (request, response) => {
     .find()
     .where('level1_approval').equals(11)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma11', {
             data: docs
@@ -756,7 +756,7 @@ app.get('/wmastation12', (request, response) => {
     .find()
     .where('level1_approval').equals(12)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma12', {
             data: docs
@@ -768,7 +768,7 @@ app.get('/wmastation13', (request, response) => {
     .find()
     .where('level1_approval').equals(13)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma13', {
             data: docs
@@ -780,7 +780,7 @@ app.get('/wmastation14', (request, response) => {
     .find()
     .where('level1_approval').equals(14)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma14', {
             data: docs
@@ -792,7 +792,7 @@ app.get('/wmastation15', (request, response) => {
     .find()
     .where('level1_approval').equals(15)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma15', {
             data: docs
@@ -804,7 +804,7 @@ app.get('/wmastation16', (request, response) => {
     .find()
     .where('level1_approval').equals(16)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma16', {
             data: docs
@@ -816,7 +816,7 @@ app.get('/wmastation17', (request, response) => {
     .find()
     .where('level1_approval').equals(17)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma17', {
             data: docs
@@ -828,7 +828,7 @@ app.get('/wmastation18', (request, response) => {
     .find()
     .where('level1_approval').equals(18)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma18', {
             data: docs
@@ -840,7 +840,7 @@ app.get('/wmastation19', (request, response) => {
     .find()
     .where('level1_approval').equals(19)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma19', {
             data: docs
@@ -852,7 +852,7 @@ app.get('/wmastation20', (request, response) => {
     .find()
     .where('level1_approval').equals(20)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma20', {
             data: docs
@@ -864,7 +864,7 @@ app.get('/wmastation21', (request, response) => {
     .find()
     .where('level1_approval').equals(21)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma21', {
             data: docs
@@ -876,7 +876,7 @@ app.get('/wmastation22', (request, response) => {
     .find()
     .where('level1_approval').equals(22)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma22', {
             data: docs
@@ -888,7 +888,7 @@ app.get('/wmastation23', (request, response) => {
     .find()
     .where('level1_approval').equals(23)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma23', {
             data: docs
@@ -900,7 +900,7 @@ app.get('/wmastation24', (request, response) => {
     .find()
     .where('level1_approval').equals(24)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma24', {
             data: docs
@@ -912,7 +912,7 @@ app.get('/wmastation25', (request, response) => {
     .find()
     .where('level1_approval').equals(25)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma25', {
             data: docs
@@ -924,7 +924,7 @@ app.get('/wmastation26', (request, response) => {
     .find()
     .where('level1_approval').equals(26)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma26', {
             data: docs
@@ -936,7 +936,7 @@ app.get('/wmastation27', (request, response) => {
     .find()
     .where('level1_approval').equals(27)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma27', {
             data: docs
@@ -948,7 +948,7 @@ app.get('/wmastation28', (request, response) => {
     .find()
     .where('level1_approval').equals(28)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma28', {
             data: docs
@@ -960,7 +960,7 @@ app.get('/wmastation29', (request, response) => {
     .find()
     .where('level1_approval').equals(29)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma29', {
             data: docs
@@ -972,7 +972,7 @@ app.get('/wmastation30', (request, response) => {
     .find()
     .where('level1_approval').equals(30)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma30', {
             data: docs
@@ -984,7 +984,7 @@ app.get('/wmastation31', (request, response) => {
     .find()
     .where('level1_approval').equals(31)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma31', {
             data: docs
@@ -996,7 +996,7 @@ app.get('/wmastation32', (request, response) => {
     .find()
     .where('level1_approval').equals(32)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma32', {
             data: docs
@@ -1008,7 +1008,7 @@ app.get('/wmastation33', (request, response) => {
     .find()
     .where('level1_approval').equals(33)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma33', {
             data: docs
@@ -1020,7 +1020,7 @@ app.get('/wmastation34', (request, response) => {
     .find()
     .where('level1_approval').equals(34)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma34', {
             data: docs
@@ -1032,7 +1032,7 @@ app.get('/wmastation35', (request, response) => {
     .find()
     .where('level1_approval').equals(35)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma35', {
             data: docs
@@ -1044,7 +1044,7 @@ app.get('/wmastation36', (request, response) => {
     .find()
     .where('level1_approval').equals(36)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma36', {
             data: docs
@@ -1056,7 +1056,7 @@ app.get('/wmastation37', (request, response) => {
     .find()
     .where('level1_approval').equals(37)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma37', {
             data: docs
@@ -1068,7 +1068,7 @@ app.get('/wmastation38', (request, response) => {
     .find()
     .where('level1_approval').equals(38)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma38', {
             data: docs
@@ -1080,7 +1080,7 @@ app.get('/wmastation39', (request, response) => {
     .find()
     .where('level1_approval').equals(39)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma39', {
             data: docs
@@ -1092,7 +1092,7 @@ app.get('/wmastation40', (request, response) => {
     .find()
     .where('level1_approval').equals(40)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma40', {
             data: docs
@@ -1104,7 +1104,7 @@ app.get('/wmastation41', (request, response) => {
     .find()
     .where('level1_approval').equals(41)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma41', {
             data: docs
@@ -1116,7 +1116,7 @@ app.get('/wmastation42', (request, response) => {
     .find()
     .where('level1_approval').equals(42)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma42', {
             data: docs
@@ -1128,7 +1128,7 @@ app.get('/wmastation43', (request, response) => {
     .find()
     .where('level1_approval').equals(43)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma43', {
             data: docs
@@ -1140,7 +1140,7 @@ app.get('/wmastation44', (request, response) => {
     .find()
     .where('level1_approval').equals(44)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma44', {
             data: docs
@@ -1152,7 +1152,7 @@ app.get('/wmastation45', (request, response) => {
     .find()
     .where('level1_approval').equals(45)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma45', {
             data: docs
@@ -1164,7 +1164,7 @@ app.get('/wmastation46', (request, response) => {
     .find()
     .where('level1_approval').equals(46)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma46', {
             data: docs
@@ -1176,7 +1176,7 @@ app.get('/wmastation47', (request, response) => {
     .find()
     .where('level1_approval').equals(47)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma47', {
             data: docs
@@ -1188,7 +1188,7 @@ app.get('/wmastation48', (request, response) => {
     .find()
     .where('level1_approval').equals(48)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma48', {
             data: docs
@@ -1200,7 +1200,7 @@ app.get('/wmastation49', (request, response) => {
     .find()
     .where('level1_approval').equals(49)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma49', {
             data: docs
@@ -1212,7 +1212,7 @@ app.get('/wmastation50', (request, response) => {
     .find()
     .where('level1_approval').equals(50)
     .where('month').equals(11)
-    .where('day').equals(1)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('wma50', {
             data: docs
