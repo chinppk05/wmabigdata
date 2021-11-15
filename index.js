@@ -23,7 +23,7 @@ app.get('/', (request, response) => {
     wmadata
     .find().sort('level1_approval')
     .where('month').equals(11)
-    .where('day').equals(4)
+    .where('day').equals(15)
     .exec((err, docs) => {
         response.render('index', {
             data: docs
@@ -2155,7 +2155,7 @@ app.get('/do-daily', (request, response) => {
 
     wmadata
     .find()
-    .select('level1_approval level2_approval treated_doo')
+    .select('level1_approval level2_approval treated_doo do')
     .where('month').equals(d.getMonth()+1)
     .where('day').equals(n)
     .exec((err, docs) => { response.json({

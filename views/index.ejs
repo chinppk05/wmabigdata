@@ -119,8 +119,8 @@
                                    <div class="row no-gutters align-items-center">
                                        <div class="col mr-2">
                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                               ปริมาณน้ำต่อปี</div>
-                                           <div class="h5 mb-0 font-weight-bold text-gray-800">83963972</div>
+                                               ปริมาณน้ำเสียต่อปี </div>
+                                           <div class="h5 mb-0 font-weight-bold text-gray-800">83,963,972</div>
                                        </div>
                                        <!-- <div class="col-auto">
                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -137,7 +137,7 @@
                                    <div class="row no-gutters align-items-center">
                                        <div class="col mr-2">
                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                               ประมาณน้ำต่อเดือน</div>
+                                               ปริมาณน้ำเสียต่อเดือน</div>
                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="monthly"></span></div>
                                        </div>
                                        <div class="col-auto">
@@ -155,7 +155,7 @@
                                    <div class="row no-gutters align-items-center">
                                        <div class="col mr-2">
                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                               ประมาณน้ำประจำวัน</div>
+                                               ปริมาณน้ำเสียประจำวัน</div>
                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="daily"></span></div>
                                        </div>
                                        <div class="col-auto">
@@ -172,7 +172,7 @@
                                <div class="card-body">
                                    <div class="row no-gutters align-items-center">
                                        <div class="col mr-2">
-                                           <div class="text-xs font-weight-bold text-info text-uppercase mb-1"> ปริมาณน้ำรายวันเทียบแผน
+                                           <div class="text-xs font-weight-bold text-info text-uppercase mb-1"> ปริมาณน้ำเสียรายวันเทียบแผน
                                            </div>
                                            <div class="row no-gutters align-items-center">
                                                <div class="col-auto">
@@ -201,8 +201,73 @@
 
                    <div class="row">
 
+                      <!-- Area Chart -->
+                      <div class="col-xl-12 col-lg-12">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div
+                                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">ปริมาณน้ำเสียที่ผ่านการบำบัด</h6>
+                                <div class="dropdown no-arrow">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                        aria-labelledby="dropdownMenuLink">
+                                        <div class="dropdown-header">เลือกช่วงเวลา:</div>
+                                        <a class="dropdown-item" href="#">รายสัปดาห์</a>
+                                        <a class="dropdown-item" href="#">รายเดือน</a>
+                                        <a class="dropdown-item" href="#">รายปี</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">กำหนดเอง</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div class="chart-area">
+                                     <div id="water_monthly" style="width: 100%; height: 320px"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                         <!-- Area Chart -->
-                        <div class="col-xl-4 col-lg-4">
+                        <div class="col-xl-6 col-lg-6">
+                           <div class="card shadow mb-4">
+                               <!-- Card Header - Dropdown -->
+                               <div
+                                   class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                   <h6 class="m-0 font-weight-bold text-primary">จำนวนสถานีจำแนกตามคุณภาพน้ำ</h6>
+                                   <div class="dropdown no-arrow">
+                                       <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                           <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                       </a>
+                                       <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                           aria-labelledby="dropdownMenuLink">
+                                           <div class="dropdown-header">การแสดงผลของแผนที่:</div>
+                                           <a class="dropdown-item" href="#">หมุดปกติ</a>
+                                           <a class="dropdown-item" href="#">หมุดค่า DO</a>
+                                           
+                                           <div class="dropdown-divider"></div>
+                                           <a class="dropdown-item" href="#">ระบบคาดการณ์</a>
+                                       </div>
+                                   </div>
+                               </div>
+                               <!-- Card Body -->
+                               <div class="card-body">
+                                   <div class="chart-area">
+                                        <div id="water_bar" style="width: 100%; height: 320px;"></div>                                
+                                    </div>
+                               </div>
+                           </div>
+                       </div>
+
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-6 col-lg-6">
                            <div class="card shadow mb-4">
                                <!-- Card Header - Dropdown -->
                                <div
@@ -236,37 +301,7 @@
 
 
 
-                       <!-- Area Chart -->
-                       <div class="col-xl-8 col-lg-8">
-                           <div class="card shadow mb-4">
-                               <!-- Card Header - Dropdown -->
-                               <div
-                                   class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                   <h6 class="m-0 font-weight-bold text-primary">ปริมาณน้ำที่ผ่านการบำบัด</h6>
-                                   <div class="dropdown no-arrow">
-                                       <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                           <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                       </a>
-                                       <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                           aria-labelledby="dropdownMenuLink">
-                                           <div class="dropdown-header">เลือกช่วงเวลา:</div>
-                                           <a class="dropdown-item" href="#">รายสัปดาห์</a>
-                                           <a class="dropdown-item" href="#">รายเดือน</a>
-                                           <a class="dropdown-item" href="#">รายปี</a>
-                                           <div class="dropdown-divider"></div>
-                                           <a class="dropdown-item" href="#">กำหนดเอง</a>
-                                       </div>
-                                   </div>
-                               </div>
-                               <!-- Card Body -->
-                               <div class="card-body">
-                                   <div class="chart-area">
-                                        <div id="water_monthly" style="width: 100%; height: 320px"></div>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
+                     
                        
                       
 
@@ -292,26 +327,39 @@
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">ข้อมูลปริมาณน้ำและคุณภาพน้ำ</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">ข้อมูลปริมาณน้ำเสียและคุณภาพน้ำ</h6>
                     </div>
                     <div class="card-body">
                         <% if (locals.data) { %>
  
                             <div class="table-responsive-sm ">
-                            <table class="table table-sm  table-hover">
+                            <table class="table table-sm  table-hover table-borderedless">
                                 <thead class="table-primary">
-                                <tr>
-                                    <th scope="col">
-                                        ลำดับที่
+                                <tr >
+                                    <th rowspan="2" class="align-middle" style="background-color: #64b5f6; color: black;">
+                                        ที่
                                     </th>
-                                    <th scope="col">ศูนย์บริหารจัดการคุณภาพน้ำ</th>
-                                    <th scope="col">ปริมาณน้ำ</th>
-                                    <th scope="col">Do</th>
-                                    <th scope="col">Treated_Do</th>
-                                    <th scope="col">Temp</th>
-                                    <th scope="col">Treated_Temp</th>
-                                    <th scope="col">pH</th>
-                                    <th scope="col">Treated_pH</th>
+                                    <th rowspan="2" class="align-middle" style="background-color: #64b5f6;color: black;">ศูนย์บริหารจัดการคุณภาพน้ำ</th>
+                                    <th rowspan="2" class="align-middle" style="background-color: #88ffff;color: black;">ปริมาณน้ำเสีย</th>
+                                    <th colspan="2" style="background-color: #73e8ff; color: black;">ค่าออกซิเจนที่ละลายน้ำ</th>
+                                
+                                    <th colspan="2" style="background-color: #88ffff; color: black;;">ค่าอุณหภูมิ</th>
+                                    
+                                    <th colspan="2" style="background-color: #73e8ff;color: black;">ค่าความกรด-ด่าง</th>
+                           
+                                   
+                                    
+                                </tr>
+                                <tr>
+                             
+                                    
+                           
+                                    <th scope="col" style="background-color: #73e8ff; color: black;">ก่อนบำบัด</th>
+                                    <th scope="col" style="background-color: #73e8ff; color: black">หลังบำบัด</th>
+                                    <th scope="col" style="background-color: #88ffff; color: black">ก่อนบำบัด</th>
+                                    <th scope="col" style="background-color: #88ffff; color: black">หลังบำบัด</th>
+                                    <th scope="col" style="background-color: #73e8ff; color: black">ก่อนบำบัด</th>
+                                    <th scope="col" style="background-color: #73e8ff; color: black">หลังบำบัด</th>
                                    
                                     
                                 </tr>
@@ -323,17 +371,56 @@
                                 %>
                                 <tbody>
                                     <tr>
-                                        <td><%= d.level1_approval %></td>
-                                        <td><%= d.level2_approval %></td>
-                                        <td><%= d.treated_water %></td>
-                                        <td><%= d.do %></td>
-                                        <td><%= d.treated_doo %></td>
-                                        <td><%= d.temp %></td>
-                                        <td><%= d.treated_temp %></td>
+                                        <% if ((d.treated_water < 10) || (d.treated_doo < 2)){ %>
+                                        <td style="background-color: #ffab91;" ><%= d.level1_approval %></td>
+                                        <td style="background-color: #ffab91;"><%= d.level2_approval %></td>
+                                        <% } else {%>
+                                            <td style="background-color: #64b5f6;" ><%= d.level1_approval %></td>
+                                            <td style="background-color: #64b5f6;"><%= d.level2_approval %></td>
+                                        <% } %>
+
+
+                                        <% if (d.treated_water < 10) { %>
+                                        <td style='background-color: #ffab91; '><%= d.treated_water %></td>
+                                        <% } else {%>
+                                        <td style="background-color: #88ffff;"><%= d.treated_water %></td>
+                                        <% } %>
                                         
-                                        <td><%= d.ph %></td>
-                                        <td><%= d.treated_ph %></td>
-                                       
+                                        <% if (d.do == 0) { %>
+                                        <td style="background-color: #ffab91;"><%= d.do %></td>
+                                        <% } else {%>
+                                        <td style="background-color: #73e8ff;"><%= d.do %></td>
+                                        <% } %>
+
+                                        <% if (d.treated_doo < 2) { %>
+                                        <td  style='background-color: #ffab91;'><%= d.treated_doo %></td>
+                                        <% } else {%>
+                                        <td style="background-color: #73e8ff;"><%= d.treated_doo %></td>
+                                        <% } %>
+
+                                        <% if (d.temp < 1) { %>
+                                        <td style="background-color: #ffab91;"><%= d.temp %></td>
+                                        <% } else {%>
+                                        <td style="background-color: #88ffff;"><%= d.temp %></td>
+                                        <% } %>
+                                        
+                                        <% if (d.treated_temp < 1) { %>
+                                        <td style="background-color: #ffab91;"><%= d.treated_temp %></td>
+                                        <% } else {%>
+                                        <td style="background-color: #88ffff;"><%= d.treated_temp %></td>
+                                        <% } %>
+
+                                        <% if (d.ph < 1) { %>
+                                        <td style="background-color: #ffab91;"><%= d.ph %></td>
+                                        <% } else {%>
+                                        <td style="background-color: #73e8ff;"><%= d.ph %></td>
+                                        <% } %>
+
+                                        <% if (d.treated_ph < 1) { %>
+                                        <td style="background-color: #ffab91;"><%= d.treated_ph %></td>
+                                        <% } else {%>
+                                        <td style="background-color: #73e8ff;"><%= d.treated_ph %></td>
+                                        <% } %>
                                        
                                     </tr>
                                 </tbody>
@@ -415,7 +502,7 @@
         }
     },
     legend: {
-        data: ['ปริมาณน้ำ']
+        data: ['ปริมาณน้ำเสีย']
     },
     toolbox: {
         feature: {
@@ -444,7 +531,7 @@
     series: [
       
         {
-            name: 'ปริมาณน้ำ',
+            name: 'ปริมาณน้ำเสีย',
             type: 'line',
             stack: '',
             label: {
@@ -480,41 +567,89 @@
   
         // specify chart configuration item and data
         option1 = {
-    tooltip: {
+        tooltip: {
         trigger: 'item',
         formatter: '{a} <br/>{b}: {c} ({d}%)'
-    },
-    legend: {
+        },
+        legend: {
         orient: 'vertical',
         left: 10,
-        data: ['ปกติ', 'เฝ้าระวัง', 'วิกฤต','ไม่มีผล' ]
-    },
+        data: ['ปกติ', 'เฝ้าระวัง', 'วิกฤต', 'ไม่มีผล']
+        },
     series: [
         {
-            name: 'จำนวนสถานี',
+            name: 'name',
             type: 'pie',
-            radius: ['50%', '70%'],
-            avoidLabelOverlap: false,
+            selectedMode: 'single',
+            radius: [0, '30%'],
+
             label: {
-                show: false,
-                position: 'center'
-            },
-            emphasis: {
-                label: {
-                    show: true,
-                    fontSize: '30',
-                    fontWeight: 'bold'
-                }
+                position: 'inner'
             },
             labelLine: {
                 show: false
             },
             data: [
-                {value: 36, name: 'ปกติ'},
-                {value: 10, name: 'เฝ้าระวัง'},
-                {value: 0, name: 'วิกฤต'},
-                {value: 4, name: 'ไม่มีผล'},
-            
+                {value: 335, name: 'X', selected: true},
+                {value: 679, name: 'Y'},
+                {value: 1548, name: 'Z'}
+            ]
+        },
+        {
+            name: 'จำนวน',
+            type: 'pie',
+            radius: ['40%', '55%'],
+            label: {
+                formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+                backgroundColor: '#eee',
+                borderColor: '#aaa',
+                borderWidth: 1,
+                borderRadius: 4,
+                // shadowBlur:3,
+                // shadowOffsetX: 2,
+                // shadowOffsetY: 2,
+                // shadowColor: '#999',
+                // padding: [0, 7],
+                rich: {
+                    a: {
+                        color: '#999',
+                        lineHeight: 22,
+                        align: 'center'
+                    },
+                    // abg: {
+                    //     backgroundColor: '#333',
+                    //     width: '100%',
+                    //     align: 'right',
+                    //     height: 22,
+                    //     borderRadius: [4, 4, 0, 0]
+                    // },
+                    hr: {
+                        borderColor: '#aaa',
+                        width: '100%',
+                        borderWidth: 0.5,
+                        height: 0
+                    },
+                    b: {
+                        fontSize: 16,
+                        lineHeight: 33
+                    },
+                    per: {
+                        color: '#eee',
+                        backgroundColor: '#334455',
+                        padding: [2, 4],
+                        borderRadius: 2
+                    }
+                }
+            },
+            data: [
+                {value: 335, name: 'A'},
+                {value: 310, name: 'B'},
+                {value: 234, name: 'C'},
+                {value: 135, name: 'D'},
+                {value: 1048, name: 'E'},
+                {value: 251, name: 'F'},
+                {value: 147, name: 'G'},
+                {value: 102, name: 'H'}
             ]
         }
     ]
@@ -528,6 +663,94 @@
       
       
       
+      
+</script>
+
+
+
+<script type="text/javascript">
+
+    
+
+
+        // based on prepared DOM, initialize echarts instance
+        var myChart2 = echarts.init(document.getElementById("water_bar"));
+  
+        option2 = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross',
+            crossStyle: {
+                color: '#999'
+            }
+        }
+    },
+    toolbox: {
+        feature: {
+            dataView: {show: true, readOnly: false},
+            magicType: {show: true, type: ['line', 'bar']},
+            restore: {show: true},
+            saveAsImage: {show: true}
+        }
+    },
+    legend: {
+        data: ['DO ก่อนบำบัด', 'DO หลังบำบัด', 'เส้น']
+    },
+    xAxis: [
+        {
+            type: 'category',
+            data: ['0.5', '1.0', '1.5', '2.0', '2.5', '3.0', '3.5', '4.0', '4.5', '5.0', '5.5','6.0','6.5','7.0','7.5','8.0'],
+            axisPointer: {
+                type: 'shadow'
+            }
+        }
+    ],
+    yAxis: [
+        {
+            type: 'value',
+            name: 'จำนวนสถานี',
+            min: 0,
+            max: 15,
+            interval: 1,
+            axisLabel: {
+                formatter: '{value}'
+            }
+        },
+        {
+            type: 'value',
+            name: 'จำนวนสถานี',
+            min: 0,
+            max: 15,
+            interval: 1,
+            axisLabel: {
+                formatter: '{value}'
+            }
+        }
+    ],
+    series: [
+        {
+            name: 'DO ก่อนบำบัด',
+            type: 'bar',
+            data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+        },
+        {
+            name: 'DO หลังบำบัด',
+            type: 'bar',
+            data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+        },
+        /*
+        {
+            name: 'เส้น',
+            type: 'line',
+            yAxisIndex: 1,
+            data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
+        }
+        */
+    ]
+};
+
+
       
 </script>
 
@@ -551,8 +774,8 @@ const getdata = () => {
      for (i=0; i < numWater; i++){
         sum = sum+response.data.data[i].treated_water
      }
-
-     waterdaily.innerHTML = parseInt(sum);
+     let sum2 = parseInt(sum)
+     waterdaily.innerHTML = sum2.toLocaleString("en-US");
     // getdo00.innerHTML = response.data.data[0].treated_water;
    
       
@@ -587,8 +810,9 @@ const getdata2 = () => {
      for (i=0; i < numWater; i++){
         sum = sum+response.data.data[i].treated_water
      }
-
-      watermonthly.innerHTML = parseInt(sum);
+     
+     let sum2 = parseInt(sum);
+      watermonthly.innerHTML = sum2.toLocaleString("en-US");
     // getdo01.innerHTML = response.data.data[0].treated_water;
    
       
@@ -642,13 +866,136 @@ const data_pie = () => {
             
             ]
     option1.series[0].data = eiei;
+    option1.series[1].data = eiei;
     myChart1.setOption(option1);
+    
+
+    let cstat = [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0];
+    for (i=0; i < numWater; i++){
+        if (parseInt((response.data.data[i].treated_doo)*10) >= 80){
+            cstat[15] = cstat[15]+1
+        }
+        else if (parseInt((response.data.data[i].treated_doo)*10) >= 75){
+            cstat[14] = cstat[14]+1
+        }
+        else if (parseInt((response.data.data[i].treated_doo)*10) >= 70){
+            cstat[13] = cstat[13]+1
+        }
+        else if (parseInt((response.data.data[i].treated_doo)*10) >= 65){
+            cstat[12] = cstat[12]+1
+        }
+        else if (parseInt((response.data.data[i].treated_doo)*10) >= 60){
+            cstat[11] = cstat[11]+1
+        }
+        else if (parseInt((response.data.data[i].treated_doo)*10) >= 55){
+            cstat[10] = cstat[10]+1
+        }
+        else if (parseInt((response.data.data[i].treated_doo)*10) >= 50){
+            cstat[9] = cstat[9]+1
+        }
+        else if (parseInt((response.data.data[i].treated_doo)*10) >= 45){
+            cstat[8] = cstat[8]+1
+        }
+        else if (parseInt((response.data.data[i].treated_doo)*10) >= 40){
+            cstat[7] = cstat[7]+1
+        }
+        else if (parseInt((response.data.data[i].treated_doo)*10) >= 35){
+            cstat[6] = cstat[6]+1
+        }
+        else if (parseInt((response.data.data[i].treated_doo)*10) >= 30){
+            cstat[5] = cstat[5]+1
+        }
+        else if (parseInt((response.data.data[i].treated_doo)*10) >= 25){
+            cstat[4] = cstat[4]+1
+        }
+        else if (parseInt((response.data.data[i].treated_doo)*10) >= 20){
+            cstat[3] = cstat[3]+1
+        }
+        else if (parseInt((response.data.data[i].treated_doo)*10) >= 15){
+            cstat[2] = cstat[2]+1
+        }
+        else if (parseInt((response.data.data[i].treated_doo)*10) >= 10){
+            cstat[1] = cstat[1]+1
+        }
+        else if (parseInt((response.data.data[i].treated_doo)*10) >= 5){
+            cstat[0] = cstat[0]+1
+        }
+        
+     }
+     console.log("cstat",cstat)
+
+    let cstat2 = [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0];
+    for (i=0; i < numWater; i++){
+        if (parseInt((response.data.data[i].do)*10) >= 80){
+            cstat2[15] = cstat[15]+1
+        }
+        else if (parseInt((response.data.data[i].do)*10) >= 75){
+            cstat2[14] = cstat[14]+1
+        }
+        else if (parseInt((response.data.data[i].do)*10) >= 70){
+            cstat2[13] = cstat[13]+1
+        }
+        else if (parseInt((response.data.data[i].do)*10) >= 65){
+            cstat2[12] = cstat[12]+1
+        }
+        else if (parseInt((response.data.data[i].do)*10) >= 60){
+            cstat2[11] = cstat[11]+1
+        }
+        else if (parseInt((response.data.data[i].do)*10) >= 55){
+            cstat2[10] = cstat[10]+1
+        }
+        else if (parseInt((response.data.data[i].do)*10) >= 50){
+            cstat2[9] = cstat[9]+1
+        }
+        else if (parseInt((response.data.data[i].do)*10) >= 45){
+            cstat2[8] = cstat[8]+1
+        }
+        else if (parseInt((response.data.data[i].do)*10) >= 40){
+            cstat2[7] = cstat[7]+1
+        }
+        else if (parseInt((response.data.data[i].do)*10) >= 35){
+            cstat2[6] = cstat[6]+1
+        }
+        else if (parseInt((response.data.data[i].do)*10) >= 30){
+            cstat2[5] = cstat[5]+1
+        }
+        else if (parseInt((response.data.data[i].do)*10) >= 25){
+            cstat2[4] = cstat[4]+1
+        }
+        else if (parseInt((response.data.data[i].do)*10) >= 20){
+            cstat2[3] = cstat[3]+1
+        }
+        else if (parseInt((response.data.data[i].do)*10) >= 15){
+            cstat2[2] = cstat[2]+1
+        }
+        else if (parseInt((response.data.data[i].do)*10) >= 10){
+            cstat2[1] = cstat[1]+1
+        }
+        else if (parseInt((response.data.data[i].do)*10) >= 5){
+            cstat2[0] = cstat[0]+1
+        }
+        
+     }
+     console.log("cstat2",cstat2)
+
+     console.log("option2",option2)
+     option2.series[0].data = cstat2;
+     option2.series[1].data = cstat;
+
+     
+    myChart2.setOption(option2);
+
+
+
     });
     
 };                                  
 
 data_pie()
  </script>
+
+
+
 
 
 <script>
