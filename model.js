@@ -3,16 +3,16 @@ const mongoose = require('mongoose')
 const paginate = require('mongoose-paginate-v2')
 const keys = require('./config/keys');
 
-/*
+
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1/wma_test', {
     useNewUrlParser: true, useUnifiedTopology: true
 }).catch(err => console.log(err))
-*/
 
+/*
 mongoose.connect("mongodb+srv://chinppk05:25021996@wmatest.plvbd.mongodb.net/wma_test?retryWrites=true&w=majority", {
     useNewUrlParser: true, useUnifiedTopology: true
 }).catch(err => console.log(err))
-
+*/
 
 const wmaSchema = new mongoose.Schema({
     timestamp: {type: Number, required:true},
