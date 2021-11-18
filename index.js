@@ -23,7 +23,7 @@ app.get('/', (request, response) => {
     wmadata
     .find().sort('level1_approval')
     .where('month').equals(11)
-    .where('day').equals(15)
+    .where('day').equals(18)
     .exec((err, docs) => {
         response.render('index', {
             data: docs
