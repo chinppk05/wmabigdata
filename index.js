@@ -15,20 +15,80 @@ const PORT = process.env.PORT ||  8080
 
 
 app.use(express.static('public'))
+app.use('/pdf',express.static(__dirname+'/node_modules'))
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
 
+// parse application/json
+app.use(bodyParser.json())
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+)
+
+
+app.post('/newuser', function (req, res) {
+    var json = req.body
+    res.send('Add new ' + json.name + ' Completed!')
+  })
+
+
+  app.post('/posttest', (request, response) => {
+    var json = request.body
+    var d = new Date();
+    var n = d.getDate();
+    var ddd = parseInt(json.date)
+   
+ 
+   
+    wmadata
+    .find()
+    .select('treated_water')
+    .where('month').equals(d.getMonth()+1)
+    .where('day').equals(ddd)
+    .exec((err, docs) => { 
+    response.json({
+        data: docs
+        })
+    })
+})
+
+
+
 app.get('/', (request, response) => {
+
+    var d = new Date();
+    var n = d.getDate();
+    var m = d.getMonth();
+    var h = d.getHours();
+    var y = d.getFullYear();
+
+    if(h<10){
     wmadata
     .find().sort('level1_approval')
-    .where('month').equals(11)
-    .where('day').equals(22)
+    .where('year').equals(y)
+    .where('month').equals(m+1)
+    .where('day').equals(n-1)
     .exec((err, docs) => {
         response.render('index', {
             data: docs
         })
     })
+    }
+    else{
+    wmadata
+    .find().sort('level1_approval')
+    .where('year').equals(y)
+    .where('month').equals(m+1)
+    .where('day').equals(n)
+    .exec((err, docs) => {
+        response.render('index', {
+            data: docs
+        })
+    })
+    }
 })
 
 app.get('/pcd01', (request, response) => {
@@ -2136,7 +2196,20 @@ app.get('/totalwater-daily', (request, response) => {
     
     var d = new Date();
     var n = d.getDate();
+    var h = d.getHours();
 
+    if(h < 10){
+        wmadata
+        .find()
+        .select('treated_water')
+        .where('month').equals(d.getMonth()+1)
+        .where('day').equals(n-1)
+        .exec((err, docs) => { response.json({
+            data: docs
+            })
+        })
+    } 
+    else{
     wmadata
     .find()
     .select('treated_water')
@@ -2146,18 +2219,66 @@ app.get('/totalwater-daily', (request, response) => {
         data: docs
         })
     })
+    }
+    
 })
 
 app.get('/do-daily', (request, response) => {
     
     var d = new Date();
     var n = d.getDate();
+    var h = d.getHours();
 
-    wmadata
+    if(h < 10){
+        wmadata
+    .find()
+    .select('level1_approval level2_approval treated_doo do')
+    .where('month').equals(d.getMonth()+1)
+    .where('day').equals(n-1)
+    .exec((err, docs) => { response.json({
+        data: docs
+        })
+    })
+    }
+
+    else{
+        wmadata
     .find()
     .select('level1_approval level2_approval treated_doo do')
     .where('month').equals(d.getMonth()+1)
     .where('day').equals(n)
+    .exec((err, docs) => { response.json({
+        data: docs
+        })
+    })
+    }
+})
+
+app.get('/all-daily', (request, response) => {
+    
+    var d = new Date();
+    var n = d.getDate();
+
+    wmadata
+    .find().sort('level1_approval')
+    .where('year').equals(d.getFullYear())
+    .where('month').equals(d.getMonth()+1)
+    .where('day').equals(n-1)
+    .exec((err, docs) => { response.json({
+        data: docs
+        })
+    })
+})
+
+app.get('/all-year', (request, response) => {
+    
+    var d = new Date();
+    var n = d.getDate();
+
+    wmadata
+    .find().sort('level1_approval')
+    .select('treated_water day')
+    .where('year').equals(d.getFullYear())
     .exec((err, docs) => { response.json({
         data: docs
         })
