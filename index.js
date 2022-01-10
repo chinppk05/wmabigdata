@@ -2258,8 +2258,10 @@ app.get('/all-daily', (request, response) => {
     
     var d = new Date();
     var n = d.getDate();
+    var h = d.getHours();
 
-    wmadata
+    if (h < 10){
+        wmadata
     .find().sort('level1_approval')
     .where('year').equals(d.getFullYear())
     .where('month').equals(d.getMonth()+1)
@@ -2268,21 +2270,38 @@ app.get('/all-daily', (request, response) => {
         data: docs
         })
     })
+    }
+    else if (h >= 10){
+        wmadata
+    .find().sort('level1_approval')
+    .where('year').equals(d.getFullYear())
+    .where('month').equals(d.getMonth()+1)
+    .where('day').equals(n)
+    .exec((err, docs) => { response.json({
+        data: docs
+        })
+    }) 
+    }
+    
 })
 
 app.get('/all-year', (request, response) => {
     
     var d = new Date();
     var n = d.getDate();
+    var h = d.getHours();
 
-    wmadata
-    .find().sort('level1_approval')
-    .select('treated_water day month year')
-    .where('year').equals(d.getFullYear())
-    .exec((err, docs) => { response.json({
-        data: docs
+   
+        wmadata
+        .find().sort('level1_approval')
+        .select('treated_water day month year')
+        .where('year').equals(d.getFullYear())
+        .exec((err, docs) => { response.json({
+            data: docs
+            })
         })
-    })
+    
+   
 })
 
 app.get('/totalwater-monthly', (request, response) => {

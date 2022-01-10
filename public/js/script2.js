@@ -78,7 +78,7 @@ function makePDF() {
 
   const getdata = () => {
     axios.get("/all-daily").then((response) => {
-      console.log(response.data);
+     // console.log(response.data);
       let numWater = response.data.data.length;
       let sum = 0;
       let x = []; // สถานีที่มีข้อมูล
@@ -86,7 +86,7 @@ function makePDF() {
       let dummy = 0;
 
       
-      
+      /// หาเลขสถานีที่มีข้อมูลและไม่มีข้อมูล ///
       for (n = 1; n <= 50; n++) {
           for  (i = 0; i < numWater; i++){
               if (n == response.data.data[i].level1_approval){
@@ -105,8 +105,8 @@ function makePDF() {
       for (i = 0; i < x.length; i++) {}
 
       let sum2 = parseInt(sum);
-      console.log("มี", x);
-      console.log("บ่มี", y);
+      //console.log("มี", x);
+     // console.log("บ่มี", y);
 
 
       // นับจำนวนคุณภาพน้ำ
@@ -142,9 +142,9 @@ function makePDF() {
       // console.log("จำนวนสถานีคุณภาพน้ำแย่",bad)
       //console.log("ไม่มีข้อมูล",nodo)
 
-      console.log("ไหน good",good_ar)
-      console.log("ไหน care",care_ar)
-      console.log("ไหน bad",bad_ar)
+      //console.log("ไหน good",good_ar)
+      //console.log("ไหน care",care_ar)
+      //console.log("ไหน bad",bad_ar)
 
     
       eiei = [
@@ -156,7 +156,7 @@ function makePDF() {
 
 
 
-      console.log(eiei)
+
       
       for (i=0 ; i< x.length; i++ ){
             station_data[x[i]-1]['treated_water'] =  response.data.data[i].treated_water
@@ -199,17 +199,17 @@ function makePDF() {
         nodata_station = nodata_station+" - "+station_data[y[i]-1].name+" , "+"\n" ;
       } 
     
-      console.log("goddddddddddddddddddd :", good_station)
-      console.log("careeeeeeeeeeeeeeeeee :", care_station)
-      console.log("baddddddddddddddddddd :", bad_station)
-      console.log("noooooooooooooooooooo :", nodata_station)
+     // console.log("goddddddddddddddddddd :", good_station)
+      //console.log("careeeeeeeeeeeeeeeeee :", care_station)
+      //console.log("baddddddddddddddddddd :", bad_station)
+     // console.log("noooooooooooooooooooo :", nodata_station)
 
       
       station_data[x[0]-1]['treated_water'] = response.data.data[x[0]-1].treated_water;
-      console.log("ไหนน้ำ", station_data)
-      console.log("xx ยาวเท่าไหร่", x.length)
-      console.log("xxx",  response.data.data[x[0]-1].treated_water )
-      console.log("At last",station_data)
+     // console.log("ไหนน้ำ", station_data)
+      //console.log("xx ยาวเท่าไหร่", x.length)
+      //console.log("xxx",  response.data.data[x[0]-1].treated_water )
+      //console.log("At last",station_data)
 
 
       //// เนื้อหา /////
@@ -882,5 +882,4 @@ function makePDF() {
 
   getdata();
 
-  console.log("eหยังวะ");
 }
