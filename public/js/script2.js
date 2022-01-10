@@ -35,7 +35,7 @@ function makePDF() {
       {"station_id":"30" , "name" : " เทศบาลตำบลท่าจีน"},
       {"station_id":"31" , "name" : " เทศบาลเมืองไร่ขิง"},
       {"station_id":"32" , "name" : " เทศบาลตำบลบางเลน"},
-      {"station_id":"33" , "name" : " องค์การบริหารส่วนตำบล\nสามควายเผือก"},
+      {"station_id":"33" , "name" : " องค์การบริหารส่วนตำบลสามควายเผือก"},
       {"station_id":"34" , "name" : " เทศบาลตำบลวิชิต"},
       {"station_id":"35" , "name" : " เทศบาลตำบลราไวย์"},
       {"station_id":"36" , "name" : " เทศบาลตำบลปากน้ำปราณ"},
@@ -52,7 +52,7 @@ function makePDF() {
       {"station_id":"47" , "name" : " เทศบาลตำบลหัวไทร หลังตลาดสด ถนนบางแค"},
       {"station_id":"48" , "name" : " วัดศรีมาประสิทธิ์"},
       {"station_id":"49" , "name" : " ชุมชนหอยราก-ศรีสมบูรณ์"},
-      {"station_id":"50" , "name" : " อุทยานสิ่งแวดล้อม\nนานาชาติสิรินธร"},
+      {"station_id":"50" , "name" : " อุทยานสิ่งแวดล้อมนานาชาติสิรินธร"},
      
      
   ]
@@ -276,7 +276,7 @@ function makePDF() {
               headerRows: 2,
               // dontBreakRows: true,
               // keepWithHeaderRows: 1,
-              widths: [150, 50, 50, 50, 50, 50, 50, 230],
+              widths: [280, 50, 50, 50, 50, 50, 50, 100],
               body: [
                 [
                   { text: "สถานี", style: "tableHeader", rowSpan: 2 },
