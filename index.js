@@ -2277,7 +2277,7 @@ app.get('/all-year', (request, response) => {
 
     wmadata
     .find().sort('level1_approval')
-    .select('treated_water day')
+    .select('treated_water day month year')
     .where('year').equals(d.getFullYear())
     .exec((err, docs) => { response.json({
         data: docs
