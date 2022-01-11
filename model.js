@@ -65,7 +65,9 @@ const mwaSchema = new mongoose.Schema({
     "depth": Number,
     "conduct": Number,
     "wlevel": Number,
-    "bga": Number
+    "bga": Number,
+    "stationId":String,
+    "stationName":String
     
 })
 
