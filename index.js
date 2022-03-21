@@ -91,6 +91,10 @@ app.get('/', (request, response) => {
     }
 })
 
+app.get('/form', (request, response) => {
+    response.render('index-f')
+})
+
 app.get('/pcd01', (request, response) => {
     pcddata
     .find()
