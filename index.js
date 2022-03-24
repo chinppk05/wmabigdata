@@ -56,6 +56,7 @@ app.post('/newuser', function (req, res) {
 })
 
 
+///////////______________________ หน้าหลัก ______________________________////////////
 
 app.get('/', (request, response) => {
 
@@ -91,9 +92,24 @@ app.get('/', (request, response) => {
     }
 })
 
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+///////////______________________ form การเงิน ______________________________////////////
+
 app.get('/form', (request, response) => {
     response.render('index-f')
 })
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 
 app.get('/pcd01', (request, response) => {
     pcddata
@@ -106,209 +122,31 @@ app.get('/pcd01', (request, response) => {
         })
     })
 })
-app.get('/pcd02', (request, response) => {
+
+
+
+
+///////////______________________ PCD กรมควบคุมมลพิษ ______________________________////////////
+
+app.get('/pcd-station/:id', (request, response) => {
+    var stationNo = request.params.id
     pcddata
     .find()
-    .where("stationid").equals("118")
+    .where("stationid").equals(String(stationNo))
     .where("date").equals("4/3/2565")
     .exec((err, docs) => {
-        response.render('pcd02', {
-            data: docs
-        })
-    })
-})
-app.get('/pcd03', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("113")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.render('pcd03', {
-            data: docs
-        })
-    })
-})
-app.get('/pcd04', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("128")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.render('pcd04', {
-            data: docs
-        })
-    })
-})
-app.get('/pcd05', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("112")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.render('pcd05', {
-            data: docs
-        })
-    })
-})
-app.get('/pcd06', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("222")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.render('pcd06', {
-            data: docs
-        })
-    })
-})
-app.get('/pcd07', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("111")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.render('pcd07', {
-            data: docs
-        })
-    })
-})
-app.get('/pcd08', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("248")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.render('pcd08', {
-            data: docs
-        })
-    })
-})
-app.get('/pcd09', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("110")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.render('pcd09', {
-            data: docs
-        })
-    })
-})
-app.get('/pcd10', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("109")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.render('pcd10', {
-            data: docs
+        response.render('at-pcd', {
+            data: docs,
+            fuck: request.params.id
         })
     })
 })
 
-app.get('/pcddata01', (request, response) => {
+app.get('/pcd-data/:id', (request, response) => {
+    var stationNo = request.params.id
     pcddata
     .find()
-    .where("stationid").equals("240")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/pcddata02', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("118")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/pcddata03', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("113")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/pcddata04', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("128")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/pcddata05', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("112")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/pcddata06', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("222")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/pcddata07', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("111")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/pcddata08', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("248")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/pcddata09', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("110")
-    .where("date").equals("4/3/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/pcddata10', (request, response) => {
-    pcddata
-    .find()
-    .where("stationid").equals("109")
+    .where("stationid").equals(String(stationNo))
     .where("date").equals("4/3/2565")
     .exec((err, docs) => {
         response.json({
@@ -317,219 +155,32 @@ app.get('/pcddata10', (request, response) => {
     })
 })
 
+//////////////////////////////////////////////////////////////////////////////////////
 
 
-app.get('/rid-tc01', (request, response) => {
+
+
+
+///////////______________________ กรมชลประทาน ลุ่มแม่น้ำท่าจีน ______________________________////////////
+
+app.get('/rid-station/thachin/:id', (request, response) => {
+    var stationNo = request.params.id
     ridtcdata
     .find()
-    .where('code').equals("TC01")
+    .where('code').equals(stationNo)
     .where('dateTh').equals("18/03/2565")
     .exec((err, docs) => {
-        response.render('ridtc01', {
+        response.render('at-ridtc', {
             data: docs
         })
     })
 })
-app.get('/rid-tc02', (request, response) => {
+
+app.get('/rid-data/thachin/:id', (request, response) => {
+    var stationNo = request.params.id
     ridtcdata
     .find()
-    .where('code').equals("TC02")
-    .where('dateTh').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('ridtc02', {
-            data: docs
-        })
-    })
-})
-app.get('/rid-tc03', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC03")
-    .where('dateTh').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('ridtc03', {
-            data: docs
-        })
-    })
-})
-app.get('/rid-tc04', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC04")
-    .where('dateTh').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('ridtc04', {
-            data: docs
-        })
-    })
-})
-app.get('/rid-tc05', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC05")
-    .where('dateTh').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('ridtc05', {
-            data: docs
-        })
-    })
-})
-app.get('/rid-tc06', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC06")
-    .where('dateTh').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('ridtc06', {
-            data: docs
-        })
-    })
-})
-app.get('/rid-tc07', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC07")
-    .where('dateTh').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('ridtc07', {
-            data: docs
-        })
-    })
-})
-app.get('/rid-tc08', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC08")
-    .where('dateTh').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('ridtc08', {
-            data: docs
-        })
-    })
-})
-app.get('/rid-tc09', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC09")
-    .where('dateTh').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('ridtc09', {
-            data: docs
-        })
-    })
-})
-app.get('/riddata-tc01', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC01")
-    .where('dateTh').equals("18/03/2565")
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/riddata-tc02', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC02")
-    .where('dateTh').equals("18/03/2565")
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/riddata-tc02', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC02")
-    .where('dateTh').equals("18/03/2565")
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/riddata-tc03', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC03")
-    .where('dateTh').equals("18/03/2565")
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/riddata-tc04', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC04")
-    .where('dateTh').equals("18/03/2565")
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/riddata-tc05', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC05")
-    .where('dateTh').equals("18/03/2565")
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/riddata-tc06', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC06")
-    .where('dateTh').equals("18/03/2565")
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/riddata-tc07', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC07")
-    .where('dateTh').equals("18/03/2565")
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/riddata-tc08', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC08")
-    .where('dateTh').equals("18/03/2565")
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/riddata-tc09', (request, response) => {
-    ridtcdata
-    .find()
-    .where('code').equals("TC09")
+    .where('code').equals(stationNo)
     .where('dateTh').equals("18/03/2565")
     
     .exec((err, docs) => {
@@ -539,141 +190,32 @@ app.get('/riddata-tc09', (request, response) => {
     })
 })
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
 
-app.get('/rid-cp01', (request, response) => {
+
+///////////______________________ กรมชลประทาน ลุ่มแม่น้ำเจ้าพระยา ______________________________////////////
+
+app.get('/rid-station/caophraya/:id', (request, response) => {
+    var stationNo = request.params.id
     ridcpdata
     .find()
-    .where('code').equals("CP01")
+    .where('code').equals(stationNo)
     .where('dateTh').equals("18/03/2565")
     .exec((err, docs) => {
-        response.render('ridcp01', {
-            data: docs
-        })
-    })
-})
-app.get('/rid-cp02', (request, response) => {
-    ridcpdata
-    .find()
-    .where('code').equals("CP02")
-    .where('dateTh').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('ridcp02', {
-            data: docs
-        })
-    })
-})
-app.get('/rid-cp03', (request, response) => {
-    ridcpdata
-    .find()
-    .where('code').equals("CP03")
-    .where('dateTh').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('ridcp03', {
-            data: docs
-        })
-    })
-})
-app.get('/rid-cp04', (request, response) => {
-    ridcpdata
-    .find()
-    .where('code').equals("CP04")
-    .where('dateTh').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('ridcp04', {
-            data: docs
-        })
-    })
-})
-app.get('/rid-cp05', (request, response) => {
-    ridcpdata
-    .find()
-    .where('code').equals("CP05")
-    .where('dateTh').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('ridcp05', {
-            data: docs
-        })
-    })
-})
-app.get('/rid-cp06', (request, response) => {
-    ridcpdata
-    .find()
-    .where('code').equals("CP06")
-    .where('dateTh').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('ridcp06', {
+        response.render('at-ridcpy', {
             data: docs
         })
     })
 })
 
-app.get('/riddata-cp01', (request, response) => {
+app.get('/rid-data/caophraya/:id', (request, response) => {
+    var stationNo = request.params.id
     ridcpdata
     .find()
-    .where('code').equals("CP01")
-    .where('dateTh').equals("18/03/2565")
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/riddata-cp02', (request, response) => {
-    ridcpdata
-    .find()
-    .where('code').equals("CP02")
-    .where('dateTh').equals("18/03/2565")
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/riddata-cp03', (request, response) => {
-    ridcpdata
-    .find()
-    .where('code').equals("CP03")
-    .where('dateTh').equals("18/03/2565")
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/riddata-cp04', (request, response) => {
-    ridcpdata
-    .find()
-    .where('code').equals("CP04")
-    .where('dateTh').equals("18/03/2565")
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/riddata-cp05', (request, response) => {
-    ridcpdata
-    .find()
-    .where('code').equals("CP05")
-    .where('dateTh').equals("18/03/2565")
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/riddata-cp06', (request, response) => {
-    ridcpdata
-    .find()
-    .where('code').equals("CP06")
+    .where('code').equals(stationNo)
     .where('dateTh').equals("18/03/2565")
     
     .exec((err, docs) => {
@@ -683,611 +225,33 @@ app.get('/riddata-cp06', (request, response) => {
     })
 })
 
-app.get('/wmastation01', (request, response) => {
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+///////////______________________ อจน ______________________________////////////
+
+app.get('/wma-station/:id', (request, response) => {
+    var stationNo = request.params.id
     wmadata
     .find()
-    .where('level1_approval').equals(1)
-    .where('month').equals(1)
-    .where('day').equals(11)
+    .where('level1_approval').equals(stationNo)
+    .where('month').equals(3)
+    .where('day').equals(23)
     .exec((err, docs) => {
-        response.render('wma-ex', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation02', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(2)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma02', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation03', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(3)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma03', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation04', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(4)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma04', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation05', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(5)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma05', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation06', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(6)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma06', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation07', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(7)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma07', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation08', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(8)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma08', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation09', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(9)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma09', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation10', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(10)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma10', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation11', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(11)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma11', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation12', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(12)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma12', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation13', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(13)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma13', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation14', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(14)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma14', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation15', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(15)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma15', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation16', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(16)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma16', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation17', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(17)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma17', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation18', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(18)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma18', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation19', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(19)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma19', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation20', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(20)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma20', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation21', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(21)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma21', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation22', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(22)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma22', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation23', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(23)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma23', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation24', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(24)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma24', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation25', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(25)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma25', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation26', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(26)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma26', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation27', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(27)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma27', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation28', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(28)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma28', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation29', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(29)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma29', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation30', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(30)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma30', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation31', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(31)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma31', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation32', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(32)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma32', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation33', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(33)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma33', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation34', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(34)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma34', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation35', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(35)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma35', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation36', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(36)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma36', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation37', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(37)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma37', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation38', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(38)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma38', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation39', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(39)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma39', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation40', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(40)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma40', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation41', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(41)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma41', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation42', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(42)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma42', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation43', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(43)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma43', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation44', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(44)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma44', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation45', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(45)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma45', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation46', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(46)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma46', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation47', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(47)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma47', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation48', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(48)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma48', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation49', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(49)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma49', {
-            data: docs
-        })
-    })
-})
-app.get('/wmastation50', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(50)
-    .where('month').equals(1)
-    .where('day').equals(11)
-    .exec((err, docs) => {
-        response.render('wma50', {
+        response.render('at-wma', {
             data: docs
         })
     })
 })
 
-app.get('/wmadata01', (request, response) => {
+app.get('/wma-data/:id', (request, response) => {
+    var stationNo = request.params.id
     wmadata
     .find()
-    .where('level1_approval').equals(1)
+    .where('level1_approval').equals(stationNo)
     .where('month').equals(1)
     .where('year').equals(2022)
     .exec((err, docs) => {
@@ -1296,727 +260,32 @@ app.get('/wmadata01', (request, response) => {
         })
     })
 })
+///////////////////////////////////////////////////////////////////////////////////////////////
 
-app.get('/wmadata02', (request, response) => {
-    wmadata
+
+
+
+
+///////////______________________ การประปานครหลวง ______________________________////////////
+
+app.get('/mwa-station/:id', (request, response) => {
+    var stationNo = request.params.id
+    mwadata
     .find()
-    .where('level1_approval').equals(2)
-    .where('month').equals(1)
-    
+    .where('stationId').equals(stationNo)
+    .where('datetime').equals("18/03/2565")
     .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata03', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(3)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata04', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(4)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata05', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(5)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata06', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(6)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata07', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(7)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata08', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(8)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata09', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(9)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata10', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(10)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata11', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(11)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata12', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(12)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata13', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(13)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata14', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(14)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata15', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(15)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata16', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(16)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata17', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(17)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata18', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(18)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata19', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(19)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata20', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(20)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata21', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(21)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata22', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(22)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata23', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(23)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata24', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(24)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata25', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(25)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata26', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(26)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata27', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(27)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata28', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(28)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata29', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(29)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata30', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(30)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata31', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(31)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata32', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(32)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata33', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(33)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata34', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(34)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata35', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(35)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata36', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(36)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata37', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(37)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata38', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(38)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata39', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(39)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata40', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(41)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata42', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(42)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata43', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(43)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata44', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(44)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata45', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(45)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata46', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(46)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata47', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(47)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata48', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(48)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata49', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(49)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-app.get('/wmadata50', (request, response) => {
-    wmadata
-    .find()
-    .where('level1_approval').equals(50)
-    .where('month').equals(1)
-    
-    .exec((err, docs) => {
-        response.json({
+        response.render('at-mwa', {
             data: docs
         })
     })
 })
 
-
-
-
-app.get('/mwa-data', (request, response) => {
+app.get('/mwa-data/:id', (request, response) => {
+    var stationNo = request.params.id
     mwadata
     .find()
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('mwa', {
-            data: docs
-        })
-    })
-})
-
-app.get('/mwa01', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("T3")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('mwa', {
-            data: docs
-        })
-    })
-})
-
-app.get('/mwa02', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('mwa02', {
-            data: docs
-        })
-    })
-})
-app.get('/mwa03', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("S4")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('mwa03', {
-            data: docs
-        })
-    })
-})
-app.get('/mwa04', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("T4")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('mwa04', {
-            data: docs
-        })
-    })
-})
-app.get('/mwa05', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("S7")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('mwa05', {
-            data: docs
-        })
-    })
-})
-app.get('/mwa06', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("S6")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('mwa05', {
-            data: docs
-        })
-    })
-})
-app.get('/mwa07', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("T2")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('mwa06', {
-            data: docs
-        })
-    })
-})
-app.get('/mwa08', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("S2")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('mwa07', {
-            data: docs
-        })
-    })
-})
-app.get('/mwa09', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("S17")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('mwa08', {
-            data: docs
-        })
-    })
-})
-app.get('/mwa10', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("S18")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('mwa09', {
-            data: docs
-        })
-    })
-})
-app.get('/mwa11', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("S20")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.render('mwa10', {
-            data: docs
-        })
-    })
-})
-
-
-
-app.get('/mwadata01', (request, response) => {
-    mwadata
-    .find()
-    .where("stationId").equals("T3")
+    .where("stationId").equals(stationNo)
     .where('datetime').equals("18/03/2565")
     .exec((err, docs) => {
         response.json({
@@ -2025,136 +294,16 @@ app.get('/mwadata01', (request, response) => {
     })
 })
 
-app.get('/mwadata02', (request, response) => {
-
-    var d = new Date();
-    var n = d.getDate();
-    var m = d.getMonth();
-    var y = d.getFullYear ();
-    var yth = y+543;
-    mwadata
-    .find()
-    .where('stationId').equals("S5")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-
-app.get('/mwadata03', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("S4")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-
-app.get('/mwadata04', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("T4")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-
-app.get('/mwadata05', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("S7")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-
-app.get('/mwadata06', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("S6")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-
-app.get('/mwadata07', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("T2")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-
-app.get('/mwadata08', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("S2")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-
-app.get('/mwadata09', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("S17")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-
-app.get('/mwadata10', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("S18")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
-
-app.get('/mwadata11', (request, response) => {
-    mwadata
-    .find()
-    .where('stationId').equals("S20")
-    .where('datetime').equals("18/03/2565")
-    .exec((err, docs) => {
-        response.json({
-            data: docs
-        })
-    })
-})
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
 
+//_______________________________API อื่น ______________________________________________________//
 
+
+
+//ข้อมูลทั้งหมด//
 app.get('/wma-all', (request, response) => {
     wmadata
     .find()
@@ -2350,6 +499,12 @@ app.get('/maps', (request, response) => {
 
 })
 
+app.get('/wma-login', (request, response) => {
+    
+      response.sendFile(path.join(__dirname,"public/authen.html"))
+
+})
+
 app.get('/map-do', (request, response) => {
     
       response.sendFile(path.join(__dirname,"public/mapdo.html"))
@@ -2530,5 +685,10 @@ app.get('/show-products-paging-no', (request, response) => {
     })
 })
 
+
+app.all('*', (req, res) => {
+    res.status(500).send('<h1>404! Page not found</h1>');
+});
+    
 app.listen(PORT, () => console.log('Server started on port: 3000'))
 
