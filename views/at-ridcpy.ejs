@@ -22,71 +22,27 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 
+<!--Jquery-->
+<script
+src="https://code.jquery.com/jquery-3.6.0.min.js"
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+crossorigin="anonymous"
+></script>
+
+
+
+<!--font จ้า-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+
 </head>
-<body>
-    <div class="container-fluid">
+<body style="font-family: 'Prompt', sans-serif; background-color: aliceblue;">
+    <%- include('layouts/nav') %>
+
+    <div class="container-fluid"   style="padding-left: 10%; padding-right: 10%;">
         <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <span class="fs-5 d-none d-sm-inline">WMA</span>
-                    </a>
-                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                        <li class="nav-item">
-                            <a href="/" class="nav-link align-middle px-0 text-light">
-                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">รายงานเชิงบริหาร</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/maps" class="nav-link align-middle px-0 text-light">
-                                <i class="bi bi-geo-alt"></i> <span class="ms-1 d-none d-sm-inline">แผนที่</span>
-                            </a>
-                        </li>
-                      
-                        <li>
-                            <a href="/search" class="nav-link px-0 align-middle text-light">
-                                <i class="bi bi-search"></i><span class="ms-1 d-none d-sm-inline">ระบบสืบค้นข้อมูลคุณภาพน้ำ</span></a>
-                        </li>
-                        <!---
-                        <li>
-                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                                <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
-                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
-                                <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
-                        </li>
-                    </ul>
-                    <hr>
-                    --->
-                </div>
-            </div>
+            
             <div class="col py-3">
                 <!-- Page Wrapper -->
     <div id="wrapper" style="">
@@ -96,10 +52,11 @@
 
        <!-- Content Wrapper -->
        <div id="content-wrapper" class="d-flex flex-column">
-
+        <%- include('layouts/search') %>
            <!-- Main Content -->
            <div id="content">
 
+    
               
 
                <!-- Begin Page Content -->

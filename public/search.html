@@ -13,6 +13,10 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
 
+
+
+
+<!--Jquery-->
 <script
 src="https://code.jquery.com/jquery-3.6.0.min.js"
 integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -34,235 +38,183 @@ crossorigin="anonymous"
 </head>
 
 
-<body style="font-family: 'Prompt', sans-serif;">
+<body style="font-family: 'Prompt', sans-serif; background-color: aliceblue;">
+
+
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light shadow p-3">
     <div class="container-fluid">
-        <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <span class="fs-5 d-none d-sm-inline">WMA</span>
-                    </a>
-                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                        <li class="nav-item">
-                            <a href="/" class="nav-link align-middle px-0 text-light">
-                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">รายงานเชิงบริหาร</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="/maps" class="nav-link align-middle px-0 text-light">
-                              <i class="bi bi-geo-alt"></i> <span class="ms-1 d-none d-sm-inline">แผนที่</span>
-                          </a>
-                      </li>
-                        <li>
-                            <a href="/search" class="nav-link px-0 align-middle text-light">
-                                <i class="bi bi-search"></i><span class="ms-1 d-none d-sm-inline">ระบบสืบค้นข้อมูลคุณภาพน้ำ</span></a>
-                        </li>
-                        <!---
-                        <li>
-                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                                <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
-                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
-                                <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
-                        </li>
-                    </ul>
-                    <hr>
-                    --->
-                </div>
-            </div>
-         <!-- Begin Page Content -->
-         <div class="container-fluid">
-            <br>
-            <!-- Page Heading -->
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-           
-                <h1 class="h3 mb-0 text-gray-800">ระบบสืบค้นข้อมูลคุณภาพน้ำ</h1>
-                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                        class="fas fa-download fa-sm text-white-50"></i> ออกรายงาน</a>
-            </div>
+       <a class="navbar-brand" href="/">
+       <img src="/views/icon/wma-logo2.png" alt="" width="84.2" height="24.3" class="d-inline-block align-text-top">
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+       </button>
+       </a>
+       <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+             <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="/"><i class="bi bi-house"></i> รายงานเชิงบริหาร</a>
+             </li>
+             <li class="nav-item">
+                <a class="nav-link" href="/maps"><i class="bi bi-geo-alt"></i> ระบบแผนที่แสดงข้อมูล</a>
+             </li>
+             <li class="nav-item">
+                <a class="nav-link" href="/search"><i class="bi bi-search"></i> ระบบสืบค้นข้อมูลคุณภาพน้ำ</a>
+             </li>
+             <li class="nav-item">
+                <a class="nav-link" href="/form" ><i class="bi bi-cash"></i> ข้อมูลการเบิกจ่ายงบประมาณ</a>
+             </li>
+          </ul>
+       </div>
+       <div class=" d-flex flex-row-reverse bd-highlight">
+          <a class="nav-link" href="/wma-login" ><i class="bi bi-person-lines-fill"></i> เข้าสู่ระบบ</a>
+       </div>
+    </div>
+ </nav>
 
-           
-
-             <div class="row">
-
-                
-
-                <!-- Area Chart -->
-                <div class="col-xl-9 col-lg-9 ">
-                    <div class="card shadow mb-4">
-                
-                                  <div class="card-header">
-                                    <ul
-                                      class="nav nav-tabs card-header-tabs"
-                                      id="bologna-list"
-                                      role="tablist"
-                                    >
-                                      <li class="nav-item">
-                                        <a
-                                          class="nav-link active"
-                                          href="#description"
-                                          role="tab"
-                                          aria-controls="description"
-                                          aria-selected="true"
-                                          >องค์การจัดการน้ำเสีย</a
-                                        >
-                                      </li>
-                                      <li class="nav-item">
-                                        <a
-                                          class="nav-link"
-                                          href="#history"
-                                          role="tab"
-                                          aria-controls="history"
-                                          aria-selected="false"
-                                          >การประปานครหลวง</a
-                                        >
-                                      </li>
-                                      <li class="nav-item">
-                                        <a
-                                          class="nav-link"
-                                          href="#deals"
-                                          role="tab"
-                                          aria-controls="deals"
-                                          aria-selected="false"
-                                          >กรมควบคุมมลพิษ</a
-                                        >
-                                      </li>
-                                      <li class="nav-item">
-                                        <a
-                                          class="nav-link"
-                                          href="#deals2"
-                                          role="tab"
-                                          aria-controls="deals2"
-                                          aria-selected="false"
-                                          >กรมชลประทาน</a
-                                        >
-                                      </li>
-                                    </ul>
+ 
+ <div class="container-fluid">
+    <div class="row flex-nowrap" style="padding-left: 10%; padding-right: 10%; margin-bottom: 50%;">
+       <!-- Begin Page Content -->
+       <div class="container-fluid">
+          <br>
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+             <h1 class="h3 mb-0 text-gray-800">ระบบสืบค้นข้อมูลคุณภาพน้ำ</h1>
+          </div>
+          <div class="row">
+             <!-- Area Chart -->
+             <div class="col-xl-12 col-lg-9 " >
+                <div class="card shadow mb-4" >
+                   <div class="card-header">
+                      <ul
+                         class="nav nav-tabs card-header-tabs"
+                         id="bologna-list"
+                         role="tablist"
+                         >
+                         <li class="nav-item">
+                            <a
+                               class="nav-link active"
+                               href="#description"
+                               role="tab"
+                               aria-controls="description"
+                               aria-selected="true"
+                               >องค์การจัดการน้ำเสีย</a
+                               >
+                         </li>
+                         <li class="nav-item">
+                            <a
+                               class="nav-link"
+                               href="#history"
+                               role="tab"
+                               aria-controls="history"
+                               aria-selected="false"
+                               >การประปานครหลวง</a
+                               >
+                         </li>
+                         <li class="nav-item">
+                            <a
+                               class="nav-link"
+                               href="#deals"
+                               role="tab"
+                               aria-controls="deals"
+                               aria-selected="false"
+                               >กรมควบคุมมลพิษ</a
+                               >
+                         </li>
+                         <li class="nav-item">
+                            <a
+                               class="nav-link"
+                               href="#deals2"
+                               role="tab"
+                               aria-controls="deals2"
+                               aria-selected="false"
+                               >กรมชลประทาน</a
+                               >
+                         </li>
+                      </ul>
+                   </div>
+                   <div class="card-body">
+                      <div class="tab-content mt-3">
+                         <div class="tab-pane active" id="description" role="tabpanel">
+                            <div class="container-fluid">
+                               <div class="row">
+                                  <div class="col-xl-4 col-lg-4">
+                                     <p>ศูนย์บริหารจัดการคุณภาพน้ำ</p>
+                                     <select class="form-select" aria-label="Default select example" id="wma">
+                                        <option selected value="#">กรุณาเลือกสถานี</option>
+                                        <option value="/wma-station/1">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองพะเยา</option>
+                                        <option value="/wma-station/2">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลนครลำปาง</option>
+                                        <option value="/wma-station/3">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองมุกดาหาร</option>
+                                        <option value="/wma-station/4">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลนครแม่สอด</option>
+                                        <option value="/wma-station/5">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลนครอุดรธานี</option>
+                                        <option value="/wma-station/6">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองกำแพงเพชร</option>
+                                        <option value="/wma-station/7">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองอำนาจเจริญ</option>
+                                        <option value="/wma-station/8">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองบ้านโป่ง</option>
+                                        <option value="/wma-station/9">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองสิงห์บุรี</option>
+                                        <option value="/wma-station/10">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลนครหาดใหญ่</option>
+                                        <option value="/wma-station/11">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลบางเสร่</option>
+                                        <option value="/wma-station/12">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองประจวบคีรีขันธ์</option>
+                                        <option value="/wma-station/13">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลนครสงขลา</option>
+                                        <option value="/wma-station/14">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองกระบี่</option>
+                                        <option value="/wma-station/15">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลนครเชียงใหม่</option>
+                                        <option value="/wma-station/16">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองปากช่อง</option>
+                                        <option value="/wma-station/17">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองมาบตาพุด</option>
+                                        <option value="/wma-station/18">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองอุบลราชธานี</option>
+                                        <option value="/wma-station/19">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองบุรีรัมย์</option>
+                                        <option value="/wma-station/20">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองกาฬสินธุ์</option>
+                                        <option value="/wma-station/21">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองชะอำ</option>
+                                        <option value="/wma-station/22">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลบ้านเพ</option>
+                                        <option value="/wma-station/23">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองศรีราชา</option>
+                                        <option value="/wma-station/24">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองแสนสุขเหนือ</option>
+                                        <option value="/wma-station/25">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองแสนสุขใต้</option>
+                                        <option value="/wma-station/26">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองกาญจนบุรี</option>
+                                        <option value="/wma-station/27">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลบางปลา</option>
+                                        <option value="/wma-station/28">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลนครชัยศรี</option>
+                                        <option value="/wma-station/29">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลบางหญ้าแพรก</option>
+                                        <option value="/wma-station/30">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลท่าจีน</option>
+                                        <option value="/wma-station/31">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองไร่ขิง</option>
+                                        <option value="/wma-station/32">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลบางเลน</option>
+                                        <option value="/wma-station/33">ศูนย์บริหารจัดการคุณภาพน้ำ องค์การบริหารส่วนตำบลสามควายเผือก</option>
+                                        <option value="/wma-station/34">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลวิชิต</option>
+                                        <option value="/wma-station/35">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลราไวย์</option>
+                                        <option value="/wma-station/36">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลปากน้ำปราณ</option>
+                                        <option value="/wma-station/37">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลพรหมโลก</option>
+                                        <option value="/wma-station/38">ศูนย์บริหารจัดการคุณภาพน้ำ องค์การบริหารส่วนตำบลบางบัวทอง</option>
+                                        <option value="/wma-station/39">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลบางพลี </option>
+                                        <option value="/wma-station/40">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลนครระยอง</option>
+                                        <option value="/wma-station/41">ศูนย์บริหารจัดการคุณภาพน้ำ องค์การบริหารส่วนตำบลกมลา</option>
+                                        <option value="/wma-station/42">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลฉลอง</option>
+                                        <option value="/wma-station/43">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองสามพราน</option>
+                                        <option value="#">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลบางพลี 2</option>
+                                        <option value="#">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลบางปลา 2</option>
+                                        <option value="#">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองปู่เจ้าสมิงพราย</option>
+                                        <option value="/wma-station/44">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองปากพนัง บริเวณหลังเรือนจำ</option>
+                                        <option value="/wma-station/45">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองปากพนัง วัดนาควารี</option>
+                                        <option value="/wma-station/46">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลหัวไทร ถนนสุขาภิบาล 1</option>
+                                        <option value="/wma-station/47">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลหัวไทร หลังตลาดสด ถนนบางแค</option>
+                                        <option value="/wma-station/48">ศูนย์บริหารจัดการคุณภาพน้ำ วัดศรีมาประสิทธิ์</option>
+                                        <option value="/wma-station/49">ศูนย์บริหารจัดการคุณภาพน้ำ ชุมชนหอยราก-ศรีสมบูรณ์</option>
+                                        <option value="/wma-station/50">ศูนย์บริหารจัดการคุณภาพน้ำ อุทยานสิ่งแวดล้อมนานาชาติสิรินธร</option>
+                                     </select>
                                   </div>
-                                  <div class="card-body">
-                                    
-                      
-                                    <div class="tab-content mt-3">
-                                      <div class="tab-pane active" id="description" role="tabpanel">
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="col-xl-4 col-lg-4">
-                                                   <p>ศูนย์บริหารจัดการคุณภาพน้ำ</p>
-                                                    <select class="form-select" aria-label="Default select example" id="wma">
-                                                       
-                                                        <option selected value="#">กรุณาเลือกสถานี</option>
-                                            <option value="/wma-station/1">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองพะเยา</option>
-                                            <option value="/wma-station/2">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลนครลำปาง</option>
-                                            <option value="/wma-station/3">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองมุกดาหาร</option>
-                                            <option value="/wma-station/4">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลนครแม่สอด</option>
-                                            <option value="/wma-station/5">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลนครอุดรธานี</option>
-                                            <option value="/wma-station/6">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองกำแพงเพชร</option>
-                                            <option value="/wma-station/7">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองอำนาจเจริญ</option>
-                                            <option value="/wma-station/8">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองบ้านโป่ง</option>
-                                            <option value="/wma-station/9">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองสิงห์บุรี</option>
-                                            <option value="/wma-station/10">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลนครหาดใหญ่</option>
-                                            <option value="/wma-station/11">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลบางเสร่</option>
-                                            <option value="/wma-station/12">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองประจวบคีรีขันธ์</option>
-                                            <option value="/wma-station/13">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลนครสงขลา</option>
-                                            <option value="/wma-station/14">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองกระบี่</option>
-                                            <option value="/wma-station/15">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลนครเชียงใหม่</option>
-                                            <option value="/wma-station/16">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองปากช่อง</option>
-                                            <option value="/wma-station/17">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองมาบตาพุด</option>
-                                            <option value="/wma-station/18">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองอุบลราชธานี</option>
-                                            <option value="/wma-station/19">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองบุรีรัมย์</option>
-                                            <option value="/wma-station/20">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองกาฬสินธุ์</option>
-                                            <option value="/wma-station/21">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองชะอำ</option>
-                                            <option value="/wma-station/22">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลบ้านเพ</option>
-                                            <option value="/wma-station/23">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองศรีราชา</option>
-                                            <option value="/wma-station/24">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองแสนสุขเหนือ</option>
-                                            <option value="/wma-station/25">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองแสนสุขใต้</option>
-                                            <option value="/wma-station/26">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองกาญจนบุรี</option>
-                                            <option value="/wma-station/27">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลบางปลา</option>
-                                            <option value="/wma-station/28">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลนครชัยศรี</option>
-                                            <option value="/wma-station/29">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลบางหญ้าแพรก</option>
-                                            <option value="/wma-station/30">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลท่าจีน</option>
-                                            <option value="/wma-station/31">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองไร่ขิง</option>
-                                            <option value="/wma-station/32">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลบางเลน</option>
-                                            <option value="/wma-station/33">ศูนย์บริหารจัดการคุณภาพน้ำ องค์การบริหารส่วนตำบลสามควายเผือก</option>
-                                            <option value="/wma-station/34">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลวิชิต</option>
-                                            <option value="/wma-station/35">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลราไวย์</option>
-                                            <option value="/wma-station/36">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลปากน้ำปราณ</option>
-                                            <option value="/wma-station/37">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลพรหมโลก</option>
-                                            <option value="/wma-station/38">ศูนย์บริหารจัดการคุณภาพน้ำ องค์การบริหารส่วนตำบลบางบัวทอง</option>
-                                            <option value="/wma-station/39">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลบางพลี </option>
-                                            <option value="/wma-station/40">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลนครระยอง</option>
-                                            <option value="/wma-station/41">ศูนย์บริหารจัดการคุณภาพน้ำ องค์การบริหารส่วนตำบลกมลา</option>
-                                            <option value="/wma-station/42">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลฉลอง</option>
-                                            <option value="/wma-station/43">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองสามพราน</option>
-                                            <option value="#">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลบางพลี 2</option>
-                                            <option value="#">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลบางปลา 2</option>
-                                            <option value="#">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองปู่เจ้าสมิงพราย</option>
-                                            <option value="/wma-station/44">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองปากพนัง บริเวณหลังเรือนจำ</option>
-                                            <option value="/wma-station/45">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองปากพนัง วัดนาควารี</option>
-                                            <option value="/wma-station/46">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลหัวไทร ถนนสุขาภิบาล 1</option>
-                                            <option value="/wma-station/47">ศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลตำบลหัวไทร หลังตลาดสด ถนนบางแค</option>
-                                            <option value="/wma-station/48">ศูนย์บริหารจัดการคุณภาพน้ำ วัดศรีมาประสิทธิ์</option>
-                                            <option value="/wma-station/49">ศูนย์บริหารจัดการคุณภาพน้ำ ชุมชนหอยราก-ศรีสมบูรณ์</option>
-                                            <option value="/wma-station/50">ศูนย์บริหารจัดการคุณภาพน้ำ อุทยานสิ่งแวดล้อมนานาชาติสิรินธร</option>
-                                                      </select>
-                                                </div>
-                                                
-                                     
-                                                
-                                              
-                                                <div class="col-xl-4 col-lg-4">
-                                                    <button type="button" class="btn btn-outline-primary" style="margin-top: 38px;" id="btn01">สืบค้น</button>
-                                                </div>
-    
-                                              
-                                                
-                                            </div>
-    
-                                       </div>
-                                        
-                                      
-                                    </div>
-                      
-                                      <div
-                                        class="tab-pane"
-                                        id="history"
-                                        role="tabpanel"
-                                        aria-labelledby="history-tab"
-                                      >
-                                      <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-xl-4 col-lg-4">
-                                               <p>สถานีจุดตรวจวัดคุณภาพน้ำ</p>
-                                                <select class="form-select" aria-label="Default select example" id="mwa">
-                                                   
-                                                    <option selected value="#">กรุณาเลือกสถานี</option>
+                                  <div class="col-xl-4 col-lg-4">
+                                     <button type="button" class="btn btn-outline-primary" style="margin-top: 38px;" id="btn01">สืบค้น</button>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                         <div
+                            class="tab-pane"
+                            id="history"
+                            role="tabpanel"
+                            aria-labelledby="history-tab"
+                            >
+                            <div class="container-fluid">
+                               <div class="row">
+                                  <div class="col-xl-4 col-lg-4">
+                                     <p>สถานีจุดตรวจวัดคุณภาพน้ำ</p>
+                                     <select class="form-select" aria-label="Default select example" id="mwa">
+                                        <option selected value="#">กรุณาเลือกสถานี</option>
                                         <option value="/mwa-station/T3">สถานีวัดบ้านแป้ง</option>
                                         <option value="/mwa-station/S5">สถานีวัดโพธิ์แดงเหนือ</option>
                                         <option value="/mwa-station/S4">สถานีวัดมะขาม</option>
@@ -274,157 +226,96 @@ crossorigin="anonymous"
                                         <option value="/mwa-station/S17">สถานีพงษ์เพชร</option>
                                         <option value="/mwa-station/S18">สถานีโรงผลิตน้ำสามเสน</option>
                                         <option value="/mwa-station/S20">สถานีคลองน้ำอ้อม *ระบบขัดข้อง*</option>
-
-                                                  </select>
-                                            </div>
-                                            
-                                 
-                                            
-                                          
-                                            <div class="col-xl-4 col-lg-4">
-                                                <button type="button" class="btn btn-outline-primary" style="margin-top: 38px;" id="btn02">สืบค้น</button>
-                                            </div>
-
-                                          
-                                            
-                                        </div>
-
-                                   </div>
-                                      </div>
-                      
-                                      <div
-                                        class="tab-pane"
-                                        id="deals"
-                                        role="tabpanel"
-                                        aria-labelledby="deals-tab"
-                                      >
-                                      <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-xl-4 col-lg-4">
-                                               <p>สถานีจุดตรวจวัดคุณภาพน้ำ</p>
-                                                <select class="form-select" aria-label="Default select example" id="pcd">
-                                                   
-                                                    <option selected  value="#">กรุณาเลือกสถานี</option>
-                                                    <option value="/pcd-station/240">สถานีสมุทรปราการ</option>
-                                                    <option value="/pcd-station/118">สถานีดาวคะนอง</option>
-                                                    <option value="/pcd-station/113">สถานีปากเกร็ด</option>
-                                                    <option value="/pcd-station/128">สถานีสำแล</option>
-                                                    <option value="/pcd-station/112">สถานีบางไทร</option>
-                                                    <option value="/pcd-station/222">สถานึอยุธยา</option>
-                                                    <option value="/pcd-station/111">สถานีป่าโมก</option>
-                                                    <option value="/pcd-station/248">สถานีอ่างทอง</option>
-                                                    <option value="/pcd-station/110">สถานีสิงห์บุรี</option>
-                                                    <option value="/pcd-station/109">สถานีชัยนาท</option>
-                                                 
-                                                        
-                                        
-                                                  </select>
-                                            </div>
-                                            
-                                 
-                                            
-                                          
-                                            <div class="col-xl-4 col-lg-4">
-                                                <button type="button" class="btn btn-outline-primary" style="margin-top: 38px;" id="btn04">สืบค้น</button>
-                                            </div>
-
-                                          
-                                            
-                                        </div>
-
-                                   </div>   
-                                      </div>
-                                      <div
-                                        class="tab-pane"
-                                        id="deals2"
-                                        role="tabpanel"
-                                        aria-labelledby="deals-tab"
-                                      >
-                                      <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-xl-4 col-lg-4">
-                                               <p>สถานีจุดตรวจวัดคุณภาพน้ำ</p>
-                                                <select class="form-select" aria-label="Default select example" id="rid">
-                                                   
-                                                    <option selected value="#">กรุณาเลือกสถานี</option>
+                                     </select>
+                                  </div>
+                                  <div class="col-xl-4 col-lg-4">
+                                     <button type="button" class="btn btn-outline-primary" style="margin-top: 38px;" id="btn02">สืบค้น</button>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                         <div
+                            class="tab-pane"
+                            id="deals"
+                            role="tabpanel"
+                            aria-labelledby="deals-tab"
+                            >
+                            <div class="container-fluid">
+                               <div class="row">
+                                  <div class="col-xl-4 col-lg-4">
+                                     <p>สถานีจุดตรวจวัดคุณภาพน้ำ</p>
+                                     <select class="form-select" aria-label="Default select example" id="pcd">
+                                        <option selected  value="#">กรุณาเลือกสถานี</option>
+                                        <option value="/pcd-station/240">สถานีสมุทรปราการ</option>
+                                        <option value="/pcd-station/118">สถานีดาวคะนอง</option>
+                                        <option value="/pcd-station/113">สถานีปากเกร็ด</option>
+                                        <option value="/pcd-station/128">สถานีสำแล</option>
+                                        <option value="/pcd-station/112">สถานีบางไทร</option>
+                                        <option value="/pcd-station/222">สถานึอยุธยา</option>
+                                        <option value="/pcd-station/111">สถานีป่าโมก</option>
+                                        <option value="/pcd-station/248">สถานีอ่างทอง</option>
+                                        <option value="/pcd-station/110">สถานีสิงห์บุรี</option>
+                                        <option value="/pcd-station/109">สถานีชัยนาท</option>
+                                     </select>
+                                  </div>
+                                  <div class="col-xl-4 col-lg-4">
+                                     <button type="button" class="btn btn-outline-primary" style="margin-top: 38px;" id="btn04">สืบค้น</button>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                         <div
+                            class="tab-pane"
+                            id="deals2"
+                            role="tabpanel"
+                            aria-labelledby="deals-tab"
+                            >
+                            <div class="container-fluid">
+                               <div class="row">
+                                  <div class="col-xl-4 col-lg-4">
+                                     <p>สถานีจุดตรวจวัดคุณภาพน้ำ</p>
+                                     <select class="form-select" aria-label="Default select example" id="rid">
+                                        <option selected value="#">กรุณาเลือกสถานี</option>
                                         <option value="/rid-station/caophraya/CP01">สถานีกรมชลประทานสามเสน</option>
                                         <option value="/rid-station/caophraya/CP02">สถานีวัดเขมาภิรตาราม</option>
                                         <option value="/rid-station/caophraya/CP03">สถานีวัดเชิงเลน</option>
                                         <option value="/rid-station/caophraya/CP04">สถานีวัดฉาง</option>
                                         <option value="/rid-station/caophraya/CP05">สถานีวัดโสภาราม</option>
                                         <option value="/rid-station/caophraya/CP06">สถานีวัดกร่าง</option>
-
-
                                         <option value="/rid-station/thachin/09">สถานีวัดพันธุวงษ์</option>
-                                        <option value="/rid-station/thachin/08">สถานีวัดอ่างทอง</option>
-                                        <option value="/rid-station/thachin/07">สถานีวัดตอนไก่ดี</option>
-                                        <option value="/rid-station/thachin/06">สถานีวัดเทียนตัด</option>
-                                        <option value="/rid-station/thachin/05">สถานีปตร.คลองจินดา</option>
-                                        <option value="/rid-station/thachin/04">สถานีวัดท่าขาม</option>
-                                        <option value="/rid-station/thachin/03">สถานีวัดท่าพูด</option>
-                                        <option value="/rid-station/thachin/02">สถานีวัดทรงคนอง</option>
-                                        <option value="/rid-station/thachin/01">สถานีวัดสัมปทวน</option>
-                                      
-                                                  </select>
-                                            </div>
-                                            
-                                 
-                                            
-                                          
-                                            <div class="col-xl-4 col-lg-4">
-                                                <button type="button" class="btn btn-outline-primary" style="margin-top: 38px;" id="btn03">สืบค้น</button>
-                                            </div>
-
-                                          
-                                            
-                                        </div>
-
-                                   </div>
-                                      </div>
-                                    </div>
+                                        <option value="/rid-station/thachin/TC08">สถานีวัดอ่างทอง</option>
+                                        <option value="/rid-station/thachin/TC07">สถานีวัดตอนไก่ดี</option>
+                                        <option value="/rid-station/thachin/TC06">สถานีวัดเทียนตัด</option>
+                                        <option value="/rid-station/thachin/TC05">สถานีปตร.คลองจินดา</option>
+                                        <option value="/rid-station/thachin/TC04">สถานีวัดท่าขาม</option>
+                                        <option value="/rid-station/thachin/TC03">สถานีวัดท่าพูด</option>
+                                        <option value="/rid-station/thachin/TC02">สถานีวัดทรงคนอง</option>
+                                        <option value="/rid-station/thachin/TC01">สถานีวัดสัมปทวน</option>
+                                     </select>
                                   </div>
-                                </div>
-                              </div>
+                                  <div class="col-xl-4 col-lg-4">
+                                     <button type="button" class="btn btn-outline-primary" style="margin-top: 38px;" id="btn03">สืบค้น</button>
+                                  </div>
+                               </div>
                             </div>
-                          </div>
-
-                            
-
-                        
-                    </div>
+                         </div>
+                      </div>
+                   </div>
                 </div>
-
-    
-                          
-                        
-
-                    
-
-                            
-
-                        
-                    </div>
-                </div>
-                    
-                
-             
-            </div>
-
-            <!-- Content Row -->
-
-            
-
-      
-
-        </div>
-        <!-- /.container-fluid -->
-                
-                
-               
-
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <!-- Content Row -->
+ </div>
+ <!-- /.container-fluid --> 
+</div>
                 
 
-      
           
 
            <!-- Footer -->

@@ -16,6 +16,7 @@ const PORT = process.env.PORT ||  8080
 
 app.use(express.static('public'))
 app.use('/pdf',express.static(__dirname+'/node_modules'))
+app.use('/views',express.static(__dirname+'/views'))
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
