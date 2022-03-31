@@ -348,7 +348,7 @@
 
               <br>
 
-               <div class="container-fluid card shadow mb-4"  >
+             
 
                 <!-- Page Heading -->
                 
@@ -356,10 +356,9 @@
                     
                 <!-- DataTales Example -->
              
-                    <div class="card-body" >
                         <% if (locals.data) { %>
  
-                            <div class="table-responsive-sm ">
+                            <div class="table table-responsive-sm  shadow">
                             <table class="table table-sm  table-hover table-borderedless">
                                 <thead class="table-primary">
                                 <tr >
@@ -398,7 +397,7 @@
                                     let dt = new Date(Date.parse(d.date_added))
                                     let df = `${dt.getDate()}-${dt.getMonth() + 1}-${dt.getFullYear()}`
                                 %>
-                                <tbody>
+                                <tbody style="background-color: white;">
                                     <tr>
                                         <% if ((d.treated_water < 10) || (d.treated_doo < 2)){ %>
                                         <td style="color : #FF0000; " style="padding-left: 10px;"><%= d.level1_approval %></i></td>
@@ -466,8 +465,7 @@
                             </table>
                             <% } %>
                     </div>
-                </div>
-
+              
             
            </div>
            <!-- End of Main Content -->
