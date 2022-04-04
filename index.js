@@ -169,7 +169,7 @@ app.get('/rid-station/thachin/:id', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals(stationNo)
-    .where('dateTh').equals("18/03/2565")
+    .where('dateTh').equals("04/04/2565")
     .exec((err, docs) => {
         response.render('at-ridtc', {
             data: docs
@@ -182,7 +182,7 @@ app.get('/rid-data/thachin/:id', (request, response) => {
     ridtcdata
     .find()
     .where('code').equals(stationNo)
-    .where('dateTh').equals("18/03/2565")
+    .where('dateTh').equals("04/04/2565")
     
     .exec((err, docs) => {
         response.json({
@@ -204,7 +204,7 @@ app.get('/rid-station/caophraya/:id', (request, response) => {
     ridcpdata
     .find()
     .where('code').equals(stationNo)
-    .where('dateTh').equals("18/03/2565")
+    .where('dateTh').equals("04/04/2565")
     .exec((err, docs) => {
         response.render('at-ridcpy', {
             data: docs
@@ -217,7 +217,7 @@ app.get('/rid-data/caophraya/:id', (request, response) => {
     ridcpdata
     .find()
     .where('code').equals(stationNo)
-    .where('dateTh').equals("18/03/2565")
+    .where('dateTh').equals("04/04/2565")
     
     .exec((err, docs) => {
         response.json({
@@ -239,8 +239,8 @@ app.get('/wma-station/:id', (request, response) => {
     wmadata
     .find()
     .where('level1_approval').equals(stationNo)
-    .where('month').equals(3)
-    .where('day').equals(23)
+    .where('month').equals(4)
+    .where('day').equals(4)
     .exec((err, docs) => {
         response.render('at-wma', {
             data: docs
@@ -253,7 +253,7 @@ app.get('/wma-data/:id', (request, response) => {
     wmadata
     .find()
     .where('level1_approval').equals(stationNo)
-    .where('month').equals(1)
+    .where('month').equals(4)
     .where('year').equals(2022)
     .exec((err, docs) => {
         response.json({
@@ -274,7 +274,7 @@ app.get('/mwa-station/:id', (request, response) => {
     mwadata
     .find()
     .where('stationId').equals(stationNo)
-    .where('datetime').equals("18/03/2565")
+    .where('datetime').equals("04/04/2565")
     .exec((err, docs) => {
         response.render('at-mwa', {
             data: docs
@@ -287,7 +287,7 @@ app.get('/mwa-data/:id', (request, response) => {
     mwadata
     .find()
     .where("stationId").equals(stationNo)
-    .where('datetime').equals("18/03/2565")
+    .where('datetime').equals("04/04/2565")
     .exec((err, docs) => {
         response.json({
             data: docs
