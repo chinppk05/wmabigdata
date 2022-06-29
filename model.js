@@ -121,6 +121,77 @@ const pcdSchema = new mongoose.Schema({
     
 })
 
+const budgetSchema = new mongoose.Schema({
+    "year": Number,
+    "projectname": String,
+    "projectlist": String,
+    "username": String,
+    "plan1": Number,
+    "plan2": Number,
+    "plan3": Number,
+    "plan4": Number,
+    "plan5": Number,
+    "plan6": Number,
+    "plan7": Number,
+    "plan8": Number,
+    "plan9": Number,
+    "plan10": Number,
+    "plan11": Number,
+    "plan12": Number,
+    "result1": Number,
+    "result2": Number,
+    "result3": Number,
+    "result4": Number,
+    "result5": Number,
+    "result6": Number,
+    "result7": Number,
+    "result8": Number,
+    "result9": Number,
+    "result10": Number,
+    "result11": Number,
+    "result12": Number,
+    "edited": Number,
+    "timestamp": Date
+   
+})
+const stationnameSchema = new mongoose.Schema({
+    "number": Number,
+    "station": String,
+    "detail" : String,
+    "location" : String,
+    "person": String,
+    "tel" : String,
+    "email": String,
+    "type" : String,
+    "capability":String,
+    "last year_average":String,
+    "input": Number,
+    "all_area":Number,
+    "service_area":Number,
+    "coverage":Number,
+    "area_waste":Number,
+    "people":String,
+
+    
+})
+
+const monthlydataSchema = new mongoose.Schema({
+    "stationid" : Number,
+    "year": Number,
+    "month" : Number,
+    "treated_water" : Number,
+    "timestamp": Date
+    
+})
+
+const userSchema = new mongoose.Schema({
+    username : {
+        type: String,
+        unique: true
+    },
+    password: String
+   
+})
 
 
 wmaSchema.plugin(paginate)
@@ -130,5 +201,10 @@ module.exports.mwadata = mongoose.model('wma87', mwaSchema)
 module.exports.ridcpdata = mongoose.model('wma88', ridcpSchema)
 module.exports.ridtcdata = mongoose.model('wma89', ridtcSchema)
 module.exports.pcddata = mongoose.model('wma85', pcdSchema)
+module.exports.userdata = mongoose.model('wmauser', userSchema)
+module.exports.budgetdata = mongoose.model('wmabudget', budgetSchema)
+module.exports.stationdata = mongoose.model('wmastations', stationnameSchema)
+module.exports.monthlydata = mongoose.model('wmamonthlies', monthlydataSchema)
+
 
 

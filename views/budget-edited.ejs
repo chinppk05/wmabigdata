@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แก้ไขข้อมูล</title>
+
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+
+<!--echart-->
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.1.2/dist/echarts.min.js"></script>
+
+
+<!--axios-->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src='/pdf/pdfmake/build/pdfmake.min.js'></script>
+<script src='/pdf/pdfmake/build/vfs_fonts.js'></script>
+
+
+<!--font จ้า-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body style="font-family: 'Prompt', sans-serif; background-color: aliceblue;">
+
+    <%- include('layouts/nav') %>
+    
+    <br>
+    <br>
+  
+
+
+    <div class="container-fluid" style="padding-left: 10%; padding-right: 10%;">
+        <div class="row">              
+            <!-- Area Chart -->
+            <div class="col-xl-12 col-lg-12">
+
+            <h3>แก้ไขข้อมูลการเบิกจ่ายงบประมาณ</h3> 
+            <br> 
+              <div class="card shadow mb-4">
+                  <!-- Card Body -->
+                  <div class="card-body" style="height: 100%;">
+                      <div class="chart-area">
+
+
+                            <% if (locals.data) { %>
+  
+                            <form method="post" action="/budget-edit">
+
+                                <br>
+                                <div class="container">
+                                    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                        <div class="row">
+                                            <div class="col-xl-2 col-md-4">
+                                                <div class="d-flex flex-row bd-highlight mb-3">
+                                                    <h5 style="margin-top: 10px;">ปีงบประมาณ</h5> 
+                                                 
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-2 col-md-4">
+                                              
+                                                <div class="mb-3">
+                                                        <select class="form-select" aria-label="Default select example" name="year" id="year" >
+                                                        <option value="2565" selected>2565</option>
+                                                        <option value="2566">2566</option>
+                                                        <option value="2567">2567</option>
+                                                        <option value="2568">2568</option>
+                                                        <option value="2569">2569</option>
+                                                        <option value="2570">2570</option>                                                
+                                                        </select>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                
+
+                                <br>
+                                <div class="container">
+                                    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                        <div class="row">
+                                            <div class="col-xl-2 col-md-4">
+                                                <div class="d-flex flex-row bd-highlight mb-3">
+                                                    <h5 style="margin-top: 10px;">ชื่อโครงการ</h5> 
+                                                 
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-10 col-md-6">
+                                              
+                                                <div class="mb-3">
+                                                        <select class="form-select" aria-label="Default select example" name="pname" id="pname">
+                                                        <option value="2565" selected>โครงการ A</option>
+                                                        <option value="2566">โครงการ B</option>
+                                                        <option value="2567">โครงการ C</option>
+                                                        <option value="2568">โครงการ D</option>
+                                                        <option value="2569">โครงการ E</option>
+                                                        <option value="2570">โครงการ C</option>
+                                       
+                                                    
+
+
+                                                        </select>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                
+                                
+
+                                <br>
+                                <div class="container">
+                                    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                        <div class="row">
+                                            <div class="col-xl-2 col-md-4">
+                                                <div class="d-flex flex-row bd-highlight mb-3">
+                                                    <h5 style="margin-top: 10px;">รายการค่าใช้จ่าย</h5> 
+                                                 
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-10 col-md-6">
+                                              
+                                                <div class="mb-3">
+                                                        <select class="form-select" aria-label="Default select example" name="plist"  id="plist">
+                                                        <option value="2565" selected>ค่าใช้จ่าย ก</option>
+                                                        <option value="2566">ค่าใช้จ่าย ข</option>
+                                                        <option value="2567">ค่าใช้จ่าย ค</option>                                         
+                                                        </select>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <br>
+                                    <div class="container">
+                                        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                            <div class="row">
+                                                <div class="col-xl-2 col-md-4">
+                                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                                        <h5 style="margin-top: 10px;"></h5> 
+                                                     
+                                                    </div>
+                                                </div>
+                                    
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                                        <h5 style="margin-top: 10px;">แผนการเบิก</h5> 
+                                                     
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-xl-4 col-md-6">
+                                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                                        <h5 style="margin-top: 10px;">ผลการจ่าย</h5> 
+                                                     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                 
+                                    <div class="container">
+                                        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                            <div class="row">
+                                                <div class="col-xl-2 col-md-4">
+                                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                                        <h5 style="margin-top: 10px;">ตุลาคม</h5> 
+                                                     
+                                                    </div>
+                                                </div>
+                                    
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="แผนการเบิก"   name="plan1"  id="plan1" value="" required>
+                                                      </div>
+                                                </div>
+                                                
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="ผลการจ่าย"  name="result1" id="result1" value="" required>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                 
+                                    <div class="container">
+                                        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                            <div class="row">
+                                                <div class="col-xl-2 col-md-4">
+                                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                                        <h5 style="margin-top: 10px;">พฤศจิกายน</h5> 
+                                                     
+                                                    </div>
+                                                </div>
+                                    
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="แผนการเบิก"  name="plan2"  id="plan2" value="" required>
+                                                      </div>
+                                                </div>
+                                                
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="ผลการจ่าย"  name="result2" id="result2" value="" required>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+    
+                                 
+                                    <div class="container">
+                                        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                            <div class="row">
+                                                <div class="col-xl-2 col-md-4">
+                                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                                        <h5 style="margin-top: 10px;">ธันวาคม</h5> 
+                                                     
+                                                    </div>
+                                                </div>
+                                    
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control"  placeholder="แผนการเบิก" name="plan3" id="plan3" value="" required>
+                                                      </div>
+                                                </div>
+                                                
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="ผลการจ่าย"  name="result3" id="result3" value="" required>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+    
+                                 
+                                    <div class="container">
+                                        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                            <div class="row">
+                                                <div class="col-xl-2 col-md-4">
+                                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                                        <h5 style="margin-top: 10px;">มกราคม</h5> 
+                                                     
+                                                    </div>
+                                                </div>
+                                    
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="แผนการเบิก"  name="plan4" id="plan4"value="" required>
+                                                      </div>
+                                                </div>
+                                                
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="ผลการจ่าย"  name="result4" id="result4" value="" required>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+    
+                                 
+                                    <div class="container">
+                                        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                            <div class="row">
+                                                <div class="col-xl-2 col-md-4">
+                                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                                        <h5 style="margin-top: 10px;">กุมภาพันธ์</h5> 
+                                                     
+                                                    </div>
+                                                </div>
+                                    
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control"  placeholder="แผนการเบิก" name="plan5" id="plan5" value="" required>
+                                                      </div>
+                                                </div>
+                                                
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="ผลการจ่าย"  name="result5" id="result5" value="" required>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+    
+                                 
+                                    <div class="container">
+                                        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                            <div class="row">
+                                                <div class="col-xl-2 col-md-4">
+                                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                                        <h5 style="margin-top: 10px;">มีนาคม</h5> 
+                                                     
+                                                    </div>
+                                                </div>
+                                    
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="แผนการเบิก"  name="plan6" id="plan6" value="" required>
+                                                      </div>
+                                                </div>
+                                                
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="ผลการจ่าย"  name="result6" id="result6" value="" required>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+    
+                                 
+                                    <div class="container">
+                                        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                            <div class="row">
+                                                <div class="col-xl-2 col-md-4">
+                                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                                        <h5 style="margin-top: 10px;">เมษายน</h5> 
+                                                     
+                                                    </div>
+                                                </div>
+                                    
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control"  placeholder="แผนการเบิก" name="plan7" id="plan7" value="" required>
+                                                      </div>
+                                                </div>
+                                                
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="ผลการจ่าย"  name="result7" id="result7" value="" required>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+    
+                                 
+                                    <div class="container">
+                                        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                            <div class="row">
+                                                <div class="col-xl-2 col-md-4">
+                                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                                        <h5 style="margin-top: 10px;">พฤษภาคม</h5> 
+                                                     
+                                                    </div>
+                                                </div>
+                                    
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="แผนการเบิก"  name="plan8" id="plan8" value="" required>
+                                                      </div>
+                                                </div>
+                                                
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="ผลการจ่าย"  name="result8" id="result8" value="" required>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+    
+                                 
+                                    <div class="container">
+                                        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                            <div class="row">
+                                                <div class="col-xl-2 col-md-4">
+                                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                                        <h5 style="margin-top: 10px;">มิถุนายน</h5> 
+                                                     
+                                                    </div>
+                                                </div>
+                                    
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="แผนการเบิก"  name="plan9" id="plan9" value="" required>
+                                                      </div>
+                                                </div>
+                                                
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="ผลการจ่าย"  name="result9" id="result9" value="" required>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+    
+                                 
+                                    <div class="container">
+                                        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                            <div class="row">
+                                                <div class="col-xl-2 col-md-4">
+                                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                                        <h5 style="margin-top: 10px;">กรกฏาคม</h5> 
+                                                     
+                                                    </div>
+                                                </div>
+                                    
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="แผนการเบิก" name="plan10" id="plan10" value="" required>
+                                                      </div>
+                                                </div>
+                                                
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="ผลการจ่าย"  name="result10" id="result10" value="" required>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+    
+                                 
+                                    <div class="container">
+                                        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                            <div class="row">
+                                                <div class="col-xl-2 col-md-4">
+                                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                                        <h5 style="margin-top: 10px;">สิงหาคม</h5> 
+                                                     
+                                                    </div>
+                                                </div>
+                                    
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="แผนการเบิก"  name="plan11"  id="plan11" value="" required>
+                                                      </div>
+                                                </div>
+                                                
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="ผลการจ่าย"  name="result11" id="result11" value="" required>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+    
+                                 
+                                    <div class="container">
+                                        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                            <div class="row">
+                                                <div class="col-xl-2 col-md-4">
+                                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                                        <h5 style="margin-top: 10px;">กันยายน</h5> 
+                                                     
+                                                    </div>
+                                                </div>
+                                    
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="แผนการเบิก"  name="plan12" id="plan12" value="" required>
+                                                      </div>
+                                                </div>
+                                                
+                                                <div class="col-xl-4 col-md-6">
+                                                  
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="ผลการจ่าย" name="result12" id="result12" value="" required>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                               
+
+
+
+                                    <br>
+                                    <br>
+
+                                    <div class="d-flex flex-row-reverse bd-highlight">
+                                        <div ><button type="submit" class="btn btn-danger" style="margin-left: 10px;" >ลบข้อมูล</button></div>
+                                        <div ><button type="submit" class="btn btn-primary" >บันทึกข้อมูล</button></div>
+                                   
+                                    </div>
+    
+
+
+
+                            </form>
+
+                            <% } %>
+
+
+
+
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+    </div>
+
+
+
+
+
+          
+
+           <!-- Footer -->
+           <footer class="sticky-footer bg-white">
+               <div class="container my-auto">
+                   <div class="copyright text-center my-auto">
+                       <span>Copyright &copy; Your Website 2021</span>
+                   </div>
+               </div>
+           </footer>
+           <!-- End of Footer -->
+
+       </div>
+       <!-- End of Content Wrapper -->
+
+   </div>
+   <!-- End of Page Wrapper -->
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<script>
+let year = document.getElementById('year')
+let pname = document.getElementById('pname')
+let plist = document.getElementById('plist')
+
+
+
+let pattern = /\//
+let yearnumber = window.location.pathname;
+let yep = yearnumber.split(pattern)
+let idnaja = yep[2]
+
+const waterdaily = document.getElementById("daily");
+
+
+const getdata = () => {
+  axios
+    
+    .get("/budget-data/"+year.value)
+    .then((response) => {
+      let store = []  
+        // เก็บข้อมูล ชื่อโปรเจคใน array
+      for(i of response.data.data){
+        if(store.includes(i.projectname)){
+            
+        }else{
+            store.push(i.projectname)
+        }
+      }
+
+
+
+        // ลบรายการ select ของชื่อโปรเจค
+      for(i= pname.length+1; i>=0 ; i--){
+            let pname = document.getElementById('pname')
+            pname.remove(i)
+        }
+
+        // เพิ่มข้อมูลรายการ ชื่อโปรเจค
+        let n = 0
+        for(i of store){
+        let adder = document.createElement('option')
+            adder.text = i
+            pname.add(adder, n)
+            n = n+1
+      }
+      
+        // ลบรายการค่าใช้จ่าย
+        for(i= plist.length+1; i>=0 ; i--){
+            let pname = document.getElementById('plist')
+            plist.remove(i)
+        }
+
+
+       //เพิ่มรายการค่าใช้จ่ายใน array  
+       let projectlist = []
+        for(i of response.data.data){
+            if(pname.value == i.projectname){
+                if(projectlist.includes(i.projectlist)){
+
+                }else{
+                projectlist.push(i.projectlist)
+             }
+            }
+        }
+
+        console.log(projectlist)
+    
+        //เพิ่มรายการค่าใช้จ่ายใน OPTIONS
+        let x = 0
+        for(i of projectlist){
+        let adder = document.createElement('option')
+            adder.text = i
+            plist.add(adder, x)
+            x = x+1
+        }
+
+
+        //ดึงข้อมูลใส่ฟอร์ม
+        let keep = [0]
+        let factor = 0
+        for(i of response.data.data){
+            if(i.projectname == pname.value && i.projectlist == plist.value){
+                if(i.edited >= factor){
+                    factor = i.edited
+                    keep.fill(i)
+                }
+            }
+        }
+     
+        console.log(keep[0].plan1)
+
+        
+        
+        let plan="plan"
+        let result="result"
+ 
+        document.getElementById("plan1").setAttribute('value',keep[0].plan1);
+        document.getElementById("result1").setAttribute('value',keep[0].result1);
+  
+        document.getElementById("plan2").setAttribute('value',keep[0].plan2);
+        document.getElementById("result2").setAttribute('value',keep[0].result2);
+  
+        document.getElementById("plan3").setAttribute('value',keep[0].plan3);
+        document.getElementById("result3").setAttribute('value',keep[0].result3);
+  
+        document.getElementById("plan4").setAttribute('value',keep[0].plan4);
+        document.getElementById("result4").setAttribute('value',keep[0].result4);
+  
+        document.getElementById("plan5").setAttribute('value',keep[0].plan5);
+        document.getElementById("result5").setAttribute('value',keep[0].result5);
+  
+        document.getElementById("plan6").setAttribute('value',keep[0].plan6);
+        document.getElementById("result6").setAttribute('value',keep[0].result6);
+  
+        document.getElementById("plan7").setAttribute('value',keep[0].plan7);
+        document.getElementById("result7").setAttribute('value',keep[0].result7);
+  
+        document.getElementById("plan8").setAttribute('value',keep[0].plan8);
+        document.getElementById("result8").setAttribute('value',keep[0].result8);
+  
+        document.getElementById("plan9").setAttribute('value',keep[0].plan9);
+        document.getElementById("result9").setAttribute('value',keep[0].result9);
+  
+        document.getElementById("plan10").setAttribute('value',keep[0].plan10);
+        document.getElementById("result10").setAttribute('value',keep[0].result10);
+  
+        document.getElementById("plan11").setAttribute('value',keep[0].plan11);
+        document.getElementById("result11").setAttribute('value',keep[0].result11);
+  
+        document.getElementById("plan12").setAttribute('value',keep[0].plan12);
+        document.getElementById("result12").setAttribute('value',keep[0].result12);
+  
+
+
+      
+  
+
+
+
+
+
+    });
+};
+
+/*getBtn.addEventListener("click", getdata);
+*/
+
+getdata()
+
+</script>
+
+
+
+
+
+
+<script>
+    year.onchange = function(event){
+        axios
+    
+    .get("/budget-data/"+year.value)
+    .then((response) => {
+      let store = []  
+        // เก็บข้อมูล ชื่อโปรเจคใน array
+      for(i of response.data.data){
+        if(store.includes(i.projectname)){
+            
+        }else{
+            store.push(i.projectname)
+        }
+      }
+
+
+
+        // ลบรายการ select ของชื่อโปรเจค
+      for(i= pname.length+1; i>=0 ; i--){
+            let pname = document.getElementById('pname')
+            pname.remove(i)
+        }
+
+        // เพิ่มข้อมูลรายการ ชื่อโปรเจค
+        let n = 0
+        for(i of store){
+        let adder = document.createElement('option')
+            adder.text = i
+            pname.add(adder, n)
+            n = n+1
+      }
+      
+         // ลบรายการค่าใช้จ่าย
+         for(i= plist.length+1; i>=0 ; i--){
+            let pname = document.getElementById('plist')
+            plist.remove(i)
+        }
+
+
+        //เพิ่มรายการค่าใช้จ่ายใน array  
+        let projectlist = []
+        for(i of response.data.data){
+            if(pname.value == i.projectname){
+             if(projectlist.includes(i.projectlist)){
+
+             }else{
+                projectlist.push(i.projectlist)
+             }
+            }
+        }
+
+    
+        //เพิ่มรายการค่าใช้จ่ายใน OPTIONS
+        let x = 0
+        for(i of projectlist){
+        let adder = document.createElement('option')
+            adder.text = i
+            plist.add(adder, x)
+            x = x+1
+        }
+
+        //ดึงข้อมูลใส่ฟอร์ม
+        let keep = [0]
+        let factor = 0
+        for(i of response.data.data){
+            if(i.projectname == pname.value && i.projectlist == plist.value){
+                if(i.edited >= factor){
+                    factor = i.edited
+                    keep.fill(i)
+                }
+            }
+        }
+     
+        console.log(keep[0].plan1)
+
+        
+        
+        let plan="plan"
+        let result="result"
+ 
+        document.getElementById("plan1").setAttribute('value',keep[0].plan1);
+        document.getElementById("result1").setAttribute('value',keep[0].result1);
+  
+        document.getElementById("plan2").setAttribute('value',keep[0].plan2);
+        document.getElementById("result2").setAttribute('value',keep[0].result2);
+  
+        document.getElementById("plan3").setAttribute('value',keep[0].plan3);
+        document.getElementById("result3").setAttribute('value',keep[0].result3);
+  
+        document.getElementById("plan4").setAttribute('value',keep[0].plan4);
+        document.getElementById("result4").setAttribute('value',keep[0].result4);
+  
+        document.getElementById("plan5").setAttribute('value',keep[0].plan5);
+        document.getElementById("result5").setAttribute('value',keep[0].result5);
+  
+        document.getElementById("plan6").setAttribute('value',keep[0].plan6);
+        document.getElementById("result6").setAttribute('value',keep[0].result6);
+  
+        document.getElementById("plan7").setAttribute('value',keep[0].plan7);
+        document.getElementById("result7").setAttribute('value',keep[0].result7);
+  
+        document.getElementById("plan8").setAttribute('value',keep[0].plan8);
+        document.getElementById("result8").setAttribute('value',keep[0].result8);
+  
+        document.getElementById("plan9").setAttribute('value',keep[0].plan9);
+        document.getElementById("result9").setAttribute('value',keep[0].result9);
+  
+        document.getElementById("plan10").setAttribute('value',keep[0].plan10);
+        document.getElementById("result10").setAttribute('value',keep[0].result10);
+  
+        document.getElementById("plan11").setAttribute('value',keep[0].plan11);
+        document.getElementById("result11").setAttribute('value',keep[0].result11);
+  
+        document.getElementById("plan12").setAttribute('value',keep[0].plan12);
+        document.getElementById("result12").setAttribute('value',keep[0].result12);
+
+
+    });
+        
+
+}
+
+</script>
+  
+
+
+
+<script>
+    pname.onchange = function(event){
+    
+    axios
+    .get("/budget-data/"+year.value)
+    .then((response) => {
+    
+        // ลบรายการค่าใช้จ่าย
+        for(i= plist.length+1; i>=0 ; i--){
+            let pname = document.getElementById('plist')
+            plist.remove(i)
+        }
+
+
+        //เพิ่มรายการค่าใช้จ่ายใน array  
+        let projectlist = []
+        for(i of response.data.data){
+            if(pname.value == i.projectname){
+             if(projectlist.includes(i.projectlist)){
+
+             }else{
+                projectlist.push(i.projectlist)
+             }
+            }
+        }
+
+    
+        //เพิ่มรายการค่าใช้จ่ายใน OPTIONS
+        let x = 0
+        for(i of projectlist){
+        let adder = document.createElement('option')
+            adder.text = i
+            plist.add(adder, x)
+            x = x+1
+        }
+
+
+        //ดึงข้อมูลใส่ฟอร์ม
+        let keep = [0]
+        let factor = 0
+        for(i of response.data.data){
+            if(i.projectname == pname.value && i.projectlist == plist.value){
+                if(i.edited >= factor){
+                    factor = i.edited
+                    keep.fill(i)
+                }
+            }
+        }
+     
+        console.log(keep[0].plan1)
+
+        
+        
+        let plan="plan"
+        let result="result"
+ 
+        document.getElementById("plan1").setAttribute('value',keep[0].plan1);
+        document.getElementById("result1").setAttribute('value',keep[0].result1);
+  
+        document.getElementById("plan2").setAttribute('value',keep[0].plan2);
+        document.getElementById("result2").setAttribute('value',keep[0].result2);
+  
+        document.getElementById("plan3").setAttribute('value',keep[0].plan3);
+        document.getElementById("result3").setAttribute('value',keep[0].result3);
+  
+        document.getElementById("plan4").setAttribute('value',keep[0].plan4);
+        document.getElementById("result4").setAttribute('value',keep[0].result4);
+  
+        document.getElementById("plan5").setAttribute('value',keep[0].plan5);
+        document.getElementById("result5").setAttribute('value',keep[0].result5);
+  
+        document.getElementById("plan6").setAttribute('value',keep[0].plan6);
+        document.getElementById("result6").setAttribute('value',keep[0].result6);
+  
+        document.getElementById("plan7").setAttribute('value',keep[0].plan7);
+        document.getElementById("result7").setAttribute('value',keep[0].result7);
+  
+        document.getElementById("plan8").setAttribute('value',keep[0].plan8);
+        document.getElementById("result8").setAttribute('value',keep[0].result8);
+  
+        document.getElementById("plan9").setAttribute('value',keep[0].plan9);
+        document.getElementById("result9").setAttribute('value',keep[0].result9);
+  
+        document.getElementById("plan10").setAttribute('value',keep[0].plan10);
+        document.getElementById("result10").setAttribute('value',keep[0].result10);
+  
+        document.getElementById("plan11").setAttribute('value',keep[0].plan11);
+        document.getElementById("result11").setAttribute('value',keep[0].result11);
+  
+        document.getElementById("plan12").setAttribute('value',keep[0].plan12);
+        document.getElementById("result12").setAttribute('value',keep[0].result12);
+
+    });
+        
+   
+
+
+      }
+</script>
+
+
+
+
+<script>
+     plist.onchange = function(event){
+
+
+        axios
+        .get("/budget-data/"+year.value)
+        .then((response) => {
+
+        //ดึงข้อมูลใส่ฟอร์ม
+        let keep = [0]
+        let factor = 0
+        for(i of response.data.data){
+            if(i.projectname == pname.value && i.projectlist == plist.value){
+                if(i.edited >= factor){
+                    factor = i.edited
+                    keep.fill(i)
+                }
+            }
+        }
+     
+        console.log(keep[0].plan1)
+
+        
+        
+        let plan="plan"
+        let result="result"
+ 
+        document.getElementById("plan1").setAttribute('value',keep[0].plan1);
+        document.getElementById("result1").setAttribute('value',keep[0].result1);
+  
+        document.getElementById("plan2").setAttribute('value',keep[0].plan2);
+        document.getElementById("result2").setAttribute('value',keep[0].result2);
+  
+        document.getElementById("plan3").setAttribute('value',keep[0].plan3);
+        document.getElementById("result3").setAttribute('value',keep[0].result3);
+  
+        document.getElementById("plan4").setAttribute('value',keep[0].plan4);
+        document.getElementById("result4").setAttribute('value',keep[0].result4);
+  
+        document.getElementById("plan5").setAttribute('value',keep[0].plan5);
+        document.getElementById("result5").setAttribute('value',keep[0].result5);
+  
+        document.getElementById("plan6").setAttribute('value',keep[0].plan6);
+        document.getElementById("result6").setAttribute('value',keep[0].result6);
+  
+        document.getElementById("plan7").setAttribute('value',keep[0].plan7);
+        document.getElementById("result7").setAttribute('value',keep[0].result7);
+  
+        document.getElementById("plan8").setAttribute('value',keep[0].plan8);
+        document.getElementById("result8").setAttribute('value',keep[0].result8);
+  
+        document.getElementById("plan9").setAttribute('value',keep[0].plan9);
+        document.getElementById("result9").setAttribute('value',keep[0].result9);
+  
+        document.getElementById("plan10").setAttribute('value',keep[0].plan10);
+        document.getElementById("result10").setAttribute('value',keep[0].result10);
+  
+        document.getElementById("plan11").setAttribute('value',keep[0].plan11);
+        document.getElementById("result11").setAttribute('value',keep[0].result11);
+  
+        document.getElementById("plan12").setAttribute('value',keep[0].plan12);
+        document.getElementById("result12").setAttribute('value',keep[0].result12);
+  
+
+        
+        })
+  
+
+    
+    }
+
+
+</script>
+</html>

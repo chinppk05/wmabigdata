@@ -5,14 +5,19 @@ const mwadata = models.mwadata
 const pcddata = models.pcddata
 const ridcpdata = models.ridcpdata
 const ridtcdata = models.ridtcdata
+const userdata = models.userdata
+const budgetdata = models.budgetdata
+const stationdata = models.stationdata
+const monthlydata = models.monthlydata
 
 const express = require('express')
 const ejs = require('ejs')
 const bodyParser = require('body-parser')
 const app = express()
 const path = require('path')
+const { redirect } = require('express/lib/response')
 const PORT = process.env.PORT ||  8080
-
+const bcrypt = require('bcrypt');
 
 app.use(express.static('public'))
 app.use('/pdf',express.static(__dirname+'/node_modules'))
@@ -109,6 +114,349 @@ app.get('/form-edit', (request, response) => {
 })
 
 ///////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+///////////////////////////////////// Authen /////////////////////////////////////////
+
+app.get('/register', (request, response) => {
+    response.render('register')
+})
+
+app.get('/login', (request, response) => {
+    response.render('authen02',{ message : "ข้อมูลไม่ถูกต้อง กรุณาทำการสมัครสมาชิก"})
+})
+
+app.post('/auth/register', async (request, response) => {
+  const { username, password } = request.body
+
+  //simple validation
+  if ( !username || !password) {
+      return response('register',{ message : "ข้อมูลไม่ถูกต้อง กรุณาทำการสมัครสมาชิก"})
+  }
+
+  const passwordHash = bcrypt.hashSync(password, 10);
+  const user = new userdata({
+      username,
+      password: passwordHash
+  });
+  console.log(user)
+  await user.save();
+  response.render('index' , {user});
+});
+
+
+app.post('/wma-authen', async (req, res) => {
+    const { username, password } = req.body;
+  
+    if (!username || !password){
+        return res.render('authen02',{ message : "ข้อมูลไม่ถูกต้อง กรุณาทำการสมัครสมาชิก"})
+    }
+    const user = await userdata.findOne({
+      username
+    });
+  
+    if (user) {
+        const isCorrect = bcrypt.compareSync(password, user.password);
+
+        if(isCorrect){
+            return res.render('employee',{user});
+        } else {
+            return res.render('authen02', {message :' Username หรือ Password ผิดพลาด'});
+        }
+    } else {
+        return res.render('authen02', {message :'ไม่พบ Username ดังกล่าว'});
+    }
+ });
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////// หน้าพนักงาน ///////////////////////////////
+
+
+app.get('/wma-manage', (request, response) => {
+    response.render('employee')
+})
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////// หน้าน้ำออก ///////////////////////////////
+
+
+
+app.get('/onestation-data/:year/:id', (request, response) => {
+    var year = request.params.year
+    var id = request.params.id
+
+    monthlydata
+    .find()
+    .where('year').equals(year)
+    .where('stationid').equals(id)
+    .select('stationid year month treated_water')
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+
+app.get('/allstation-data', (request, response) => {
+  
+    stationdata
+    .find()
+    .where('number').lt(100)
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+
+
+
+
+app.all('/treated-water', (request, response) => {
+    //ถ้าเปิดพาธนี้โดยไม่ได้โพสข้อมูลเข้ามา ให้แสดงฟอร์มรับข้อมูล
+      if(!request.body.stationid){
+        response.render('water-out')      
+      } else {
+            
+            console.log(request.body)
+            let form = request.body
+            let stack = [form.m1,form.m2,form.m3,form.m4,form.m5,form.m6,form.m7,
+            form.m8,form.m9,form.m10,form.m11,form.m12]
+
+            let alldata = []
+            console.log("stack :"+stack)
+            for (i=0; i< stack.length ; i++){
+                let data = {
+                    stationid : form.stationid ,
+                    year: form.year ,
+                    month : i,
+                    treated_water : stack[i] || '',
+                    timestamp: new Date(),        
+                }  
+                alldata.concat(data)
+
+                if(stack[i] != ""){
+                    monthlydata.create(data, err =>{
+                        if(!err){
+                            console.log("yesss")
+                        }
+                    })
+                }
+            
+            }
+            stack = []
+            console.log("complete!!")
+            response.render('water-out') 
+       
+
+      }          
+})
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////____________budget_____________________//////////////////////////////////////////////
+
+
+
+app.all('/budget-add', (request, response) => {
+    //ถ้าเปิดพาธนี้โดยไม่ได้โพสข้อมูลเข้ามา ให้แสดงฟอร์มรับข้อมูล
+      if(!request.body.pname){
+        response.render('budget-add')      
+      } else {
+            
+            console.log(request.body)
+            let form = request.body
+            let stack = [form.plist1,form.plist2,form.plist3,form.plist4,form.plist5]
+            let alldata = []
+            console.log("stack :"+stack)
+            for (i=0; i<5; i++){
+                let data = {
+                    projectname: form.pname || '',
+                    projectlist: stack[i] || '',
+                    year: form.year ,
+                    username: 'tester',
+                    edited: 0,
+                    timestamp: new Date(),
+                    plan1: 0,
+                    plan2: 0,
+                    plan3: 0,
+                    plan4: 0,
+                    plan5: 0,
+                    plan6: 0,
+                    plan7: 0,
+                    plan8: 0,
+                    plan9: 0,
+                    plan10: 0,
+                    plan11: 0,
+                    plan12: 0,
+                    result1: 0,
+                    result2: 0,
+                    result3: 0,
+                    result4: 0,
+                    result5: 0,
+                    result6: 0,
+                    result7: 0,
+                    result8: 0,
+                    result9: 0,
+                    result10: 0,
+                    result11: 0,
+                    result12: 0,
+                }  
+                alldata.concat(data)
+
+                if(stack[i] != ""){
+                    budgetdata.create(data, err =>{
+                        if(!err){
+                            console.log("yesss")
+                        }
+                    })
+                }
+            
+            }
+            let eiei = 'eiei'
+            console.log("complete!!")
+            response.redirect('/budget-edit')  
+       
+
+      }          
+})
+
+
+app.all('/budget-edit', (request, response) => {
+    //ถ้าเปิดพาธนี้โดยไม่ได้โพสข้อมูลเข้ามา ให้แสดงฟอร์มแก้ไขข้อมูลพื้นฐาน
+      if(!request.body.pname){
+          
+        var d = new Date();
+        var n = d.getDate();
+        var m = d.getMonth();
+        var h = d.getHours();
+        var y = d.getFullYear();
+
+        budgetdata
+        .find()
+        .where('year').equals(y+543)
+        .exec((err, docs) => {
+        response.render('budget-edited', {
+            data: docs || ''  
+            
+        })
+    })
+       
+    } else {
+
+            var d = new Date();
+            var n = d.getDate();
+            var m = d.getMonth();
+            var h = d.getHours();
+            var y = d.getFullYear();
+            
+            console.log(request.body)
+            let form = request.body
+            
+            budgetdata
+            .find().sort('-edited')
+            .where('year').equals(form.year)
+            .where('projectname').equals(form.pname)
+            .where('projectlist').equals(form.plist)
+            .exec((err, docs) => {  
+
+            console.log(docs[0]._id)
+            console.log(docs[0].projectname)
+            console.log(docs[0].projectlist)
+            console.log(docs[0].edited)
+
+            let data = {
+                projectname: form.pname || '',
+                projectlist: form.plist || '',
+                year: form.year ,
+                username: 'tester',
+                edited: docs[0].edited+1 ,
+                timestamp: new Date(),
+                plan1: form.plan1,
+                plan2: form.plan2,
+                plan3: form.plan3,
+                plan4: form.plan4,
+                plan5: form.plan5,
+                plan6: form.plan6,
+                plan7: form.plan7,
+                plan8: form.plan8,
+                plan9: form.plan9,
+                plan10: form.plan10,
+                plan11: form.plan11,
+                plan12: form.plan12,
+                result1: form.result1,
+                result2: form.result2,
+                result3: form.result3,
+                result4: form.result4,
+                result5: form.result5,
+                result6: form.result6,
+                result7: form.result7,
+                result8: form.result8,
+                result9: form.result9,
+                result10: form.result10,
+                result11: form.result11,
+                result12: form.result12,
+            }  
+            
+            budgetdata.create(data, err =>{
+                if(!err){
+                    console.log("yesss")
+                }
+            })
+
+            
+        
+        })
+            
+           
+             
+            console.log("complete!!")
+            response.redirect('/budget-edit')  
+       
+
+      }
+
+            
+})
+
+
+
+
+
+app.get('/budget-data/:year', (request, response) => {
+    var year = request.params.year
+
+    budgetdata
+    .find()
+    .where('year').equals(year)
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+
 
 
 
@@ -243,8 +591,8 @@ app.get('/wma-station/:id', (request, response) => {
     wmadata
     .find()
     .where('level1_approval').equals(stationNo)
-    .where('month').equals(4)
-    .where('day').equals(4)
+    .where('month').equals(5)
+    .where('day').equals(5)
     .exec((err, docs) => {
         response.render('at-wma', {
             data: docs
@@ -257,7 +605,7 @@ app.get('/wma-data/:id', (request, response) => {
     wmadata
     .find()
     .where('level1_approval').equals(stationNo)
-    .where('month').equals(4)
+    .where('month').equals(5)
     .where('year').equals(2022)
     .exec((err, docs) => {
         response.json({
@@ -387,6 +735,8 @@ app.get('/totalwater-daily', (request, response) => {
     
 })
 
+
+
 app.get('/do-daily', (request, response) => {
     
     var d = new Date();
@@ -417,6 +767,8 @@ app.get('/do-daily', (request, response) => {
     })
     }
 })
+
+
 
 app.get('/all-daily', (request, response) => {
     
@@ -449,6 +801,8 @@ app.get('/all-daily', (request, response) => {
     
 })
 
+
+
 app.get('/all-year', (request, response) => {
     
     var d = new Date();
@@ -467,6 +821,8 @@ app.get('/all-year', (request, response) => {
     
    
 })
+
+
 
 app.get('/totalwater-monthly', (request, response) => {
     
@@ -496,6 +852,9 @@ app.get('/wma-month', (request, response) => {
         })
     })
 })
+
+
+
 
 
 app.get('/maps', (request, response) => {
