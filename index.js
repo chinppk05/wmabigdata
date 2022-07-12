@@ -190,15 +190,17 @@ app.get('/wma-manage', (request, response) => {
 
 
 
-app.get('/onestation-data/:year/:id', (request, response) => {
+app.get('/onestation-data/:year/:month/:id', (request, response) => {
     var year = request.params.year
     var id = request.params.id
+    var month = request.params.month
 
     monthlydata
-    .find()
+    .find().sort('date')
     .where('year').equals(year)
+    .where('month').equals(month)
     .where('stationid').equals(id)
-    .select('stationid year month treated_water')
+    .select('stationid year month date treated_water comment')
     .exec((err, docs) => {
         response.json({
             data: docs
@@ -229,33 +231,74 @@ app.all('/treated-water', (request, response) => {
             
             console.log(request.body)
             let form = request.body
-            let stack = [form.m1,form.m2,form.m3,form.m4,form.m5,form.m6,form.m7,
-            form.m8,form.m9,form.m10,form.m11,form.m12]
+            let stack = [form.dd1,form.dd2,form.dd3,form.dd4,form.dd5,form.dd6,form.dd7,form.dd8,form.dd9,form.dd10,
+                form.dd11,form.dd12,form.dd13,form.dd14,form.dd15,form.dd16,form.dd17,form.dd18,form.dd19,form.dd20,
+                form.dd21,form.dd22,form.dd23,form.dd24,form.dd25,form.dd26,form.dd27,form.dd28,form.dd29,form.dd30,form.dd31]
 
-            let alldata = []
-            console.log("stack :"+stack)
-            for (i=0; i< stack.length ; i++){
-                let data = {
-                    stationid : form.stationid ,
-                    year: form.year ,
-                    month : i,
-                    treated_water : stack[i] || '',
-                    timestamp: new Date(),        
-                }  
-                alldata.concat(data)
-
-                if(stack[i] != ""){
-                    monthlydata.create(data, err =>{
-                        if(!err){
-                            console.log("yesss")
-                        }
-                    })
-                }
             
-            }
-            stack = []
-            console.log("complete!!")
-            response.render('water-out') 
+            let ps_stack = [form.ps1,form.ps2,form.ps3,form.ps4,form.ps5,form.ps6,form.ps7,form.ps8,form.ps9,form.ps10,
+                form.ps11,form.ps12,form.ps13,form.ps14,form.ps15,form.ps16,form.ps17,form.ps18,form.ps19,form.ps20,
+                form.ps21,form.ps22,form.ps23,form.ps24,form.ps25,form.ps26,form.ps27,form.ps28,form.ps29,form.ps30,form.ps31]
+            monthlydata
+            .find()
+            .where('year').equals(form.year)
+            .where('month').equals(form.monthly)
+            .where('stationid').equals(form.stationid)
+            .exec((err, docs) => { 
+                let keep_date = []
+                console.log('docs ยาวว : '+docs.length)
+
+                for (i=0; i<docs.length; i++){
+                    keep_date.push(docs[i].date)
+                }
+                console.log('docs วันที่ : '+ keep_date)
+                
+                if (docs.length == 0){
+                    console.log('ไม่มีข้อมูลก่อนหน้า => ดำเนินการเพิ่มข้อมูล')
+                    for (i=0; i< stack.length ; i++){
+                        let data = {
+                            stationid : form.stationid ,
+                            year: form.year ,
+                            month : form.monthly,
+                            date: i+1,
+                            treated_water : stack[i] || '',
+                            timestamp: new Date(),
+                            edited: 0,
+                            editor: 'test',
+                            comment: ps_stack[i] ||''       
+                        }  
+        
+                        if(stack[i] != ""){
+                            monthlydata.create(data, err =>{
+                                if(!err){
+                                    console.log("เพิ่มข้อมูลเสร็จสิ้นรายการที่ : " + (i+1))
+                                }
+                            })
+                        }
+                    
+                    }
+                    stack = []
+                    console.log("complete!!")
+                    response.render('water-out') 
+
+                } else{
+                    console.log('มีข้อมูลก่อนหน้า => ดำเนินการแก้ไขข้อมูล')
+                                
+                    for(i=0; i< stack.length ; i++){
+                            const query = { year: form.year, month: form.monthly,date: i+1, stationid: form.stationid};
+                            const update = { $set: { treated_water: stack[i], comment: ps_stack[i] , edited: docs[0].edited+1, timestamp:new Date(),}};
+                            const options = {};
+                            monthlydata.updateOne(query, update, function(err,res){
+                                if(err) throw err;
+                                console.log('Update' + i)
+                            });
+                    }
+
+                    response.render('water-out') 
+                }
+            })
+
+      
        
 
       }          

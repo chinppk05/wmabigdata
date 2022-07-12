@@ -179,8 +179,12 @@ const monthlydataSchema = new mongoose.Schema({
     "stationid" : Number,
     "year": Number,
     "month" : Number,
+    "date" : Number,
     "treated_water" : Number,
-    "timestamp": Date
+    "timestamp": Date,
+    "edited":Number,
+    "editor":String,
+    "comment":String
     
 })
 
