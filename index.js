@@ -18,7 +18,7 @@ const path = require('path')
 const { redirect } = require('express/lib/response')
 const PORT = process.env.PORT ||  8080
 //const bcrypt = require('bcrypt');
-const bcrypt = require('../app.js').bcrypt
+const bcrypt = require('../index.js').bcrypt
 
 app.use(express.static('public'))
 app.use('/pdf',express.static(__dirname+'/node_modules'))
