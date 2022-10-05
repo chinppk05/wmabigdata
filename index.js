@@ -17,8 +17,8 @@ const app = express()
 const path = require('path')
 const { redirect } = require('express/lib/response')
 const PORT = process.env.PORT ||  8080
-//const bcrypt = require('bcrypt');
-const bcrypt = require('/app/index.js').bcrypt
+const bcrypt = require('bcrypt');
+//const bcrypt = require('/app/index.js').bcrypt
 
 app.use(express.static('public'))
 app.use('/pdf',express.static(__dirname+'/node_modules'))
@@ -214,6 +214,23 @@ app.get('/allstation-data', (request, response) => {
     stationdata
     .find()
     .where('number').lt(100)
+    .exec((err, docs) => {
+        response.json({
+            data: docs
+        })
+    })
+})
+
+app.get('/water-thismonth', (request, response) => {
+    var d = new Date();
+    var year =  d.getFullYear();
+    var month = d.getMonth();
+  
+    wmadata
+    .find()
+    .select('level2_approval day month year')
+    .where('year').equals(year)
+    .where('month').equals(month+1)
     .exec((err, docs) => {
         response.json({
             data: docs
@@ -869,14 +886,16 @@ app.get('/all-year', (request, response) => {
 
 
 app.get('/totalwater-monthly', (request, response) => {
-    
     var d = new Date();
-    var n = d.getDate();
+    var year =  d.getFullYear();
+    var month = d.getMonth();
+
 
     wmadata
     .find()
-    .select('treated_water day')
-    .where('month').equals(d.getMonth()+1)
+    .select('level2_approval treated_water day month year')
+    .where('month').equals(month+1)
+    .where('year').equals(year)
     .exec((err, docs) => { response.json({
         data: docs
         })
@@ -1098,5 +1117,5 @@ app.all('*', (req, res) => {
     res.status(500).send('<h1>404! Page not found</h1>');
 });
     
-app.listen(PORT, () => console.log('Server started on port: 3000'))
+app.listen(PORT, () => console.log('Server started on port: 8080'))
 

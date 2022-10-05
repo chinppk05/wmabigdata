@@ -54,50 +54,107 @@
               
 
                <!-- Begin Page Content -->
+       
                <div class="container-fluid">
 
                    <!-- Page Heading -->
-          
-                   <div class="d-sm-flex align-items-center justify-content-between mb-4" >
-                    
-                        <h3>แผนการเบิกจ่ายงบลงทุน</h3>    
-                      
-              
-                   
-                     
-                   </div>
-                </div>
-                   
-               <div class="container-fluid">
-
-                   <!-- Page Heading -->
-          
+        
            
-            
-     
-                   </div>
                    
                    <div class="container">
                     <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-                    <div class="row">
-                      <div class="col-xl-6 col-md-6">
-                            <div class="d-flex flex-row bd-highlight mb-3">
-                                <h6 style="margin-top: 10px;">ปีงบประมาณ</h6> 
-                                <button type="button" class="btn btn-outline-primary rounded-pill" id="" style="margin-left: 15px;">2565</button>
-                                <button type="button" class="btn btn-outline-primary rounded-pill" id="" style="margin-left: 15px;">2566</button>
-                                <button type="button" class="btn btn-outline-primary rounded-pill" id="" style="margin-left: 15px;">2567</button>
-                            </div>
-                      </div>
-                      
-                     
+                
+                   
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4" >
+                      <h3>แผนการเบิกจ่ายงบลงทุน</h3>    
                     </div>
+
                    
-                   
-                <br>
-            
-                   
-                   <!-- Content Row -->
-                   <div class="row">
+                <div class="card shadow mb-4">
+                  <div class="container">
+                    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                        <div class="row" style="padding-top: 20px;">
+
+                            <div class="col-xl-2 col-md-4">
+                                <div class="d-flex flex-row bd-highlight mb-3">
+                                    
+                                    <h5 style="margin-top: 10px;">ปีงบประมาณ</h5> 
+                                 
+                                </div>
+                            </div>
+
+
+                            <div class="col-xl-2 col-md-4">
+                              
+                                <div class="mb-3">
+                                        <select class="form-select" aria-label="Default select example" name="year" id="year" >
+                                        <option value="2564" >2564</option>
+                                        <option value="2565" selected>2565</option>
+                                        <option value="2566">2566</option>
+                                                                                 
+                                        </select>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="container">
+                        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                            <div class="row">
+                                <div class="col-xl-2 col-md-4">
+                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                        <h5 style="margin-top: 10px;">ชื่อโครงการ</h5> 
+                                     
+                                    </div>
+                                </div>
+                                <div class="col-xl-10 col-md-6">
+                                  
+                                    <div class="mb-3">
+                                            <select class="form-select" aria-label="Default select example" name="pname" id="pname">
+                                            <option value="2565" selected>โครงการ A</option>
+                                            <option value="2566">โครงการ B</option>
+                                            <option value="2567">โครงการ C</option>
+                                            <option value="2568">โครงการ D</option>
+                                            <option value="2569">โครงการ E</option>
+                                            <option value="2570">โครงการ C</option>
+                           
+                                        
+
+
+                                            </select>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="container">
+                            <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                <div class="row">
+                                    <div class="col-xl-2 col-md-4">
+                                        <div class="d-flex flex-row bd-highlight mb-3">
+                                            <h5 style="margin-top: 10px;">รายการค่าใช้จ่าย</h5> 
+                                         
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-10 col-md-6">
+                                      
+                                        <div class="mb-3">
+                                                <select class="form-select" aria-label="Default select example" name="plist"  id="plist">
+                                                <option value="2565" selected>ค่าใช้จ่าย ก</option>
+                                                <option value="2566">ค่าใช้จ่าย ข</option>
+                                                <option value="2567">ค่าใช้จ่าย ค</option>                                         
+                                                </select>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                
+
+                </div> <!-- นี่ปิด -->
+              
 
                     
 
@@ -115,33 +172,33 @@
                                 <thead class="table-secondary">
                                   <tr>
                                     <th scope="col"></th>
-                                    <th scope="col">มกราคม</th>
-                                    <th scope="col">กุมภาพันธ์</th>
-                                    <th scope="col">มีนาคม</th>
+                                    <th scope="col">ตุลาคม</th>
+                                    <th scope="col">พฤศจิกายน</th>
+                                    <th scope="col">ธันวาคม</th>
                                     <th scope="col">ไตรมาสที่ 1</th>
                                   </tr>
                                 </thead>
                                 <tbody style="background-color: white;">
                                   <tr>
                                     <th scope="row">แผนเบิก</th>
-                                    <td>1,000,000</td>
-                                    <td>1,000,000</td>
-                                    <td>1,000,000</td>
-                                    <td>3,000,000</td>
+                                    <td id="plan1">0</td>
+                                    <td id="plan2">0</td>
+                                    <td id="plan3">0</td>
+                                    <td id="plan-p1">0</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">ผลใช้</th>
-                                    <td>900,000</td>
-                                    <td>950,000</td>
-                                    <td>1,050,000</td>
-                                    <td>2,900,000</td>
+                                    <td id="result1">0</td>
+                                    <td id="result2">0</td>
+                                    <td id="result3">0</td>
+                                    <td id="result-p1">0</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">% ที่ได้</th>
-                                    <td >90 %</td>
-                                    <td>95 %</td>
-                                    <td>105 %</td>
-                                    <td>96.67 %</td>
+                                    <td id="rap1"> %</td>
+                                    <td id="rap2"> %</td>
+                                    <td id="rap3"> %</td>
+                                    <td id="rap-p1"> %</td>
                            
                                   </tr>
                                 </tbody>
@@ -156,33 +213,33 @@
                                 <thead class="table-secondary">
                                   <tr>
                                     <th scope="col"></th>
-                                    <th scope="col">เมษายน</th>
-                                    <th scope="col">พฤษภาคม</th>
-                                    <th scope="col">มิถุนายน</th>
+                                    <th scope="col">มกราคม</th>
+                                    <th scope="col">กุมภาพันธ์</th>
+                                    <th scope="col">มีนาคม</th>
                                     <th scope="col">ไตรมาสที่ 2</th>
                                   </tr>
                                 </thead>
                                 <tbody style="background-color: white;">
                                   <tr>
                                     <th scope="row">แผนเบิก</th>
-                                    <td>1,000,000</td>
-                                    <td>1,000,000</td>
-                                    <td>1,000,000</td>
-                                    <td>3,000,000</td>
+                                    <td id="plan4">0</td>
+                                    <td id="plan5">0</td>
+                                    <td id="plan6">0</td>
+                                    <td id="plan-p2">0</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">ผลใช้</th>
-                                    <td>900,000</td>
-                                    <td>950,000</td>
-                                    <td>1,050,000</td>
-                                    <td>2,900,000</td>
+                                    <td id="result4">9</td>
+                                    <td id="result5">0</td>
+                                    <td id="result6">0</td>
+                                    <td id="result-p2">0</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">% ที่ได้</th>
-                                    <td >90 %</td>
-                                    <td>95 %</td>
-                                    <td>105 %</td>
-                                    <td>96.67 %</td>
+                                    <td id="rap4"> %</td>
+                                    <td id="rap5"> %</td>
+                                    <td id="rap6"> %</td>
+                                    <td id="rap-p2"> %</td>
                            
                                   </tr>
                                 </tbody>
@@ -203,33 +260,33 @@
                                 <thead class="table-secondary">
                                   <tr>
                                     <th scope="col"></th>
-                                    <th scope="col">กรกฏาคม</th>
-                                    <th scope="col">สิงหาคม</th>
-                                    <th scope="col">กันยายน</th>
+                                    <th scope="col">เมษายน</th>
+                                    <th scope="col">พฤษภาคม</th>
+                                    <th scope="col">มิถุนายน</th>
                                     <th scope="col">ไตรมาสที่ 3</th>
                                   </tr>
                                 </thead>
                                 <tbody style="background-color: white;">
                                   <tr>
                                     <th scope="row">แผนเบิก</th>
-                                    <td>1,000,000</td>
-                                    <td>1,000,000</td>
-                                    <td>1,000,000</td>
-                                    <td>3,000,000</td>
+                                    <td id="plan7">0</td>
+                                    <td id="plan8">0</td>
+                                    <td id="plan9">0</td>
+                                    <td id="plan-p3">0</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">ผลใช้</th>
-                                    <td>900,000</td>
-                                    <td>950,000</td>
-                                    <td>1,050,000</td>
-                                    <td>2,900,000</td>
+                                    <td id="result7">0</td>
+                                    <td id="result8">0</td>
+                                    <td id="result9">0</td>
+                                    <td id="result-p3">0</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">% ที่ได้</th>
-                                    <td >90 %</td>
-                                    <td>95 %</td>
-                                    <td>105 %</td>
-                                    <td>96.67 %</td>
+                                    <td id="rap7"> %</td>
+                                    <td id="rap8"> %</td>
+                                    <td id="rap9"> %</td>
+                                    <td id="rap-p3"> %</td>
                            
                                   </tr>
                                 </tbody>
@@ -244,33 +301,33 @@
                                 <thead class="table-secondary">
                                   <tr>
                                     <th scope="col"></th>
-                                    <th scope="col">ตุลาคม</th>
-                                    <th scope="col">พฤศจิกายน</th>
-                                    <th scope="col">ธันวาคม</th>
+                                    <th scope="col">กรกฏาคม</th>
+                                    <th scope="col">สิงหาคม</th>
+                                    <th scope="col">กันยายน</th>
                                     <th scope="col">ไตรมาสที่ 4</th>
                                   </tr>
                                 </thead>
                                 <tbody style="background-color: white;">
                                   <tr>
                                     <th scope="row">แผนเบิก</th>
-                                    <td>1,000,000</td>
-                                    <td>1,000,000</td>
-                                    <td>1,000,000</td>
-                                    <td>3,000,000</td>
+                                    <td id="plan10">0</td>
+                                    <td id="plan11">0</td>
+                                    <td id="plan12">0</td>
+                                    <td id="plan-p4">0</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">ผลใช้</th>
-                                    <td>900,000</td>
-                                    <td>950,000</td>
-                                    <td>1,050,000</td>
-                                    <td>2,900,000</td>
+                                    <td id="result10">0</td>
+                                    <td id="result11">0</td>
+                                    <td id="result12">0</td>
+                                    <td id="result-p4">0</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">% ที่ได้</th>
-                                    <td >90 %</td>
-                                    <td>95 %</td>
-                                    <td>105 %</td>
-                                    <td>96.67 %</td>
+                                    <td id="rap10"> %</td>
+                                    <td id="rap11"> %</td>
+                                    <td id="rap12"> %</td>
+                                    <td id="rap-p4"> %</td>
                            
                                   </tr>
                                 </tbody>
@@ -283,1253 +340,6 @@
                   
 
 
-
-                   <div class="row">              
-                      <!-- Area Chart -->
-                      <div class="col-xl-12 col-lg-12">
-                        <div class="accordion accordion-flush" id="accordionFlushExample">
-                          <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingOne">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                1. โครงการปรับปรุงและเพิ่มประสิทธิภาพระบบบำบัดน้ำเสีย
-                                  พื้นที่โครงการอันเนื่องมาจากพระราชดำริ เทศบาลเมืองปากพนัง
-                                  บริเวณหลังเรือนจำ จังหวัดนครศรีธรรมราช
-
-                              </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body table-responsive">
-                            
-                                <table class="table">
-                                  <thead class="table">
-                                    <tr>
-                                      
-                                      <th scope="col" >รายการงบประมาณ  </th>
-                                      <th scope="col"></th>
-                                      <th scope="col">ต.ค. 64</th>
-                                      <th scope="col">พ.ย. 64</th>
-                                      <th scope="col">ธ.ค. 64</th>
-                                      <th scope="col">ม.ค. 65</th>
-                                      <th scope="col">ก.พ. 65</th>
-                                      <th scope="col">มี.ค. 65</th>
-                                      <th scope="col">เม.ย. 65</th>
-                                      <th scope="col">พ.ค. 65</th>
-                                      <th scope="col">มิ.ย. 65</th>
-                                      <th scope="col">ก.ค. 65</th>
-                                      <th scope="col">ส.ค. 65</th>
-                                      <th scope="col">ก.ย. 65</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody style="background-color: white;">
-
-                                    <tr>
-                                      <td rowspan="3">1. ค่าก่อสร้าง</td>
-                                      <th scope="row">แผนเบิก</th>
-                                      <td>100,000,000.00</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                     
-                                    </tr>
-                                    <tr>
-                           
-                                      <th scope="row">ผลใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                      
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                    
-                                    <tr>
-                                      <td rowspan="3">2. ที่ปรึกษา</td>
-                                      <th scope="row">แผนเบิก</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">ผลใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                   
-                                    <tr>
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                            </div>
-                          </div>
-
-
-                          <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingTwo">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                2. โครงการก่อสร้างศูนย์บริหารจัดการคุณภาพน้ำ องค์การบริหารส่วนตำบลลำโพ จังหวัดนนทบุรี
-                              </button>
-                            </h2>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body table-responsive">
-                                <table class="table">
-                                  <thead class="table">
-                                    <tr>
-                                      
-                                      <th scope="col" >รายการงบประมาณ  </th>
-                                      <th scope="col"></th>
-                                      <th scope="col">ต.ค. 64</th>
-                                      <th scope="col">พ.ย. 64</th>
-                                      <th scope="col">ธ.ค. 64</th>
-                                      <th scope="col">ม.ค. 65</th>
-                                      <th scope="col">ก.พ. 65</th>
-                                      <th scope="col">มี.ค. 65</th>
-                                      <th scope="col">เม.ย. 65</th>
-                                      <th scope="col">พ.ค. 65</th>
-                                      <th scope="col">มิ.ย. 65</th>
-                                      <th scope="col">ก.ค. 65</th>
-                                      <th scope="col">ส.ค. 65</th>
-                                      <th scope="col">ก.ย. 65</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody style="background-color: white;">
-
-                                    <tr>
-                                      <td rowspan="3">1. ค่าก่อสร้าง</td>
-                                      <th scope="row">แผนเบิก</th>
-                                      <td>100,000,000.00</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                     
-                                    </tr>
-                                    <tr>
-                           
-                                      <th scope="row">ผลใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                      
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                    
-                                    <tr>
-                                      <td rowspan="3">2. ที่ปรึกษา</td>
-                                      <th scope="row">แผนเบิก</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">ผลใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                   
-                                    <tr>
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                  </tbody>
-                                </table> 
-                              </div>
-                            </div>
-                          </div>
-
-
-
-                          <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingTwo">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                3. โครงการก่อสร้างศูนย์บริหารจัดการคุณภาพน้ำ องค์การบริหารส่วนตำบลกำแพงแสน จังหวัดนครปฐม
-                              </button>
-                            </h2>
-                            <div id="flush-collapse3" class="accordion-collapse collapse" aria-labelledby="flush-heading3" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body table-responsive">
-                                <table class="table">
-                                  <thead class="table">
-                                    <tr>
-                                      
-                                      <th scope="col" >รายการงบประมาณ  </th>
-                                      <th scope="col"></th>
-                                      <th scope="col">ต.ค. 64</th>
-                                      <th scope="col">พ.ย. 64</th>
-                                      <th scope="col">ธ.ค. 64</th>
-                                      <th scope="col">ม.ค. 65</th>
-                                      <th scope="col">ก.พ. 65</th>
-                                      <th scope="col">มี.ค. 65</th>
-                                      <th scope="col">เม.ย. 65</th>
-                                      <th scope="col">พ.ค. 65</th>
-                                      <th scope="col">มิ.ย. 65</th>
-                                      <th scope="col">ก.ค. 65</th>
-                                      <th scope="col">ส.ค. 65</th>
-                                      <th scope="col">ก.ย. 65</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody style="background-color: white;">
-
-                                    <tr>
-                                      <td rowspan="3">1. ค่าก่อสร้าง</td>
-                                      <th scope="row">แผนเบิก</th>
-                                      <td>100,000,000.00</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                     
-                                    </tr>
-                                    <tr>
-                           
-                                      <th scope="row">ผลใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                      
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                    
-                                    <tr>
-                                      <td rowspan="3">2. ที่ปรึกษา</td>
-                                      <th scope="row">แผนเบิก</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">ผลใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                   
-                                    <tr>
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                  </tbody>
-                                </table> 
-                              </div>
-                            </div>
-                          </div>
-
-
-
-                          <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-heading4">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
-                                4. โครงการก่อสร้างศูนย์บริหารจัดการคุณภาพน้ำ เทศบาลเมืองแพรกษา จังหวัดสมุทรปราการ
-                              </button>
-                            </h2>
-                            <div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-heading4" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body table-responsive">
-                                <table class="table">
-                                  <thead class="table">
-                                    <tr>
-                                      
-                                      <th scope="col" >รายการงบประมาณ  </th>
-                                      <th scope="col"></th>
-                                      <th scope="col">ต.ค. 64</th>
-                                      <th scope="col">พ.ย. 64</th>
-                                      <th scope="col">ธ.ค. 64</th>
-                                      <th scope="col">ม.ค. 65</th>
-                                      <th scope="col">ก.พ. 65</th>
-                                      <th scope="col">มี.ค. 65</th>
-                                      <th scope="col">เม.ย. 65</th>
-                                      <th scope="col">พ.ค. 65</th>
-                                      <th scope="col">มิ.ย. 65</th>
-                                      <th scope="col">ก.ค. 65</th>
-                                      <th scope="col">ส.ค. 65</th>
-                                      <th scope="col">ก.ย. 65</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody style="background-color: white;">
-
-                                    <tr>
-                                      <td rowspan="3">1. ค่าก่อสร้าง</td>
-                                      <th scope="row">แผนเบิก</th>
-                                      <td>100,000,000.00</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                     
-                                    </tr>
-                                    <tr>
-                           
-                                      <th scope="row">ผลใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                      
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                    
-                                    <tr>
-                                      <td rowspan="3">2. ที่ปรึกษา</td>
-                                      <th scope="row">แผนเบิก</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">ผลใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                   
-                                    <tr>
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                  </tbody>
-                                </table> 
-                              </div>
-                            </div>
-                          </div>
-
-
-                          <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-heading5">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
-                                5. โครงการก่อสร้างและเพิ่มประสิทธิภาพการบริหารจัดการคุณภาพน้ำ เทศบาลเมืองราชบุรี จังหวัดราชบุรี
-                            </h2>
-                            <div id="flush-collapse5" class="accordion-collapse collapse" aria-labelledby="flush-heading5" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body table-responsive">
-                                <table class="table">
-                                  <thead class="table">
-                                    <tr>
-                                      
-                                      <th scope="col" >รายการงบประมาณ  </th>
-                                      <th scope="col"></th>
-                                      <th scope="col">ต.ค. 64</th>
-                                      <th scope="col">พ.ย. 64</th>
-                                      <th scope="col">ธ.ค. 64</th>
-                                      <th scope="col">ม.ค. 65</th>
-                                      <th scope="col">ก.พ. 65</th>
-                                      <th scope="col">มี.ค. 65</th>
-                                      <th scope="col">เม.ย. 65</th>
-                                      <th scope="col">พ.ค. 65</th>
-                                      <th scope="col">มิ.ย. 65</th>
-                                      <th scope="col">ก.ค. 65</th>
-                                      <th scope="col">ส.ค. 65</th>
-                                      <th scope="col">ก.ย. 65</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody style="background-color: white;">
-
-                                    <tr>
-                                      <td rowspan="3">1. ค่าก่อสร้าง</td>
-                                      <th scope="row">แผนเบิก</th>
-                                      <td>100,000,000.00</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                     
-                                    </tr>
-                                    <tr>
-                           
-                                      <th scope="row">ผลใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                      
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                    
-                                    <tr>
-                                      <td rowspan="3">2. ที่ปรึกษา</td>
-                                      <th scope="row">แผนเบิก</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">ผลใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                   
-                                    <tr>
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                  </tbody>
-                                </table> 
-                              </div>
-                            </div>
-                          </div>
-
-
-
-
-                          <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-heading6">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse6" aria-expanded="false" aria-controls="flush-collapse6">
-                                6. โครงการก่อสร้างและเพิ่มประสิทธิภาพการบริหารจัดการคุณภาพน้ำ ในเขตพื้นที่จัดการน้ำเสีย เทศบาลนครสงขลา จังหวัดสงขลา ระยะที่ 1
-                              </button>
-                            </h2>
-                            <div id="flush-collapse6" class="accordion-collapse collapse" aria-labelledby="flush-heading6" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body table-responsive">
-                                <table class="table">
-                                  <thead class="table">
-                                    <tr>
-                                      
-                                      <th scope="col" >รายการงบประมาณ  </th>
-                                      <th scope="col"></th>
-                                      <th scope="col">ต.ค. 64</th>
-                                      <th scope="col">พ.ย. 64</th>
-                                      <th scope="col">ธ.ค. 64</th>
-                                      <th scope="col">ม.ค. 65</th>
-                                      <th scope="col">ก.พ. 65</th>
-                                      <th scope="col">มี.ค. 65</th>
-                                      <th scope="col">เม.ย. 65</th>
-                                      <th scope="col">พ.ค. 65</th>
-                                      <th scope="col">มิ.ย. 65</th>
-                                      <th scope="col">ก.ค. 65</th>
-                                      <th scope="col">ส.ค. 65</th>
-                                      <th scope="col">ก.ย. 65</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody style="background-color: white;">
-
-                                    <tr>
-                                      <td rowspan="3">1. ค่าก่อสร้าง</td>
-                                      <th scope="row">แผนเบิก</th>
-                                      <td>100,000,000.00</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                     
-                                    </tr>
-                                    <tr>
-                           
-                                      <th scope="row">ผลใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                      
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                    
-                                    <tr>
-                                      <td rowspan="3">2. ที่ปรึกษา</td>
-                                      <th scope="row">แผนเบิก</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">ผลใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                   
-                                    <tr>
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                  </tbody>
-                                </table> 
-                              </div>
-                            </div>
-                          </div>
-
-
-
-
-                          <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-heading7">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse7" aria-expanded="false" aria-controls="flush-collapse7">
-                                7. โครงการก่อสร้างและเพิ่มประสิทธิภาพระบบรวบรวมน้ำเสีย เทศบาลนครพิษณุโลก จังหวัดพิษณุโลก
-                              </button>
-                            </h2>
-                            <div id="flush-collapse7" class="accordion-collapse collapse" aria-labelledby="flush-heading7" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body table-responsive">
-                                <table class="table">
-                                  <thead class="table">
-                                    <tr>
-                                      
-                                      <th scope="col" >รายการงบประมาณ  </th>
-                                      <th scope="col"></th>
-                                      <th scope="col">ต.ค. 64</th>
-                                      <th scope="col">พ.ย. 64</th>
-                                      <th scope="col">ธ.ค. 64</th>
-                                      <th scope="col">ม.ค. 65</th>
-                                      <th scope="col">ก.พ. 65</th>
-                                      <th scope="col">มี.ค. 65</th>
-                                      <th scope="col">เม.ย. 65</th>
-                                      <th scope="col">พ.ค. 65</th>
-                                      <th scope="col">มิ.ย. 65</th>
-                                      <th scope="col">ก.ค. 65</th>
-                                      <th scope="col">ส.ค. 65</th>
-                                      <th scope="col">ก.ย. 65</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody style="background-color: white;">
-
-                                    <tr>
-                                      <td rowspan="3">1. ค่าก่อสร้าง</td>
-                                      <th scope="row">แผนเบิก</th>
-                                      <td>100,000,000.00</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                     
-                                    </tr>
-                                    <tr>
-                           
-                                      <th scope="row">ผลใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                      
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                    
-                                    <tr>
-                                      <td rowspan="3">2. ที่ปรึกษา</td>
-                                      <th scope="row">แผนเบิก</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">ผลใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                   
-                                    <tr>
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                  </tbody>
-                                </table> 
-                              </div>
-                            </div>
-                          </div>
-
-                          
-                          <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-heading8">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse8" aria-expanded="false" aria-controls="flush-collapse8">
-                                8. โครงการก่อสร้างและเพิ่มประสิทธิภาพระบบรวบรวมน้ำเสียเทศบาลเมืองพะเยา จังหวัดพะเยา
-                              </button>
-                            </h2>
-                            <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-heading8" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body table-responsive">
-                                <table class="table">
-                                  <thead class="table">
-                                    <tr>
-                                      
-                                      <th scope="col" >รายการงบประมาณ  </th>
-                                      <th scope="col"></th>
-                                      <th scope="col">ต.ค. 64</th>
-                                      <th scope="col">พ.ย. 64</th>
-                                      <th scope="col">ธ.ค. 64</th>
-                                      <th scope="col">ม.ค. 65</th>
-                                      <th scope="col">ก.พ. 65</th>
-                                      <th scope="col">มี.ค. 65</th>
-                                      <th scope="col">เม.ย. 65</th>
-                                      <th scope="col">พ.ค. 65</th>
-                                      <th scope="col">มิ.ย. 65</th>
-                                      <th scope="col">ก.ค. 65</th>
-                                      <th scope="col">ส.ค. 65</th>
-                                      <th scope="col">ก.ย. 65</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody style="background-color: white;">
-
-                                    <tr>
-                                      <td rowspan="3">1. ค่าก่อสร้าง</td>
-                                      <th scope="row">แผนเบิก</th>
-                                      <td>100,000,000.00</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                     
-                                    </tr>
-                                    <tr>
-                           
-                                      <th scope="row">ผลใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                      
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                    
-                                    <tr>
-                                      <td rowspan="3">2. ที่ปรึกษา</td>
-                                      <th scope="row">แผนเบิก</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">ผลใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                   
-                                    <tr>
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                  </tbody>
-                                </table> 
-                              </div>
-                            </div>
-                          </div>
-
-
-
-                          <div class="accordion-item">
-
-
-                          <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-heading9">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse9" aria-expanded="false" aria-controls="flush-collapse9">
-                                9. โครงการก่อสร้าง เพิ่มประสิทธิภาพระบบบำบัดน้ำเสีย ระบบท่อรวบรวมน้ำเสีย เกาะพีพี ตำบลอ่าวนาง จังหวัดกระบี่
-                              </button>
-                            </h2>
-                            <div id="flush-collapse9" class="accordion-collapse collapse" aria-labelledby="flush-heading9" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body table-responsive">
-                                <table class="table">
-                                  <thead class="table">
-                                    <tr>
-                                      
-                                      <th scope="col">งบประมาณ 100,000,000.00 </th>
-                                      <th scope="col"></th>
-                                      <th scope="col">ต.ค. 64</th>
-                                      <th scope="col">พ.ย. 64</th>
-                                      <th scope="col">ธ.ค. 64</th>
-                                      <th scope="col">ม.ค. 65</th>
-                                      <th scope="col">ก.พ. 65</th>
-                                      <th scope="col">มี.ค. 65</th>
-                                      <th scope="col">เม.ย. 65</th>
-                                      <th scope="col">พ.ค. 65</th>
-                                      <th scope="col">มิ.ย. 65</th>
-                                      <th scope="col">ก.ค. 65</th>
-                                      <th scope="col">ส.ค. 65</th>
-                                      <th scope="col">ก.ย. 65</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody style="background-color: white;">
-
-                                    <tr>
-                                      <td rowspan="3">1. ค่าก่อสร้าง 90,000,000.00</td>
-                                      <th scope="row">แผนการเบิก</th>
-                                      <td>100,000,000.00</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                      <td>100,000,000</td>
-                                     
-                                    </tr>
-                                    <tr>
-                           
-                                      <th scope="row">ผลการใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                      
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                    
-                                    <tr>
-                                      <td rowspan="3">2. ที่ปรึกษา 10,000,000.00</td>
-                                      <th scope="row">แผนการเบิก</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">ผลการใช้</th>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                      <td>900,000</td>
-                                      <td>950,000</td>
-                                      <td>1,050,000</td>
-                                      <td>2,900,000</td>
-                                    </tr>
-                                   
-                                    <tr>
-                                      <th scope="row">% ที่ได้</th>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                                      <td >90 %</td>
-                                      <td>95 %</td>
-                                      <td>105 %</td>
-                                      <td>96.67 %</td>
-                             
-                                    </tr>
-                                  </tbody>
-                                </table> 
-                              </div>
-                            </div>
-                          </div>
-
-
-                     </div>
-                   </div>
-
-                  
-                   
                    <div style="height: 50px;">
                      
                    </div>
@@ -1729,6 +539,750 @@
         myChart.setOption(option);
 
       </script>
+
+
+
+    <script>
+
+    function percent(p1, p2) {
+          if(p2 == 0){
+            return "-";
+          } else{
+            return (p1/p2)*100;
+          }
+        }
+    var d = new Date();
+    var thisyear =  d.getFullYear();
+
+    axios
+        .get("/budget-data/"+(thisyear+543))
+        .then((response) => {
+
+        console.log(response.data.data)
+
+        //จัดการข้อมูล
+        var alldata = response.data.data
+
+        // ต้องการชื่อโปรเจค
+        var pjname = []
+        var pjlist = []
+        var listvr = []
+        var thisresult = []
+        
+        for(i of alldata){
+            pjname.push(i.projectname)
+        }
+
+        // ตัดชื่อซ้ำ
+        let uniqueName = [...new Set(pjname)];
+
+        console.log(uniqueName)
+
+        
+        for(i of alldata){
+          if(i.projectname == uniqueName[0]){
+            pjlist.push(i.projectlist)
+          }
+        }
+
+        console.log(pjlist)
+        let uniqueList = [...new Set(pjlist)];
+        console.log(uniqueList)
+
+        for(i of alldata){
+          if(i.projectlist == uniqueList[0]){
+            listvr.push(i.edited)
+          }
+        }
+
+        listvr.sort();
+        listvr.reverse();
+        console.log(listvr);
+
+
+        for(i of alldata){
+          if((i.projectname == uniqueName[0]) && (i.projectlist == uniqueList[0]) &&  (i.edited == listvr[0])){
+            thisresult.push(i)
+          }
+        }
+
+        console.log(thisresult)
+      
+   
+        //var plan1 = document.getElementById('plan1')
+        document.getElementById("plan1").innerHTML = (thisresult[0].plan1).toLocaleString("en-US");
+        document.getElementById("result1").innerHTML = thisresult[0].result1.toLocaleString("en-US");
+
+        
+        document.getElementById("plan2").innerHTML = (thisresult[0].plan2).toLocaleString("en-US");
+        document.getElementById("result2").innerHTML = thisresult[0].result2.toLocaleString("en-US");
+
+        
+        document.getElementById("plan3").innerHTML = (thisresult[0].plan3).toLocaleString("en-US");
+        document.getElementById("result3").innerHTML = thisresult[0].result3.toLocaleString("en-US");
+
+        document.getElementById("plan4").innerHTML = (thisresult[0].plan4).toLocaleString("en-US");
+        document.getElementById("result4").innerHTML = thisresult[0].result4.toLocaleString("en-US");
+
+        document.getElementById("plan5").innerHTML = (thisresult[0].plan5).toLocaleString("en-US");
+        document.getElementById("result5").innerHTML = thisresult[0].result5.toLocaleString("en-US");
+
+        document.getElementById("plan6").innerHTML = (thisresult[0].plan6).toLocaleString("en-US");
+        document.getElementById("result6").innerHTML = thisresult[0].result6.toLocaleString("en-US");
+
+        document.getElementById("plan7").innerHTML = (thisresult[0].plan7).toLocaleString("en-US");
+        document.getElementById("result7").innerHTML = thisresult[0].result7.toLocaleString("en-US");
+
+        document.getElementById("plan8").innerHTML = (thisresult[0].plan8).toLocaleString("en-US");
+        document.getElementById("result8").innerHTML = thisresult[0].result8.toLocaleString("en-US");
+
+        document.getElementById("plan9").innerHTML = (thisresult[0].plan9).toLocaleString("en-US");
+        document.getElementById("result9").innerHTML = thisresult[0].result9.toLocaleString("en-US");
+
+        document.getElementById("plan10").innerHTML = (thisresult[0].plan10).toLocaleString("en-US");
+        document.getElementById("result10").innerHTML = thisresult[0].result10.toLocaleString("en-US");
+
+        document.getElementById("plan11").innerHTML = (thisresult[0].plan11).toLocaleString("en-US");
+        document.getElementById("result11").innerHTML = thisresult[0].result11.toLocaleString("en-US");
+
+        document.getElementById("plan12").innerHTML = (thisresult[0].plan12).toLocaleString("en-US");
+        document.getElementById("result12").innerHTML = thisresult[0].result12.toLocaleString("en-US");
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        
+        //////////////////////////////////////////////////////////////////////////////////////////
+
+        // % เปอร์เซ็น
+
+
+
+        document.getElementById("rap1").innerHTML = (percent(thisresult[0].result1,thisresult[0].plan1)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap2").innerHTML = (percent(thisresult[0].result2,thisresult[0].plan2)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap3").innerHTML = (percent(thisresult[0].result3,thisresult[0].plan3)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap4").innerHTML = (percent(thisresult[0].result4,thisresult[0].plan4)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap5").innerHTML = (percent(thisresult[0].result5,thisresult[0].plan5)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap6").innerHTML = (percent(thisresult[0].result6,thisresult[0].plan6)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap7").innerHTML = (percent(thisresult[0].result7,thisresult[0].plan7)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap8").innerHTML = (percent(thisresult[0].result8,thisresult[0].plan8)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap9").innerHTML = (percent(thisresult[0].result9,thisresult[0].plan9)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap10").innerHTML = (percent(thisresult[0].result10,thisresult[0].plan10)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap11").innerHTML = (percent(thisresult[0].result11,thisresult[0].plan11)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap12").innerHTML = (percent(thisresult[0].result12,thisresult[0].plan12)).toLocaleString("en-US")+ " %";
+        
+        var ree1 = thisresult[0].result1 + thisresult[0].result2 + thisresult[0].result3
+        var pee1 = thisresult[0].plan1 + thisresult[0].plan2 + thisresult[0].plan3
+
+        var ree2 = thisresult[0].result4 + thisresult[0].result5 + thisresult[0].result6
+        var pee2 = thisresult[0].plan4 + thisresult[0].plan5 + thisresult[0].plan6
+   
+        var ree3 = thisresult[0].result7 + thisresult[0].result8 + thisresult[0].result9
+        var pee3 = thisresult[0].plan7 + thisresult[0].plan8 + thisresult[0].plan9
+     
+        var ree4 = thisresult[0].result10 + thisresult[0].result11 + thisresult[0].result12
+        var pee4 = thisresult[0].plan10 + thisresult[0].plan11 + thisresult[0].plan12
+
+
+        document.getElementById("rap-p1").innerHTML = (percent(ree1,pee1)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap-p2").innerHTML = (percent(ree2,pee2)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap-p3").innerHTML = (percent(ree3,pee3)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap-p4").innerHTML = (percent(ree4,pee4)).toLocaleString("en-US")+ " %";
+   
+          // ไตรมาส
+        
+        document.getElementById("plan-p1").innerHTML = (pee1).toLocaleString("en-US");
+        document.getElementById("result-p1").innerHTML = ree1.toLocaleString("en-US");
+        
+        document.getElementById("plan-p2").innerHTML = (pee2).toLocaleString("en-US");
+        document.getElementById("result-p2").innerHTML = ree2.toLocaleString("en-US");
+        
+        document.getElementById("plan-p3").innerHTML = (pee3).toLocaleString("en-US");
+        document.getElementById("result-p3").innerHTML = ree3.toLocaleString("en-US");
+        
+        document.getElementById("plan-p4").innerHTML = (pee4).toLocaleString("en-US");
+        document.getElementById("result-p4").innerHTML = ree4.toLocaleString("en-US");
+        
+       
+
+        })
+  
+</script>
+
+
+
+
+<!-- ONCNAGE -->
+
+<script>
+  let year = document.getElementById('year')
+  let pname = document.getElementById('pname')
+  let plist = document.getElementById('plist')
+  
+  
+  
+  let pattern = /\//
+  let yearnumber = window.location.pathname;
+  let yep = yearnumber.split(pattern)
+  let idnaja = yep[2]
+  
+  const waterdaily = document.getElementById("daily");
+  
+  
+  const getdata = () => {
+    axios
+      
+      .get("/budget-data/"+year.value)
+      .then((response) => {
+        let store = []  
+          // เก็บข้อมูล ชื่อโปรเจคใน array
+        for(i of response.data.data){
+          if(store.includes(i.projectname)){
+              
+          }else{
+              store.push(i.projectname)
+          }
+        }
+  
+  
+  
+          // ลบรายการ select ของชื่อโปรเจค
+        for(i= pname.length+1; i>=0 ; i--){
+              let pname = document.getElementById('pname')
+              pname.remove(i)
+          }
+  
+          // เพิ่มข้อมูลรายการ ชื่อโปรเจค
+          let n = 0
+          for(i of store){
+          let adder = document.createElement('option')
+              adder.text = i
+              pname.add(adder, n)
+              n = n+1
+        }
+        
+          // ลบรายการค่าใช้จ่าย
+          for(i= plist.length+1; i>=0 ; i--){
+              let pname = document.getElementById('plist')
+              plist.remove(i)
+          }
+  
+  
+         //เพิ่มรายการค่าใช้จ่ายใน array  
+         let projectlist = []
+          for(i of response.data.data){
+              if(pname.value == i.projectname){
+                  if(projectlist.includes(i.projectlist)){
+  
+                  }else{
+                  projectlist.push(i.projectlist)
+               }
+              }
+          }
+  
+          console.log(projectlist)
+      
+          //เพิ่มรายการค่าใช้จ่ายใน OPTIONS
+          let x = 0
+          for(i of projectlist){
+          let adder = document.createElement('option')
+              adder.text = i
+              plist.add(adder, x)
+              x = x+1
+          }
+  
+  
+          //ดึงข้อมูลใส่ฟอร์ม
+          let keep = [0]
+          let factor = 0
+          for(i of response.data.data){
+              if(i.projectname == pname.value && i.projectlist == plist.value){
+                  if(i.edited >= factor){
+                      factor = i.edited
+                      keep.fill(i)
+                  }
+              }
+          }
+       
+          console.log(keep[0].plan1)
+  
+          /*
+          
+          let plan="plan"
+          let result="result"
+
+          document.getElementById("plan1").innerHTML = (keep[0].plan1).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].plan2).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].plan3).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].plan4).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].plan5).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].plan6).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].plan7).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].plan8).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].plan9).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].plan10).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].plan11).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].plan12).toLocaleString("en-US");
+
+          document.getElementById("plan1").innerHTML = (keep[0].result1).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].result2).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].result3).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].result4).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].result5).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].result6).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].result7).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].result8).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].result9).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].result10).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].result11).toLocaleString("en-US");
+          document.getElementById("plan1").innerHTML = (keep[0].result12).toLocaleString("en-US");
+         
+        
     
+  
+  */
+        
+    
+  
+  
+  
+  
+  
+      });
+  };
+  
+
+  /*getBtn.addEventListener("click", getdata);
+  */
+
+  getdata()
+  
+  </script>
+  
+  
+  
+  
+  
+  
+  <script>
+      year.onchange = function(event){
+          axios
+      
+      .get("/budget-data/"+year.value)
+      .then((response) => {
+        let store = []  
+          // เก็บข้อมูล ชื่อโปรเจคใน array
+        for(i of response.data.data){
+          if(store.includes(i.projectname)){
+              
+          }else{
+              store.push(i.projectname)
+          }
+        }
+  
+  
+  
+          // ลบรายการ select ของชื่อโปรเจค
+        for(i= pname.length+1; i>=0 ; i--){
+              let pname = document.getElementById('pname')
+              pname.remove(i)
+          }
+  
+          // เพิ่มข้อมูลรายการ ชื่อโปรเจค
+          let n = 0
+          for(i of store){
+          let adder = document.createElement('option')
+              adder.text = i
+              pname.add(adder, n)
+              n = n+1
+        }
+        
+           // ลบรายการค่าใช้จ่าย
+           for(i= plist.length+1; i>=0 ; i--){
+              let pname = document.getElementById('plist')
+              plist.remove(i)
+          }
+  
+  
+          //เพิ่มรายการค่าใช้จ่ายใน array  
+          let projectlist = []
+          for(i of response.data.data){
+              if(pname.value == i.projectname){
+               if(projectlist.includes(i.projectlist)){
+  
+               }else{
+                  projectlist.push(i.projectlist)
+               }
+              }
+          }
+  
+      
+          //เพิ่มรายการค่าใช้จ่ายใน OPTIONS
+          let x = 0
+          for(i of projectlist){
+          let adder = document.createElement('option')
+              adder.text = i
+              plist.add(adder, x)
+              x = x+1
+          }
+  
+          //ดึงข้อมูลใส่ฟอร์ม
+          let keep = [0]
+          let factor = 0
+          for(i of response.data.data){
+              if(i.projectname == pname.value && i.projectlist == plist.value){
+                  if(i.edited >= factor){
+                      factor = i.edited
+                      keep.fill(i)
+                  }
+              }
+          }
+       
+          console.log(keep[0].plan1)
+  
+          
+         
+          document.getElementById("plan1").innerHTML = (keep[0].plan1).toLocaleString("en-US");
+          document.getElementById("plan2").innerHTML = (keep[0].plan2).toLocaleString("en-US");
+          document.getElementById("plan3").innerHTML = (keep[0].plan3).toLocaleString("en-US");
+          document.getElementById("plan4").innerHTML = (keep[0].plan4).toLocaleString("en-US");
+          document.getElementById("plan5").innerHTML = (keep[0].plan5).toLocaleString("en-US");
+          document.getElementById("plan6").innerHTML = (keep[0].plan6).toLocaleString("en-US");
+          document.getElementById("plan7").innerHTML = (keep[0].plan7).toLocaleString("en-US");
+          document.getElementById("plan8").innerHTML = (keep[0].plan8).toLocaleString("en-US");
+          document.getElementById("plan9").innerHTML = (keep[0].plan9).toLocaleString("en-US");
+          document.getElementById("plan10").innerHTML = (keep[0].plan10).toLocaleString("en-US");
+          document.getElementById("plan11").innerHTML = (keep[0].plan11).toLocaleString("en-US");
+          document.getElementById("plan12").innerHTML = (keep[0].plan12).toLocaleString("en-US");
+
+          document.getElementById("result1").innerHTML = (keep[0].result1).toLocaleString("en-US");
+          document.getElementById("result2").innerHTML = (keep[0].result2).toLocaleString("en-US");
+          document.getElementById("result3").innerHTML = (keep[0].result3).toLocaleString("en-US");
+          document.getElementById("result4").innerHTML = (keep[0].result4).toLocaleString("en-US");
+          document.getElementById("result5").innerHTML = (keep[0].result5).toLocaleString("en-US");
+          document.getElementById("result6").innerHTML = (keep[0].result6).toLocaleString("en-US");
+          document.getElementById("result7").innerHTML = (keep[0].result7).toLocaleString("en-US");
+          document.getElementById("result8").innerHTML = (keep[0].result8).toLocaleString("en-US");
+          document.getElementById("result9").innerHTML = (keep[0].result9).toLocaleString("en-US");
+          document.getElementById("result10").innerHTML = (keep[0].result10).toLocaleString("en-US");
+          document.getElementById("result11").innerHTML = (keep[0].result11).toLocaleString("en-US");
+          document.getElementById("result12").innerHTML = (keep[0].result12).toLocaleString("en-US");
+         
+        
+    
+  
+            /////////////////////////////////////////////////////////////////////////
+
+            
+        document.getElementById("rap1").innerHTML = (percent(keep[0].result1,keep[0].plan1)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap2").innerHTML = (percent(keep[0].result2,keep[0].plan2)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap3").innerHTML = (percent(keep[0].result3,keep[0].plan3)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap4").innerHTML = (percent(keep[0].result4,keep[0].plan4)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap5").innerHTML = (percent(keep[0].result5,keep[0].plan5)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap6").innerHTML = (percent(keep[0].result6,keep[0].plan6)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap7").innerHTML = (percent(keep[0].result7,keep[0].plan7)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap8").innerHTML = (percent(keep[0].result8,keep[0].plan8)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap9").innerHTML = (percent(keep[0].result9,keep[0].plan9)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap10").innerHTML = (percent(keep[0].result10,keep[0].plan10)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap11").innerHTML = (percent(keep[0].result11,keep[0].plan11)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap12").innerHTML = (percent(keep[0].result12,keep[0].plan12)).toLocaleString("en-US")+ " %";
+        
+        var ree1 = keep[0].result1 + keep[0].result2 + keep[0].result3
+        var pee1 = keep[0].plan1 + keep[0].plan2 + keep[0].plan3
+
+        var ree2 = keep[0].result4 + keep[0].result5 + keep[0].result6
+        var pee2 = keep[0].plan4 + keep[0].plan5 + keep[0].plan6
+   
+        var ree3 = keep[0].result7 + keep[0].result8 + keep[0].result9
+        var pee3 = keep[0].plan7 + keep[0].plan8 + keep[0].plan9
+     
+        var ree4 = keep[0].result10 + keep[0].result11 + keep[0].result12
+        var pee4 = keep[0].plan10 + keep[0].plan11 + keep[0].plan12
+
+
+        document.getElementById("rap-p1").innerHTML = (percent(ree1,pee1)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap-p2").innerHTML = (percent(ree2,pee2)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap-p3").innerHTML = (percent(ree3,pee3)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap-p4").innerHTML = (percent(ree4,pee4)).toLocaleString("en-US")+ " %";
+
+
+        // ไตรมาส
+        
+        document.getElementById("plan-p1").innerHTML = pee1.toLocaleString("en-US");
+        document.getElementById("result-p1").innerHTML = ree1.toLocaleString("en-US");
+        
+        document.getElementById("plan-p2").innerHTML = pee2.toLocaleString("en-US");
+        document.getElementById("result-p2").innerHTML = ree2.toLocaleString("en-US");
+        
+        document.getElementById("plan-p3").innerHTML = pee3.toLocaleString("en-US");
+        document.getElementById("result-p3").innerHTML = ree3.toLocaleString("en-US");
+        
+        document.getElementById("plan-p4").innerHTML = pee4.toLocaleString("en-US");
+        document.getElementById("result-p4").innerHTML = ree4.toLocaleString("en-US");
+
+
+
+
+
+
+
+  
+      });
+          
+  
+  }
+  
+  </script>
+    
+  
+  
+  
+  <script>
+      pname.onchange = function(event){
+      
+      axios
+      .get("/budget-data/"+year.value)
+      .then((response) => {
+         
+          // ลบรายการค่าใช้จ่าย
+          for(i= plist.length+1; i>=0 ; i--){
+              let pname = document.getElementById('plist')
+              plist.remove(i)
+          }
+  
+  
+          //เพิ่มรายการค่าใช้จ่ายใน array  
+          let projectlist = []
+          for(i of response.data.data){
+              if(pname.value == i.projectname){
+               if(projectlist.includes(i.projectlist)){
+  
+               }else{
+                  projectlist.push(i.projectlist)
+               }
+              }
+          }
+  
+      
+          //เพิ่มรายการค่าใช้จ่ายใน OPTIONS
+          let x = 0
+          for(i of projectlist){
+          let adder = document.createElement('option')
+              adder.text = i
+              plist.add(adder, x)
+              x = x+1
+          }
+  
+  
+          //ดึงข้อมูลใส่ฟอร์ม
+          let keep = [0]
+          let factor = 0
+          for(i of response.data.data){
+              if(i.projectname == pname.value && i.projectlist == plist.value){
+                  if(i.edited >= factor){
+                      factor = i.edited
+                      keep.fill(i)
+                  }
+              }
+          }
+       
+          console.log(keep[0].plan1)
+  
+         
+          document.getElementById("plan1").innerHTML = (keep[0].plan1).toLocaleString("en-US");
+          document.getElementById("plan2").innerHTML = (keep[0].plan2).toLocaleString("en-US");
+          document.getElementById("plan3").innerHTML = (keep[0].plan3).toLocaleString("en-US");
+          document.getElementById("plan4").innerHTML = (keep[0].plan4).toLocaleString("en-US");
+          document.getElementById("plan5").innerHTML = (keep[0].plan5).toLocaleString("en-US");
+          document.getElementById("plan6").innerHTML = (keep[0].plan6).toLocaleString("en-US");
+          document.getElementById("plan7").innerHTML = (keep[0].plan7).toLocaleString("en-US");
+          document.getElementById("plan8").innerHTML = (keep[0].plan8).toLocaleString("en-US");
+          document.getElementById("plan9").innerHTML = (keep[0].plan9).toLocaleString("en-US");
+          document.getElementById("plan10").innerHTML = (keep[0].plan10).toLocaleString("en-US");
+          document.getElementById("plan11").innerHTML = (keep[0].plan11).toLocaleString("en-US");
+          document.getElementById("plan12").innerHTML = (keep[0].plan12).toLocaleString("en-US");
+
+          document.getElementById("result1").innerHTML = (keep[0].result1).toLocaleString("en-US");
+          document.getElementById("result2").innerHTML = (keep[0].result2).toLocaleString("en-US");
+          document.getElementById("result3").innerHTML = (keep[0].result3).toLocaleString("en-US");
+          document.getElementById("result4").innerHTML = (keep[0].result4).toLocaleString("en-US");
+          document.getElementById("result5").innerHTML = (keep[0].result5).toLocaleString("en-US");
+          document.getElementById("result6").innerHTML = (keep[0].result6).toLocaleString("en-US");
+          document.getElementById("result7").innerHTML = (keep[0].result7).toLocaleString("en-US");
+          document.getElementById("result8").innerHTML = (keep[0].result8).toLocaleString("en-US");
+          document.getElementById("result9").innerHTML = (keep[0].result9).toLocaleString("en-US");
+          document.getElementById("result10").innerHTML = (keep[0].result10).toLocaleString("en-US");
+          document.getElementById("result11").innerHTML = (keep[0].result11).toLocaleString("en-US");
+          document.getElementById("result12").innerHTML = (keep[0].result12).toLocaleString("en-US");
+
+               /////////////////////////////////////////////////////////////////////////
+
+            
+        document.getElementById("rap1").innerHTML = (percent(keep[0].result1,keep[0].plan1)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap2").innerHTML = (percent(keep[0].result2,keep[0].plan2)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap3").innerHTML = (percent(keep[0].result3,keep[0].plan3)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap4").innerHTML = (percent(keep[0].result4,keep[0].plan4)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap5").innerHTML = (percent(keep[0].result5,keep[0].plan5)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap6").innerHTML = (percent(keep[0].result6,keep[0].plan6)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap7").innerHTML = (percent(keep[0].result7,keep[0].plan7)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap8").innerHTML = (percent(keep[0].result8,keep[0].plan8)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap9").innerHTML = (percent(keep[0].result9,keep[0].plan9)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap10").innerHTML = (percent(keep[0].result10,keep[0].plan10)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap11").innerHTML = (percent(keep[0].result11,keep[0].plan11)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap12").innerHTML = (percent(keep[0].result12,keep[0].plan12)).toLocaleString("en-US")+ " %";
+        
+        var ree1 = keep[0].result1 + keep[0].result2 + keep[0].result3
+        var pee1 = keep[0].plan1 + keep[0].plan2 + keep[0].plan3
+
+        var ree2 = keep[0].result4 + keep[0].result5 + keep[0].result6
+        var pee2 = keep[0].plan4 + keep[0].plan5 + keep[0].plan6
+   
+        var ree3 = keep[0].result7 + keep[0].result8 + keep[0].result9
+        var pee3 = keep[0].plan7 + keep[0].plan8 + keep[0].plan9
+     
+        var ree4 = keep[0].result10 + keep[0].result11 + keep[0].result12
+        var pee4 = keep[0].plan10 + keep[0].plan11 + keep[0].plan12
+
+
+        document.getElementById("rap-p1").innerHTML = (percent(ree1,pee1)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap-p2").innerHTML = (percent(ree2,pee2)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap-p3").innerHTML = (percent(ree3,pee3)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap-p4").innerHTML = (percent(ree4,pee4)).toLocaleString("en-US")+ " %";
+         
+         // ไตรมาส
+        
+        document.getElementById("plan-p1").innerHTML = pee1.toLocaleString("en-US");
+        document.getElementById("result-p1").innerHTML = ree1.toLocaleString("en-US");
+        
+        document.getElementById("plan-p2").innerHTML = pee2.toLocaleString("en-US");
+        document.getElementById("result-p2").innerHTML = ree2.toLocaleString("en-US");
+        
+        document.getElementById("plan-p3").innerHTML = pee3.toLocaleString("en-US");
+        document.getElementById("result-p3").innerHTML = ree3.toLocaleString("en-US");
+        
+        document.getElementById("plan-p4").innerHTML = pee4.toLocaleString("en-US");
+        document.getElementById("result-p4").innerHTML = ree4.toLocaleString("en-US");
+        
+    
+  
+  
+      });
+          
+     
+  
+  
+        }
+  </script>
+  
+  
+  
+  
+  <script>
+       plist.onchange = function(event){
+  
+  
+          axios
+          .get("/budget-data/"+year.value)
+          .then((response) => {
+  
+          //ดึงข้อมูลใส่ฟอร์ม
+          let keep = [0]
+          let factor = 0
+          for(i of response.data.data){
+              if(i.projectname == pname.value && i.projectlist == plist.value){
+                  if(i.edited >= factor){
+                      factor = i.edited
+                      keep.fill(i)
+                  }
+              }
+          }
+       
+          console.log(keep[0].plan1)
+  
+          document.getElementById("plan1").innerHTML = (keep[0].plan1).toLocaleString("en-US");
+          document.getElementById("plan2").innerHTML = (keep[0].plan2).toLocaleString("en-US");
+          document.getElementById("plan3").innerHTML = (keep[0].plan3).toLocaleString("en-US");
+          document.getElementById("plan4").innerHTML = (keep[0].plan4).toLocaleString("en-US");
+          document.getElementById("plan5").innerHTML = (keep[0].plan5).toLocaleString("en-US");
+          document.getElementById("plan6").innerHTML = (keep[0].plan6).toLocaleString("en-US");
+          document.getElementById("plan7").innerHTML = (keep[0].plan7).toLocaleString("en-US");
+          document.getElementById("plan8").innerHTML = (keep[0].plan8).toLocaleString("en-US");
+          document.getElementById("plan9").innerHTML = (keep[0].plan9).toLocaleString("en-US");
+          document.getElementById("plan10").innerHTML = (keep[0].plan10).toLocaleString("en-US");
+          document.getElementById("plan11").innerHTML = (keep[0].plan11).toLocaleString("en-US");
+          document.getElementById("plan12").innerHTML = (keep[0].plan12).toLocaleString("en-US");
+
+          document.getElementById("result1").innerHTML = (keep[0].result1).toLocaleString("en-US");
+          document.getElementById("result2").innerHTML = (keep[0].result2).toLocaleString("en-US");
+          document.getElementById("result3").innerHTML = (keep[0].result3).toLocaleString("en-US");
+          document.getElementById("result4").innerHTML = (keep[0].result4).toLocaleString("en-US");
+          document.getElementById("result5").innerHTML = (keep[0].result5).toLocaleString("en-US");
+          document.getElementById("result6").innerHTML = (keep[0].result6).toLocaleString("en-US");
+          document.getElementById("result7").innerHTML = (keep[0].result7).toLocaleString("en-US");
+          document.getElementById("result8").innerHTML = (keep[0].result8).toLocaleString("en-US");
+          document.getElementById("result9").innerHTML = (keep[0].result9).toLocaleString("en-US");
+          document.getElementById("result10").innerHTML = (keep[0].result10).toLocaleString("en-US");
+          document.getElementById("result11").innerHTML = (keep[0].result11).toLocaleString("en-US");
+          document.getElementById("result12").innerHTML = (keep[0].result12).toLocaleString("en-US");
+
+               /////////////////////////////////////////////////////////////////////////
+
+            
+        document.getElementById("rap1").innerHTML = (percent(keep[0].result1,keep[0].plan1)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap2").innerHTML = (percent(keep[0].result2,keep[0].plan2)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap3").innerHTML = (percent(keep[0].result3,keep[0].plan3)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap4").innerHTML = (percent(keep[0].result4,keep[0].plan4)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap5").innerHTML = (percent(keep[0].result5,keep[0].plan5)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap6").innerHTML = (percent(keep[0].result6,keep[0].plan6)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap7").innerHTML = (percent(keep[0].result7,keep[0].plan7)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap8").innerHTML = (percent(keep[0].result8,keep[0].plan8)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap9").innerHTML = (percent(keep[0].result9,keep[0].plan9)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap10").innerHTML = (percent(keep[0].result10,keep[0].plan10)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap11").innerHTML = (percent(keep[0].result11,keep[0].plan11)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap12").innerHTML = (percent(keep[0].result12,keep[0].plan12)).toLocaleString("en-US")+ " %";
+        
+        var ree1 = keep[0].result1 + keep[0].result2 + keep[0].result3
+        var pee1 = keep[0].plan1 + keep[0].plan2 + keep[0].plan3
+
+        var ree2 = keep[0].result4 + keep[0].result5 + keep[0].result6
+        var pee2 = keep[0].plan4 + keep[0].plan5 + keep[0].plan6
+   
+        var ree3 = keep[0].result7 + keep[0].result8 + keep[0].result9
+        var pee3 = keep[0].plan7 + keep[0].plan8 + keep[0].plan9
+     
+        var ree4 = keep[0].result10 + keep[0].result11 + keep[0].result12
+        var pee4 = keep[0].plan10 + keep[0].plan11 + keep[0].plan12
+
+
+        document.getElementById("rap-p1").innerHTML = (percent(ree1,pee1)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap-p2").innerHTML = (percent(ree2,pee2)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap-p3").innerHTML = (percent(ree3,pee3)).toLocaleString("en-US")+ " %";
+        document.getElementById("rap-p4").innerHTML = (percent(ree4,pee4)).toLocaleString("en-US")+ " %";
+         
+        // ไตรมาส
+        
+        document.getElementById("plan-p1").innerHTML = pee1.toLocaleString("en-US");
+        document.getElementById("result-p1").innerHTML = ree1.toLocaleString("en-US");
+        
+        document.getElementById("plan-p2").innerHTML = pee2.toLocaleString("en-US");
+        document.getElementById("result-p2").innerHTML = ree2.toLocaleString("en-US");
+        
+        document.getElementById("plan-p3").innerHTML = pee3.toLocaleString("en-US");
+        document.getElementById("result-p3").innerHTML = ree3.toLocaleString("en-US");
+        
+        document.getElementById("plan-p4").innerHTML = pee4.toLocaleString("en-US");
+        document.getElementById("result-p4").innerHTML = ree4.toLocaleString("en-US");
+        
+    
+  
+          })
+    
+  
+      
+      }
+  
+  
+</script>
+
 </body>
 </html>
